@@ -1,0 +1,1 @@
+[{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"validator","type":"address"},{"indexed":false,"internalType":"enum IBaseSlash.SlashType","name":"slashType","type":"uint8"},{"indexed":false,"internalType":"uint256","name":"period","type":"uint256"}],"name":"Slashed","type":"event"}]
