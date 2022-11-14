@@ -1,0 +1,1 @@
+[{"inputs":[],"name":"getBridgeOperators","outputs":[{"internalType":"address[]","name":"","type":"address[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address[]","name":"","type":"address[]"}],"name":"replaceBridgeOperators","outputs":[],"stateMutability":"nonpayable","type":"function"}]
