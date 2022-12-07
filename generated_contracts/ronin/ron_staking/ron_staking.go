@@ -30,7 +30,7 @@ var (
 
 // RonStakingMetaData contains all meta data concerning the RonStaking contract.
 var RonStakingMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"minSecs\",\"type\":\"uint256\"}],\"name\":\"CooldownSecsToUndelegateUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"delegator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensuAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Delegated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"threshold\",\"type\":\"uint256\"}],\"name\":\"MinValidatorStakingAmountUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"validator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"admin\",\"type\":\"address\"}],\"name\":\"PoolApproved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"poolAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"}],\"name\":\"PoolSharesUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"validator\",\"type\":\"address[]\"}],\"name\":\"PoolsDeprecated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"poolAddrs\",\"type\":\"address[]\"}],\"name\":\"PoolsUpdateConflicted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"poolAddrs\",\"type\":\"address[]\"},{\"indexed\":false,\"internalType\":\"uint256[]\",\"name\":\"rewards\",\"type\":\"uint256[]\"}],\"name\":\"PoolsUpdateFailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"poolAddrs\",\"type\":\"address[]\"},{\"indexed\":false,\"internalType\":\"uint256[]\",\"name\":\"aRps\",\"type\":\"uint256[]\"},{\"indexed\":false,\"internalType\":\"uint256[]\",\"name\":\"shares\",\"type\":\"uint256[]\"}],\"name\":\"PoolsUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"poolAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"RewardClaimed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensuAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Staked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"validator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"admin\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"contractBalance\",\"type\":\"uint256\"}],\"name\":\"StakingAmountTransferFailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"delegator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensuAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Undelegated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensuAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Unstaked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"poolAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"debited\",\"type\":\"uint256\"}],\"name\":\"UserRewardUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"ValidatorContractUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"secs\",\"type\":\"uint256\"}],\"name\":\"WaitingSecsToRevokeUpdated\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_candidateAdmin\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"addresspayable\",\"name\":\"_treasuryAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_bridgeOperatorAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_commissionRate\",\"type\":\"uint256\"}],\"name\":\"applyValidatorCandidate\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_pools\",\"type\":\"address[]\"}],\"name\":\"bulkSelfStaking\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"_selfStakings\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_poolAddrs\",\"type\":\"address[]\"},{\"internalType\":\"address[]\",\"name\":\"_userList\",\"type\":\"address[]\"}],\"name\":\"bulkStakingAmountOf\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"_stakingAmounts\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_poolList\",\"type\":\"address[]\"}],\"name\":\"bulkStakingTotal\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"_stakingAmounts\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_consensusAddrs\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"_amounts\",\"type\":\"uint256[]\"}],\"name\":\"bulkUndelegate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_consensusAddrList\",\"type\":\"address[]\"}],\"name\":\"claimRewards\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"cooldownSecsToUndelegate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"deductStakingAmount\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"delegate\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_consensusAddrList\",\"type\":\"address[]\"},{\"internalType\":\"address\",\"name\":\"_consensusAddrDst\",\"type\":\"address\"}],\"name\":\"delegateRewards\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_pools\",\"type\":\"address[]\"}],\"name\":\"deprecatePools\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_poolAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"getReward\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"_poolAddrList\",\"type\":\"address[]\"}],\"name\":\"getRewards\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"_rewards\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_poolAddr\",\"type\":\"address\"}],\"name\":\"getStakingPool\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"_admin\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_stakingAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_stakingTotal\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"__validatorContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"__minValidatorStakingAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"__cooldownSecsToUndelegate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"__waitingSecsToRevoke\",\"type\":\"uint256\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minValidatorStakingAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_consensusAddrs\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"_rewards\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256\",\"name\":\"_period\",\"type\":\"uint256\"}],\"name\":\"recordRewards\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddrSrc\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_consensusAddrDst\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"redelegate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"requestRenounce\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_cooldownSecs\",\"type\":\"uint256\"}],\"name\":\"setCooldownSecsToUndelegate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_threshold\",\"type\":\"uint256\"}],\"name\":\"setMinValidatorStakingAmount\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setValidatorContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_secs\",\"type\":\"uint256\"}],\"name\":\"setWaitingSecsToRevoke\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"stake\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_poolAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"stakingAmountOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_poolAddr\",\"type\":\"address\"}],\"name\":\"stakingTotal\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"undelegate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"unstake\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"validatorContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"waitingSecsToRevoke\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
+	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"minSecs\",\"type\":\"uint256\"}],\"name\":\"CooldownSecsToUndelegateUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"delegator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensuAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Delegated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"threshold\",\"type\":\"uint256\"}],\"name\":\"MinValidatorStakingAmountUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"validator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"admin\",\"type\":\"address\"}],\"name\":\"PoolApproved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"poolAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"}],\"name\":\"PoolSharesUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"validator\",\"type\":\"address[]\"}],\"name\":\"PoolsDeprecated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"poolAddrs\",\"type\":\"address[]\"}],\"name\":\"PoolsUpdateConflicted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"poolAddrs\",\"type\":\"address[]\"},{\"indexed\":false,\"internalType\":\"uint256[]\",\"name\":\"rewards\",\"type\":\"uint256[]\"}],\"name\":\"PoolsUpdateFailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"poolAddrs\",\"type\":\"address[]\"},{\"indexed\":false,\"internalType\":\"uint256[]\",\"name\":\"aRps\",\"type\":\"uint256[]\"},{\"indexed\":false,\"internalType\":\"uint256[]\",\"name\":\"shares\",\"type\":\"uint256[]\"}],\"name\":\"PoolsUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"poolAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"RewardClaimed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensuAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Staked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"validator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"contractBalance\",\"type\":\"uint256\"}],\"name\":\"StakingAmountDeductFailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"validator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"admin\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"contractBalance\",\"type\":\"uint256\"}],\"name\":\"StakingAmountTransferFailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"delegator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensuAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Undelegated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensuAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Unstaked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"poolAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"debited\",\"type\":\"uint256\"}],\"name\":\"UserRewardUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"ValidatorContractUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"secs\",\"type\":\"uint256\"}],\"name\":\"WaitingSecsToRevokeUpdated\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_candidateAdmin\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"addresspayable\",\"name\":\"_treasuryAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_bridgeOperatorAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_commissionRate\",\"type\":\"uint256\"}],\"name\":\"applyValidatorCandidate\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_consensusAddrs\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"_amounts\",\"type\":\"uint256[]\"}],\"name\":\"bulkUndelegate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_consensusAddrList\",\"type\":\"address[]\"}],\"name\":\"claimRewards\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"cooldownSecsToUndelegate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"deductStakingAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_actualDeductingAmount\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"delegate\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_consensusAddrList\",\"type\":\"address[]\"},{\"internalType\":\"address\",\"name\":\"_consensusAddrDst\",\"type\":\"address\"}],\"name\":\"delegateRewards\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_pools\",\"type\":\"address[]\"}],\"name\":\"deprecatePools\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_pools\",\"type\":\"address[]\"}],\"name\":\"getManySelfStakings\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"_selfStakings\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_poolAddrs\",\"type\":\"address[]\"},{\"internalType\":\"address[]\",\"name\":\"_userList\",\"type\":\"address[]\"}],\"name\":\"getManyStakingAmounts\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"_stakingAmounts\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_poolList\",\"type\":\"address[]\"}],\"name\":\"getManyStakingTotals\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"_stakingAmounts\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_poolAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"getReward\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"_poolAddrList\",\"type\":\"address[]\"}],\"name\":\"getRewards\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"_rewards\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_poolAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"getStakingAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_poolAddr\",\"type\":\"address\"}],\"name\":\"getStakingPool\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"_admin\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_stakingAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_stakingTotal\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_poolAddr\",\"type\":\"address\"}],\"name\":\"getStakingTotal\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"__validatorContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"__minValidatorStakingAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"__cooldownSecsToUndelegate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"__waitingSecsToRevoke\",\"type\":\"uint256\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minValidatorStakingAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_consensusAddrs\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"_rewards\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256\",\"name\":\"_period\",\"type\":\"uint256\"}],\"name\":\"recordRewards\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddrSrc\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_consensusAddrDst\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"redelegate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"requestRenounce\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_effectiveDaysOnwards\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_commissionRate\",\"type\":\"uint256\"}],\"name\":\"requestUpdateCommissionRate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_cooldownSecs\",\"type\":\"uint256\"}],\"name\":\"setCooldownSecsToUndelegate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_threshold\",\"type\":\"uint256\"}],\"name\":\"setMinValidatorStakingAmount\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setValidatorContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_secs\",\"type\":\"uint256\"}],\"name\":\"setWaitingSecsToRevoke\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"stake\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"undelegate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"unstake\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"validatorContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"waitingSecsToRevoke\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
 }
 
 // RonStakingABI is the input ABI used to generate the binding from.
@@ -179,99 +179,6 @@ func (_RonStaking *RonStakingTransactorRaw) Transact(opts *bind.TransactOpts, me
 	return _RonStaking.Contract.contract.Transact(opts, method, params...)
 }
 
-// BulkSelfStaking is a free data retrieval call binding the contract method 0x017dd950.
-//
-// Solidity: function bulkSelfStaking(address[] _pools) view returns(uint256[] _selfStakings)
-func (_RonStaking *RonStakingCaller) BulkSelfStaking(opts *bind.CallOpts, _pools []common.Address) ([]*big.Int, error) {
-	var out []interface{}
-	err := _RonStaking.contract.Call(opts, &out, "bulkSelfStaking", _pools)
-
-	if err != nil {
-		return *new([]*big.Int), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new([]*big.Int)).(*[]*big.Int)
-
-	return out0, err
-
-}
-
-// BulkSelfStaking is a free data retrieval call binding the contract method 0x017dd950.
-//
-// Solidity: function bulkSelfStaking(address[] _pools) view returns(uint256[] _selfStakings)
-func (_RonStaking *RonStakingSession) BulkSelfStaking(_pools []common.Address) ([]*big.Int, error) {
-	return _RonStaking.Contract.BulkSelfStaking(&_RonStaking.CallOpts, _pools)
-}
-
-// BulkSelfStaking is a free data retrieval call binding the contract method 0x017dd950.
-//
-// Solidity: function bulkSelfStaking(address[] _pools) view returns(uint256[] _selfStakings)
-func (_RonStaking *RonStakingCallerSession) BulkSelfStaking(_pools []common.Address) ([]*big.Int, error) {
-	return _RonStaking.Contract.BulkSelfStaking(&_RonStaking.CallOpts, _pools)
-}
-
-// BulkStakingAmountOf is a free data retrieval call binding the contract method 0xe793d5bc.
-//
-// Solidity: function bulkStakingAmountOf(address[] _poolAddrs, address[] _userList) view returns(uint256[] _stakingAmounts)
-func (_RonStaking *RonStakingCaller) BulkStakingAmountOf(opts *bind.CallOpts, _poolAddrs []common.Address, _userList []common.Address) ([]*big.Int, error) {
-	var out []interface{}
-	err := _RonStaking.contract.Call(opts, &out, "bulkStakingAmountOf", _poolAddrs, _userList)
-
-	if err != nil {
-		return *new([]*big.Int), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new([]*big.Int)).(*[]*big.Int)
-
-	return out0, err
-
-}
-
-// BulkStakingAmountOf is a free data retrieval call binding the contract method 0xe793d5bc.
-//
-// Solidity: function bulkStakingAmountOf(address[] _poolAddrs, address[] _userList) view returns(uint256[] _stakingAmounts)
-func (_RonStaking *RonStakingSession) BulkStakingAmountOf(_poolAddrs []common.Address, _userList []common.Address) ([]*big.Int, error) {
-	return _RonStaking.Contract.BulkStakingAmountOf(&_RonStaking.CallOpts, _poolAddrs, _userList)
-}
-
-// BulkStakingAmountOf is a free data retrieval call binding the contract method 0xe793d5bc.
-//
-// Solidity: function bulkStakingAmountOf(address[] _poolAddrs, address[] _userList) view returns(uint256[] _stakingAmounts)
-func (_RonStaking *RonStakingCallerSession) BulkStakingAmountOf(_poolAddrs []common.Address, _userList []common.Address) ([]*big.Int, error) {
-	return _RonStaking.Contract.BulkStakingAmountOf(&_RonStaking.CallOpts, _poolAddrs, _userList)
-}
-
-// BulkStakingTotal is a free data retrieval call binding the contract method 0xafcb2e02.
-//
-// Solidity: function bulkStakingTotal(address[] _poolList) view returns(uint256[] _stakingAmounts)
-func (_RonStaking *RonStakingCaller) BulkStakingTotal(opts *bind.CallOpts, _poolList []common.Address) ([]*big.Int, error) {
-	var out []interface{}
-	err := _RonStaking.contract.Call(opts, &out, "bulkStakingTotal", _poolList)
-
-	if err != nil {
-		return *new([]*big.Int), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new([]*big.Int)).(*[]*big.Int)
-
-	return out0, err
-
-}
-
-// BulkStakingTotal is a free data retrieval call binding the contract method 0xafcb2e02.
-//
-// Solidity: function bulkStakingTotal(address[] _poolList) view returns(uint256[] _stakingAmounts)
-func (_RonStaking *RonStakingSession) BulkStakingTotal(_poolList []common.Address) ([]*big.Int, error) {
-	return _RonStaking.Contract.BulkStakingTotal(&_RonStaking.CallOpts, _poolList)
-}
-
-// BulkStakingTotal is a free data retrieval call binding the contract method 0xafcb2e02.
-//
-// Solidity: function bulkStakingTotal(address[] _poolList) view returns(uint256[] _stakingAmounts)
-func (_RonStaking *RonStakingCallerSession) BulkStakingTotal(_poolList []common.Address) ([]*big.Int, error) {
-	return _RonStaking.Contract.BulkStakingTotal(&_RonStaking.CallOpts, _poolList)
-}
-
 // CooldownSecsToUndelegate is a free data retrieval call binding the contract method 0x0682e8fa.
 //
 // Solidity: function cooldownSecsToUndelegate() view returns(uint256)
@@ -301,6 +208,99 @@ func (_RonStaking *RonStakingSession) CooldownSecsToUndelegate() (*big.Int, erro
 // Solidity: function cooldownSecsToUndelegate() view returns(uint256)
 func (_RonStaking *RonStakingCallerSession) CooldownSecsToUndelegate() (*big.Int, error) {
 	return _RonStaking.Contract.CooldownSecsToUndelegate(&_RonStaking.CallOpts)
+}
+
+// GetManySelfStakings is a free data retrieval call binding the contract method 0x42ef3c34.
+//
+// Solidity: function getManySelfStakings(address[] _pools) view returns(uint256[] _selfStakings)
+func (_RonStaking *RonStakingCaller) GetManySelfStakings(opts *bind.CallOpts, _pools []common.Address) ([]*big.Int, error) {
+	var out []interface{}
+	err := _RonStaking.contract.Call(opts, &out, "getManySelfStakings", _pools)
+
+	if err != nil {
+		return *new([]*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([]*big.Int)).(*[]*big.Int)
+
+	return out0, err
+
+}
+
+// GetManySelfStakings is a free data retrieval call binding the contract method 0x42ef3c34.
+//
+// Solidity: function getManySelfStakings(address[] _pools) view returns(uint256[] _selfStakings)
+func (_RonStaking *RonStakingSession) GetManySelfStakings(_pools []common.Address) ([]*big.Int, error) {
+	return _RonStaking.Contract.GetManySelfStakings(&_RonStaking.CallOpts, _pools)
+}
+
+// GetManySelfStakings is a free data retrieval call binding the contract method 0x42ef3c34.
+//
+// Solidity: function getManySelfStakings(address[] _pools) view returns(uint256[] _selfStakings)
+func (_RonStaking *RonStakingCallerSession) GetManySelfStakings(_pools []common.Address) ([]*big.Int, error) {
+	return _RonStaking.Contract.GetManySelfStakings(&_RonStaking.CallOpts, _pools)
+}
+
+// GetManyStakingAmounts is a free data retrieval call binding the contract method 0x095f6475.
+//
+// Solidity: function getManyStakingAmounts(address[] _poolAddrs, address[] _userList) view returns(uint256[] _stakingAmounts)
+func (_RonStaking *RonStakingCaller) GetManyStakingAmounts(opts *bind.CallOpts, _poolAddrs []common.Address, _userList []common.Address) ([]*big.Int, error) {
+	var out []interface{}
+	err := _RonStaking.contract.Call(opts, &out, "getManyStakingAmounts", _poolAddrs, _userList)
+
+	if err != nil {
+		return *new([]*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([]*big.Int)).(*[]*big.Int)
+
+	return out0, err
+
+}
+
+// GetManyStakingAmounts is a free data retrieval call binding the contract method 0x095f6475.
+//
+// Solidity: function getManyStakingAmounts(address[] _poolAddrs, address[] _userList) view returns(uint256[] _stakingAmounts)
+func (_RonStaking *RonStakingSession) GetManyStakingAmounts(_poolAddrs []common.Address, _userList []common.Address) ([]*big.Int, error) {
+	return _RonStaking.Contract.GetManyStakingAmounts(&_RonStaking.CallOpts, _poolAddrs, _userList)
+}
+
+// GetManyStakingAmounts is a free data retrieval call binding the contract method 0x095f6475.
+//
+// Solidity: function getManyStakingAmounts(address[] _poolAddrs, address[] _userList) view returns(uint256[] _stakingAmounts)
+func (_RonStaking *RonStakingCallerSession) GetManyStakingAmounts(_poolAddrs []common.Address, _userList []common.Address) ([]*big.Int, error) {
+	return _RonStaking.Contract.GetManyStakingAmounts(&_RonStaking.CallOpts, _poolAddrs, _userList)
+}
+
+// GetManyStakingTotals is a free data retrieval call binding the contract method 0x91f8723f.
+//
+// Solidity: function getManyStakingTotals(address[] _poolList) view returns(uint256[] _stakingAmounts)
+func (_RonStaking *RonStakingCaller) GetManyStakingTotals(opts *bind.CallOpts, _poolList []common.Address) ([]*big.Int, error) {
+	var out []interface{}
+	err := _RonStaking.contract.Call(opts, &out, "getManyStakingTotals", _poolList)
+
+	if err != nil {
+		return *new([]*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([]*big.Int)).(*[]*big.Int)
+
+	return out0, err
+
+}
+
+// GetManyStakingTotals is a free data retrieval call binding the contract method 0x91f8723f.
+//
+// Solidity: function getManyStakingTotals(address[] _poolList) view returns(uint256[] _stakingAmounts)
+func (_RonStaking *RonStakingSession) GetManyStakingTotals(_poolList []common.Address) ([]*big.Int, error) {
+	return _RonStaking.Contract.GetManyStakingTotals(&_RonStaking.CallOpts, _poolList)
+}
+
+// GetManyStakingTotals is a free data retrieval call binding the contract method 0x91f8723f.
+//
+// Solidity: function getManyStakingTotals(address[] _poolList) view returns(uint256[] _stakingAmounts)
+func (_RonStaking *RonStakingCallerSession) GetManyStakingTotals(_poolList []common.Address) ([]*big.Int, error) {
+	return _RonStaking.Contract.GetManyStakingTotals(&_RonStaking.CallOpts, _poolList)
 }
 
 // GetReward is a free data retrieval call binding the contract method 0x6b091695.
@@ -365,6 +365,37 @@ func (_RonStaking *RonStakingCallerSession) GetRewards(_user common.Address, _po
 	return _RonStaking.Contract.GetRewards(&_RonStaking.CallOpts, _user, _poolAddrList)
 }
 
+// GetStakingAmount is a free data retrieval call binding the contract method 0x76664b65.
+//
+// Solidity: function getStakingAmount(address _poolAddr, address _user) view returns(uint256)
+func (_RonStaking *RonStakingCaller) GetStakingAmount(opts *bind.CallOpts, _poolAddr common.Address, _user common.Address) (*big.Int, error) {
+	var out []interface{}
+	err := _RonStaking.contract.Call(opts, &out, "getStakingAmount", _poolAddr, _user)
+
+	if err != nil {
+		return *new(*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+
+	return out0, err
+
+}
+
+// GetStakingAmount is a free data retrieval call binding the contract method 0x76664b65.
+//
+// Solidity: function getStakingAmount(address _poolAddr, address _user) view returns(uint256)
+func (_RonStaking *RonStakingSession) GetStakingAmount(_poolAddr common.Address, _user common.Address) (*big.Int, error) {
+	return _RonStaking.Contract.GetStakingAmount(&_RonStaking.CallOpts, _poolAddr, _user)
+}
+
+// GetStakingAmount is a free data retrieval call binding the contract method 0x76664b65.
+//
+// Solidity: function getStakingAmount(address _poolAddr, address _user) view returns(uint256)
+func (_RonStaking *RonStakingCallerSession) GetStakingAmount(_poolAddr common.Address, _user common.Address) (*big.Int, error) {
+	return _RonStaking.Contract.GetStakingAmount(&_RonStaking.CallOpts, _poolAddr, _user)
+}
+
 // GetStakingPool is a free data retrieval call binding the contract method 0x9e614e0e.
 //
 // Solidity: function getStakingPool(address _poolAddr) view returns(address _admin, uint256 _stakingAmount, uint256 _stakingTotal)
@@ -415,6 +446,37 @@ func (_RonStaking *RonStakingCallerSession) GetStakingPool(_poolAddr common.Addr
 	return _RonStaking.Contract.GetStakingPool(&_RonStaking.CallOpts, _poolAddr)
 }
 
+// GetStakingTotal is a free data retrieval call binding the contract method 0x895ab742.
+//
+// Solidity: function getStakingTotal(address _poolAddr) view returns(uint256)
+func (_RonStaking *RonStakingCaller) GetStakingTotal(opts *bind.CallOpts, _poolAddr common.Address) (*big.Int, error) {
+	var out []interface{}
+	err := _RonStaking.contract.Call(opts, &out, "getStakingTotal", _poolAddr)
+
+	if err != nil {
+		return *new(*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+
+	return out0, err
+
+}
+
+// GetStakingTotal is a free data retrieval call binding the contract method 0x895ab742.
+//
+// Solidity: function getStakingTotal(address _poolAddr) view returns(uint256)
+func (_RonStaking *RonStakingSession) GetStakingTotal(_poolAddr common.Address) (*big.Int, error) {
+	return _RonStaking.Contract.GetStakingTotal(&_RonStaking.CallOpts, _poolAddr)
+}
+
+// GetStakingTotal is a free data retrieval call binding the contract method 0x895ab742.
+//
+// Solidity: function getStakingTotal(address _poolAddr) view returns(uint256)
+func (_RonStaking *RonStakingCallerSession) GetStakingTotal(_poolAddr common.Address) (*big.Int, error) {
+	return _RonStaking.Contract.GetStakingTotal(&_RonStaking.CallOpts, _poolAddr)
+}
+
 // MinValidatorStakingAmount is a free data retrieval call binding the contract method 0x909791dd.
 //
 // Solidity: function minValidatorStakingAmount() view returns(uint256)
@@ -444,68 +506,6 @@ func (_RonStaking *RonStakingSession) MinValidatorStakingAmount() (*big.Int, err
 // Solidity: function minValidatorStakingAmount() view returns(uint256)
 func (_RonStaking *RonStakingCallerSession) MinValidatorStakingAmount() (*big.Int, error) {
 	return _RonStaking.Contract.MinValidatorStakingAmount(&_RonStaking.CallOpts)
-}
-
-// StakingAmountOf is a free data retrieval call binding the contract method 0x161a1daf.
-//
-// Solidity: function stakingAmountOf(address _poolAddr, address _user) view returns(uint256)
-func (_RonStaking *RonStakingCaller) StakingAmountOf(opts *bind.CallOpts, _poolAddr common.Address, _user common.Address) (*big.Int, error) {
-	var out []interface{}
-	err := _RonStaking.contract.Call(opts, &out, "stakingAmountOf", _poolAddr, _user)
-
-	if err != nil {
-		return *new(*big.Int), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
-
-	return out0, err
-
-}
-
-// StakingAmountOf is a free data retrieval call binding the contract method 0x161a1daf.
-//
-// Solidity: function stakingAmountOf(address _poolAddr, address _user) view returns(uint256)
-func (_RonStaking *RonStakingSession) StakingAmountOf(_poolAddr common.Address, _user common.Address) (*big.Int, error) {
-	return _RonStaking.Contract.StakingAmountOf(&_RonStaking.CallOpts, _poolAddr, _user)
-}
-
-// StakingAmountOf is a free data retrieval call binding the contract method 0x161a1daf.
-//
-// Solidity: function stakingAmountOf(address _poolAddr, address _user) view returns(uint256)
-func (_RonStaking *RonStakingCallerSession) StakingAmountOf(_poolAddr common.Address, _user common.Address) (*big.Int, error) {
-	return _RonStaking.Contract.StakingAmountOf(&_RonStaking.CallOpts, _poolAddr, _user)
-}
-
-// StakingTotal is a free data retrieval call binding the contract method 0x82c47bce.
-//
-// Solidity: function stakingTotal(address _poolAddr) view returns(uint256)
-func (_RonStaking *RonStakingCaller) StakingTotal(opts *bind.CallOpts, _poolAddr common.Address) (*big.Int, error) {
-	var out []interface{}
-	err := _RonStaking.contract.Call(opts, &out, "stakingTotal", _poolAddr)
-
-	if err != nil {
-		return *new(*big.Int), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
-
-	return out0, err
-
-}
-
-// StakingTotal is a free data retrieval call binding the contract method 0x82c47bce.
-//
-// Solidity: function stakingTotal(address _poolAddr) view returns(uint256)
-func (_RonStaking *RonStakingSession) StakingTotal(_poolAddr common.Address) (*big.Int, error) {
-	return _RonStaking.Contract.StakingTotal(&_RonStaking.CallOpts, _poolAddr)
-}
-
-// StakingTotal is a free data retrieval call binding the contract method 0x82c47bce.
-//
-// Solidity: function stakingTotal(address _poolAddr) view returns(uint256)
-func (_RonStaking *RonStakingCallerSession) StakingTotal(_poolAddr common.Address) (*big.Int, error) {
-	return _RonStaking.Contract.StakingTotal(&_RonStaking.CallOpts, _poolAddr)
 }
 
 // ValidatorContract is a free data retrieval call binding the contract method 0x99439089.
@@ -635,21 +635,21 @@ func (_RonStaking *RonStakingTransactorSession) ClaimRewards(_consensusAddrList 
 
 // DeductStakingAmount is a paid mutator transaction binding the contract method 0xc905bb35.
 //
-// Solidity: function deductStakingAmount(address _consensusAddr, uint256 _amount) returns()
+// Solidity: function deductStakingAmount(address _consensusAddr, uint256 _amount) returns(uint256 _actualDeductingAmount)
 func (_RonStaking *RonStakingTransactor) DeductStakingAmount(opts *bind.TransactOpts, _consensusAddr common.Address, _amount *big.Int) (*types.Transaction, error) {
 	return _RonStaking.contract.Transact(opts, "deductStakingAmount", _consensusAddr, _amount)
 }
 
 // DeductStakingAmount is a paid mutator transaction binding the contract method 0xc905bb35.
 //
-// Solidity: function deductStakingAmount(address _consensusAddr, uint256 _amount) returns()
+// Solidity: function deductStakingAmount(address _consensusAddr, uint256 _amount) returns(uint256 _actualDeductingAmount)
 func (_RonStaking *RonStakingSession) DeductStakingAmount(_consensusAddr common.Address, _amount *big.Int) (*types.Transaction, error) {
 	return _RonStaking.Contract.DeductStakingAmount(&_RonStaking.TransactOpts, _consensusAddr, _amount)
 }
 
 // DeductStakingAmount is a paid mutator transaction binding the contract method 0xc905bb35.
 //
-// Solidity: function deductStakingAmount(address _consensusAddr, uint256 _amount) returns()
+// Solidity: function deductStakingAmount(address _consensusAddr, uint256 _amount) returns(uint256 _actualDeductingAmount)
 func (_RonStaking *RonStakingTransactorSession) DeductStakingAmount(_consensusAddr common.Address, _amount *big.Int) (*types.Transaction, error) {
 	return _RonStaking.Contract.DeductStakingAmount(&_RonStaking.TransactOpts, _consensusAddr, _amount)
 }
@@ -799,6 +799,27 @@ func (_RonStaking *RonStakingSession) RequestRenounce(_consensusAddr common.Addr
 // Solidity: function requestRenounce(address _consensusAddr) returns()
 func (_RonStaking *RonStakingTransactorSession) RequestRenounce(_consensusAddr common.Address) (*types.Transaction, error) {
 	return _RonStaking.Contract.RequestRenounce(&_RonStaking.TransactOpts, _consensusAddr)
+}
+
+// RequestUpdateCommissionRate is a paid mutator transaction binding the contract method 0x924f081e.
+//
+// Solidity: function requestUpdateCommissionRate(address _consensusAddr, uint256 _effectiveDaysOnwards, uint256 _commissionRate) returns()
+func (_RonStaking *RonStakingTransactor) RequestUpdateCommissionRate(opts *bind.TransactOpts, _consensusAddr common.Address, _effectiveDaysOnwards *big.Int, _commissionRate *big.Int) (*types.Transaction, error) {
+	return _RonStaking.contract.Transact(opts, "requestUpdateCommissionRate", _consensusAddr, _effectiveDaysOnwards, _commissionRate)
+}
+
+// RequestUpdateCommissionRate is a paid mutator transaction binding the contract method 0x924f081e.
+//
+// Solidity: function requestUpdateCommissionRate(address _consensusAddr, uint256 _effectiveDaysOnwards, uint256 _commissionRate) returns()
+func (_RonStaking *RonStakingSession) RequestUpdateCommissionRate(_consensusAddr common.Address, _effectiveDaysOnwards *big.Int, _commissionRate *big.Int) (*types.Transaction, error) {
+	return _RonStaking.Contract.RequestUpdateCommissionRate(&_RonStaking.TransactOpts, _consensusAddr, _effectiveDaysOnwards, _commissionRate)
+}
+
+// RequestUpdateCommissionRate is a paid mutator transaction binding the contract method 0x924f081e.
+//
+// Solidity: function requestUpdateCommissionRate(address _consensusAddr, uint256 _effectiveDaysOnwards, uint256 _commissionRate) returns()
+func (_RonStaking *RonStakingTransactorSession) RequestUpdateCommissionRate(_consensusAddr common.Address, _effectiveDaysOnwards *big.Int, _commissionRate *big.Int) (*types.Transaction, error) {
+	return _RonStaking.Contract.RequestUpdateCommissionRate(&_RonStaking.TransactOpts, _consensusAddr, _effectiveDaysOnwards, _commissionRate)
 }
 
 // SetCooldownSecsToUndelegate is a paid mutator transaction binding the contract method 0x888b9ae9.
@@ -2718,6 +2739,161 @@ func (_RonStaking *RonStakingFilterer) WatchStaked(opts *bind.WatchOpts, sink ch
 func (_RonStaking *RonStakingFilterer) ParseStaked(log types.Log) (*RonStakingStaked, error) {
 	event := new(RonStakingStaked)
 	if err := _RonStaking.contract.UnpackLog(event, "Staked", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// RonStakingStakingAmountDeductFailedIterator is returned from FilterStakingAmountDeductFailed and is used to iterate over the raw logs and unpacked data for StakingAmountDeductFailed events raised by the RonStaking contract.
+type RonStakingStakingAmountDeductFailedIterator struct {
+	Event *RonStakingStakingAmountDeductFailed // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *RonStakingStakingAmountDeductFailedIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(RonStakingStakingAmountDeductFailed)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(RonStakingStakingAmountDeductFailed)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *RonStakingStakingAmountDeductFailedIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *RonStakingStakingAmountDeductFailedIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// RonStakingStakingAmountDeductFailed represents a StakingAmountDeductFailed event raised by the RonStaking contract.
+type RonStakingStakingAmountDeductFailed struct {
+	Validator       common.Address
+	Recipient       common.Address
+	Amount          *big.Int
+	ContractBalance *big.Int
+	Raw             types.Log // Blockchain specific contextual infos
+}
+
+// FilterStakingAmountDeductFailed is a free log retrieval operation binding the contract event 0x63701cd972aa3c7f87898aab145c972e52185beab07d6e39380a998d334cf6c8.
+//
+// Solidity: event StakingAmountDeductFailed(address indexed validator, address indexed recipient, uint256 amount, uint256 contractBalance)
+func (_RonStaking *RonStakingFilterer) FilterStakingAmountDeductFailed(opts *bind.FilterOpts, validator []common.Address, recipient []common.Address) (*RonStakingStakingAmountDeductFailedIterator, error) {
+
+	var validatorRule []interface{}
+	for _, validatorItem := range validator {
+		validatorRule = append(validatorRule, validatorItem)
+	}
+	var recipientRule []interface{}
+	for _, recipientItem := range recipient {
+		recipientRule = append(recipientRule, recipientItem)
+	}
+
+	logs, sub, err := _RonStaking.contract.FilterLogs(opts, "StakingAmountDeductFailed", validatorRule, recipientRule)
+	if err != nil {
+		return nil, err
+	}
+	return &RonStakingStakingAmountDeductFailedIterator{contract: _RonStaking.contract, event: "StakingAmountDeductFailed", logs: logs, sub: sub}, nil
+}
+
+// WatchStakingAmountDeductFailed is a free log subscription operation binding the contract event 0x63701cd972aa3c7f87898aab145c972e52185beab07d6e39380a998d334cf6c8.
+//
+// Solidity: event StakingAmountDeductFailed(address indexed validator, address indexed recipient, uint256 amount, uint256 contractBalance)
+func (_RonStaking *RonStakingFilterer) WatchStakingAmountDeductFailed(opts *bind.WatchOpts, sink chan<- *RonStakingStakingAmountDeductFailed, validator []common.Address, recipient []common.Address) (event.Subscription, error) {
+
+	var validatorRule []interface{}
+	for _, validatorItem := range validator {
+		validatorRule = append(validatorRule, validatorItem)
+	}
+	var recipientRule []interface{}
+	for _, recipientItem := range recipient {
+		recipientRule = append(recipientRule, recipientItem)
+	}
+
+	logs, sub, err := _RonStaking.contract.WatchLogs(opts, "StakingAmountDeductFailed", validatorRule, recipientRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(RonStakingStakingAmountDeductFailed)
+				if err := _RonStaking.contract.UnpackLog(event, "StakingAmountDeductFailed", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseStakingAmountDeductFailed is a log parse operation binding the contract event 0x63701cd972aa3c7f87898aab145c972e52185beab07d6e39380a998d334cf6c8.
+//
+// Solidity: event StakingAmountDeductFailed(address indexed validator, address indexed recipient, uint256 amount, uint256 contractBalance)
+func (_RonStaking *RonStakingFilterer) ParseStakingAmountDeductFailed(log types.Log) (*RonStakingStakingAmountDeductFailed, error) {
+	event := new(RonStakingStakingAmountDeductFailed)
+	if err := _RonStaking.contract.UnpackLog(event, "StakingAmountDeductFailed", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
