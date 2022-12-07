@@ -30,7 +30,7 @@ var (
 
 // SlashIndicatorMetaData contains all meta data concerning the SlashIndicator contract.
 var SlashIndicatorMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"validator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"}],\"name\":\"BailedOut\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"missingVotesRatioTier1\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"missingVotesRatioTier2\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"jailDurationForMissingVotesRatioTier2\",\"type\":\"uint256\"}],\"name\":\"BridgeOperatorSlashingConfigsUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bridgeVotingThreshold\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bridgeVotingSlashAmount\",\"type\":\"uint256\"}],\"name\":\"BridgeVotingSlashingConfigsUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"gainCreditScore\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maxCreditScore\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bailOutCostMultiplier\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"cutOffPercentageAfterBailout\",\"type\":\"uint256\"}],\"name\":\"CreditScoreConfigsUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"validators\",\"type\":\"address[]\"},{\"indexed\":false,\"internalType\":\"uint256[]\",\"name\":\"creditScores\",\"type\":\"uint256[]\"}],\"name\":\"CreditScoresUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"slashDoubleSignAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"doubleSigningJailUntilBlock\",\"type\":\"uint256\"}],\"name\":\"DoubleSignSlashingConfigsUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"MaintenanceContractUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"RoninGovernanceAdminContractUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"RoninTrustedOrganizationContractUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"validator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"enumIBaseSlash.SlashType\",\"name\":\"slashType\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"}],\"name\":\"Slashed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"unavailabilityTier1Threshold\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"unavailabilityTier2Threshold\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"slashAmountForUnavailabilityTier2Threshold\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"jailDurationForUnavailabilityTier2Threshold\",\"type\":\"uint256\"}],\"name\":\"UnavailabilitySlashingConfigsUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"ValidatorContractUpdated\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"bailOut\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"bailOutCostMultiplier\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_period\",\"type\":\"uint256\"}],\"name\":\"bailedOutAtPeriod\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"}],\"name\":\"currentUnavailabilityIndicator\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"cutOffPercentageAfterBailout\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gainCreditScore\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getBridgeOperatorSlashingConfigs\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getBridgeVotingSlashingConfigs\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_validators\",\"type\":\"address[]\"}],\"name\":\"getBulkCreditScore\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"_resultList\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"}],\"name\":\"getCreditScore\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCreditScoreConfigs\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_gainCreditScore\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxCreditScore\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_bailOutCostMultiplier\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_cutOffPercentageAfterBailout\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getDoubleSignSlashingConfigs\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_period\",\"type\":\"uint256\"}],\"name\":\"getUnavailabilityIndicator\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getUnavailabilitySlashingConfigs\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"__validatorContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"__maintenanceContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"__roninTrustedOrganizationContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"__roninGovernanceAdminContract\",\"type\":\"address\"},{\"internalType\":\"uint256[3]\",\"name\":\"_bridgeOperatorSlashingConfigs\",\"type\":\"uint256[3]\"},{\"internalType\":\"uint256[2]\",\"name\":\"_bridgeVotingSlashingConfigs\",\"type\":\"uint256[2]\"},{\"internalType\":\"uint256[2]\",\"name\":\"_doubleSignSlashingConfigs\",\"type\":\"uint256[2]\"},{\"internalType\":\"uint256[4]\",\"name\":\"_unavailabilitySlashingConfigs\",\"type\":\"uint256[4]\"},{\"internalType\":\"uint256[4]\",\"name\":\"_creditScoreConfigs\",\"type\":\"uint256[4]\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastUnavailabilitySlashedBlock\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maintenanceContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxCreditScore\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"precompileValidateDoubleSignAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"roninGovernanceAdminContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"roninTrustedOrganizationContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_ratioTier1\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_ratioTier2\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_jailDurationTier2\",\"type\":\"uint256\"}],\"name\":\"setBridgeOperatorSlashingConfigs\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_threshold\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_slashAmount\",\"type\":\"uint256\"}],\"name\":\"setBridgeVotingSlashingConfigs\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_gainCreditScore\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxCreditScore\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_bailOutCostMultiplier\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_cutOffPercentageAfterBailout\",\"type\":\"uint256\"}],\"name\":\"setCreditScoreConfigs\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_slashAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_jailUntilBlock\",\"type\":\"uint256\"}],\"name\":\"setDoubleSignSlashingConfigs\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setMaintenanceContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setRoninGovernanceAdminContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setRoninTrustedOrganizationContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tier1Threshold\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_tier2Threshold\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_slashAmountForTier2Threshold\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_jailDurationForTier2Threshold\",\"type\":\"uint256\"}],\"name\":\"setUnavailabilitySlashingConfigs\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setValidatorContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"slashBridgeVoting\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensuAddr\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"_header1\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"_header2\",\"type\":\"bytes\"}],\"name\":\"slashDoubleSign\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validatorAddr\",\"type\":\"address\"}],\"name\":\"slashUnavailability\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_validators\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_period\",\"type\":\"uint256\"}],\"name\":\"updateCreditScore\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"validatorContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
+	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"validator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"}],\"name\":\"BailedOut\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"missingVotesRatioTier1\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"missingVotesRatioTier2\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"jailDurationForMissingVotesRatioTier2\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"skipBridgeOperatorSlashingThreshold\",\"type\":\"uint256\"}],\"name\":\"BridgeOperatorSlashingConfigsUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bridgeVotingThreshold\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bridgeVotingSlashAmount\",\"type\":\"uint256\"}],\"name\":\"BridgeVotingSlashingConfigsUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"gainCreditScore\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maxCreditScore\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bailOutCostMultiplier\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"cutOffPercentageAfterBailout\",\"type\":\"uint256\"}],\"name\":\"CreditScoreConfigsUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"validators\",\"type\":\"address[]\"},{\"indexed\":false,\"internalType\":\"uint256[]\",\"name\":\"creditScores\",\"type\":\"uint256[]\"}],\"name\":\"CreditScoresUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"slashDoubleSignAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"doubleSigningJailUntilBlock\",\"type\":\"uint256\"}],\"name\":\"DoubleSignSlashingConfigsUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"MaintenanceContractUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"RoninGovernanceAdminContractUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"RoninTrustedOrganizationContractUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"validator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"enumIBaseSlash.SlashType\",\"name\":\"slashType\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"}],\"name\":\"Slashed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"unavailabilityTier1Threshold\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"unavailabilityTier2Threshold\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"slashAmountForUnavailabilityTier2Threshold\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"jailDurationForUnavailabilityTier2Threshold\",\"type\":\"uint256\"}],\"name\":\"UnavailabilitySlashingConfigsUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"ValidatorContractUpdated\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"bailOut\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_period\",\"type\":\"uint256\"}],\"name\":\"checkBailedOutAtPeriod\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"}],\"name\":\"currentUnavailabilityIndicator\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getBridgeOperatorSlashingConfigs\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getBridgeVotingSlashingConfigs\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"}],\"name\":\"getCreditScore\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCreditScoreConfigs\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getDoubleSignSlashingConfigs\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_validators\",\"type\":\"address[]\"}],\"name\":\"getManyCreditScores\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"_resultList\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_period\",\"type\":\"uint256\"}],\"name\":\"getUnavailabilityIndicator\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getUnavailabilitySlashingConfigs\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"__validatorContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"__maintenanceContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"__roninTrustedOrganizationContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"__roninGovernanceAdminContract\",\"type\":\"address\"},{\"internalType\":\"uint256[4]\",\"name\":\"_bridgeOperatorSlashingConfigs\",\"type\":\"uint256[4]\"},{\"internalType\":\"uint256[2]\",\"name\":\"_bridgeVotingSlashingConfigs\",\"type\":\"uint256[2]\"},{\"internalType\":\"uint256[2]\",\"name\":\"_doubleSignSlashingConfigs\",\"type\":\"uint256[2]\"},{\"internalType\":\"uint256[4]\",\"name\":\"_unavailabilitySlashingConfigs\",\"type\":\"uint256[4]\"},{\"internalType\":\"uint256[4]\",\"name\":\"_creditScoreConfigs\",\"type\":\"uint256[4]\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastUnavailabilitySlashedBlock\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maintenanceContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"precompileValidateDoubleSignAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"roninGovernanceAdminContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"roninTrustedOrganizationContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_ratioTier1\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_ratioTier2\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_jailDurationTier2\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_skipSlashingThreshold\",\"type\":\"uint256\"}],\"name\":\"setBridgeOperatorSlashingConfigs\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_threshold\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_slashAmount\",\"type\":\"uint256\"}],\"name\":\"setBridgeVotingSlashingConfigs\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_gainScore\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxScore\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_bailOutMultiplier\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_cutOffPercentage\",\"type\":\"uint256\"}],\"name\":\"setCreditScoreConfigs\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_slashAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_jailUntilBlock\",\"type\":\"uint256\"}],\"name\":\"setDoubleSignSlashingConfigs\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setMaintenanceContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setRoninGovernanceAdminContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setRoninTrustedOrganizationContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tier1Threshold\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_tier2Threshold\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_slashAmountForTier2Threshold\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_jailDurationForTier2Threshold\",\"type\":\"uint256\"}],\"name\":\"setUnavailabilitySlashingConfigs\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setValidatorContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"slashBridgeVoting\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensuAddr\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"_header1\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"_header2\",\"type\":\"bytes\"}],\"name\":\"slashDoubleSign\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validatorAddr\",\"type\":\"address\"}],\"name\":\"slashUnavailability\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_validators\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_period\",\"type\":\"uint256\"}],\"name\":\"updateCreditScores\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"validatorContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
 }
 
 // SlashIndicatorABI is the input ABI used to generate the binding from.
@@ -179,43 +179,12 @@ func (_SlashIndicator *SlashIndicatorTransactorRaw) Transact(opts *bind.Transact
 	return _SlashIndicator.Contract.contract.Transact(opts, method, params...)
 }
 
-// BailOutCostMultiplier is a free data retrieval call binding the contract method 0x37c597ea.
+// CheckBailedOutAtPeriod is a free data retrieval call binding the contract method 0x29ddc3c0.
 //
-// Solidity: function bailOutCostMultiplier() view returns(uint256)
-func (_SlashIndicator *SlashIndicatorCaller) BailOutCostMultiplier(opts *bind.CallOpts) (*big.Int, error) {
+// Solidity: function checkBailedOutAtPeriod(address _validator, uint256 _period) view returns(bool)
+func (_SlashIndicator *SlashIndicatorCaller) CheckBailedOutAtPeriod(opts *bind.CallOpts, _validator common.Address, _period *big.Int) (bool, error) {
 	var out []interface{}
-	err := _SlashIndicator.contract.Call(opts, &out, "bailOutCostMultiplier")
-
-	if err != nil {
-		return *new(*big.Int), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
-
-	return out0, err
-
-}
-
-// BailOutCostMultiplier is a free data retrieval call binding the contract method 0x37c597ea.
-//
-// Solidity: function bailOutCostMultiplier() view returns(uint256)
-func (_SlashIndicator *SlashIndicatorSession) BailOutCostMultiplier() (*big.Int, error) {
-	return _SlashIndicator.Contract.BailOutCostMultiplier(&_SlashIndicator.CallOpts)
-}
-
-// BailOutCostMultiplier is a free data retrieval call binding the contract method 0x37c597ea.
-//
-// Solidity: function bailOutCostMultiplier() view returns(uint256)
-func (_SlashIndicator *SlashIndicatorCallerSession) BailOutCostMultiplier() (*big.Int, error) {
-	return _SlashIndicator.Contract.BailOutCostMultiplier(&_SlashIndicator.CallOpts)
-}
-
-// BailedOutAtPeriod is a free data retrieval call binding the contract method 0x84146e29.
-//
-// Solidity: function bailedOutAtPeriod(address _validator, uint256 _period) view returns(bool)
-func (_SlashIndicator *SlashIndicatorCaller) BailedOutAtPeriod(opts *bind.CallOpts, _validator common.Address, _period *big.Int) (bool, error) {
-	var out []interface{}
-	err := _SlashIndicator.contract.Call(opts, &out, "bailedOutAtPeriod", _validator, _period)
+	err := _SlashIndicator.contract.Call(opts, &out, "checkBailedOutAtPeriod", _validator, _period)
 
 	if err != nil {
 		return *new(bool), err
@@ -227,18 +196,18 @@ func (_SlashIndicator *SlashIndicatorCaller) BailedOutAtPeriod(opts *bind.CallOp
 
 }
 
-// BailedOutAtPeriod is a free data retrieval call binding the contract method 0x84146e29.
+// CheckBailedOutAtPeriod is a free data retrieval call binding the contract method 0x29ddc3c0.
 //
-// Solidity: function bailedOutAtPeriod(address _validator, uint256 _period) view returns(bool)
-func (_SlashIndicator *SlashIndicatorSession) BailedOutAtPeriod(_validator common.Address, _period *big.Int) (bool, error) {
-	return _SlashIndicator.Contract.BailedOutAtPeriod(&_SlashIndicator.CallOpts, _validator, _period)
+// Solidity: function checkBailedOutAtPeriod(address _validator, uint256 _period) view returns(bool)
+func (_SlashIndicator *SlashIndicatorSession) CheckBailedOutAtPeriod(_validator common.Address, _period *big.Int) (bool, error) {
+	return _SlashIndicator.Contract.CheckBailedOutAtPeriod(&_SlashIndicator.CallOpts, _validator, _period)
 }
 
-// BailedOutAtPeriod is a free data retrieval call binding the contract method 0x84146e29.
+// CheckBailedOutAtPeriod is a free data retrieval call binding the contract method 0x29ddc3c0.
 //
-// Solidity: function bailedOutAtPeriod(address _validator, uint256 _period) view returns(bool)
-func (_SlashIndicator *SlashIndicatorCallerSession) BailedOutAtPeriod(_validator common.Address, _period *big.Int) (bool, error) {
-	return _SlashIndicator.Contract.BailedOutAtPeriod(&_SlashIndicator.CallOpts, _validator, _period)
+// Solidity: function checkBailedOutAtPeriod(address _validator, uint256 _period) view returns(bool)
+func (_SlashIndicator *SlashIndicatorCallerSession) CheckBailedOutAtPeriod(_validator common.Address, _period *big.Int) (bool, error) {
+	return _SlashIndicator.Contract.CheckBailedOutAtPeriod(&_SlashIndicator.CallOpts, _validator, _period)
 }
 
 // CurrentUnavailabilityIndicator is a free data retrieval call binding the contract method 0x082e7420.
@@ -272,98 +241,37 @@ func (_SlashIndicator *SlashIndicatorCallerSession) CurrentUnavailabilityIndicat
 	return _SlashIndicator.Contract.CurrentUnavailabilityIndicator(&_SlashIndicator.CallOpts, _validator)
 }
 
-// CutOffPercentageAfterBailout is a free data retrieval call binding the contract method 0x016b641c.
-//
-// Solidity: function cutOffPercentageAfterBailout() view returns(uint256)
-func (_SlashIndicator *SlashIndicatorCaller) CutOffPercentageAfterBailout(opts *bind.CallOpts) (*big.Int, error) {
-	var out []interface{}
-	err := _SlashIndicator.contract.Call(opts, &out, "cutOffPercentageAfterBailout")
-
-	if err != nil {
-		return *new(*big.Int), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
-
-	return out0, err
-
-}
-
-// CutOffPercentageAfterBailout is a free data retrieval call binding the contract method 0x016b641c.
-//
-// Solidity: function cutOffPercentageAfterBailout() view returns(uint256)
-func (_SlashIndicator *SlashIndicatorSession) CutOffPercentageAfterBailout() (*big.Int, error) {
-	return _SlashIndicator.Contract.CutOffPercentageAfterBailout(&_SlashIndicator.CallOpts)
-}
-
-// CutOffPercentageAfterBailout is a free data retrieval call binding the contract method 0x016b641c.
-//
-// Solidity: function cutOffPercentageAfterBailout() view returns(uint256)
-func (_SlashIndicator *SlashIndicatorCallerSession) CutOffPercentageAfterBailout() (*big.Int, error) {
-	return _SlashIndicator.Contract.CutOffPercentageAfterBailout(&_SlashIndicator.CallOpts)
-}
-
-// GainCreditScore is a free data retrieval call binding the contract method 0x3be2ed8a.
-//
-// Solidity: function gainCreditScore() view returns(uint256)
-func (_SlashIndicator *SlashIndicatorCaller) GainCreditScore(opts *bind.CallOpts) (*big.Int, error) {
-	var out []interface{}
-	err := _SlashIndicator.contract.Call(opts, &out, "gainCreditScore")
-
-	if err != nil {
-		return *new(*big.Int), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
-
-	return out0, err
-
-}
-
-// GainCreditScore is a free data retrieval call binding the contract method 0x3be2ed8a.
-//
-// Solidity: function gainCreditScore() view returns(uint256)
-func (_SlashIndicator *SlashIndicatorSession) GainCreditScore() (*big.Int, error) {
-	return _SlashIndicator.Contract.GainCreditScore(&_SlashIndicator.CallOpts)
-}
-
-// GainCreditScore is a free data retrieval call binding the contract method 0x3be2ed8a.
-//
-// Solidity: function gainCreditScore() view returns(uint256)
-func (_SlashIndicator *SlashIndicatorCallerSession) GainCreditScore() (*big.Int, error) {
-	return _SlashIndicator.Contract.GainCreditScore(&_SlashIndicator.CallOpts)
-}
-
 // GetBridgeOperatorSlashingConfigs is a free data retrieval call binding the contract method 0x1079402a.
 //
-// Solidity: function getBridgeOperatorSlashingConfigs() view returns(uint256, uint256, uint256)
-func (_SlashIndicator *SlashIndicatorCaller) GetBridgeOperatorSlashingConfigs(opts *bind.CallOpts) (*big.Int, *big.Int, *big.Int, error) {
+// Solidity: function getBridgeOperatorSlashingConfigs() view returns(uint256, uint256, uint256, uint256)
+func (_SlashIndicator *SlashIndicatorCaller) GetBridgeOperatorSlashingConfigs(opts *bind.CallOpts) (*big.Int, *big.Int, *big.Int, *big.Int, error) {
 	var out []interface{}
 	err := _SlashIndicator.contract.Call(opts, &out, "getBridgeOperatorSlashingConfigs")
 
 	if err != nil {
-		return *new(*big.Int), *new(*big.Int), *new(*big.Int), err
+		return *new(*big.Int), *new(*big.Int), *new(*big.Int), *new(*big.Int), err
 	}
 
 	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
 	out1 := *abi.ConvertType(out[1], new(*big.Int)).(**big.Int)
 	out2 := *abi.ConvertType(out[2], new(*big.Int)).(**big.Int)
+	out3 := *abi.ConvertType(out[3], new(*big.Int)).(**big.Int)
 
-	return out0, out1, out2, err
+	return out0, out1, out2, out3, err
 
 }
 
 // GetBridgeOperatorSlashingConfigs is a free data retrieval call binding the contract method 0x1079402a.
 //
-// Solidity: function getBridgeOperatorSlashingConfigs() view returns(uint256, uint256, uint256)
-func (_SlashIndicator *SlashIndicatorSession) GetBridgeOperatorSlashingConfigs() (*big.Int, *big.Int, *big.Int, error) {
+// Solidity: function getBridgeOperatorSlashingConfigs() view returns(uint256, uint256, uint256, uint256)
+func (_SlashIndicator *SlashIndicatorSession) GetBridgeOperatorSlashingConfigs() (*big.Int, *big.Int, *big.Int, *big.Int, error) {
 	return _SlashIndicator.Contract.GetBridgeOperatorSlashingConfigs(&_SlashIndicator.CallOpts)
 }
 
 // GetBridgeOperatorSlashingConfigs is a free data retrieval call binding the contract method 0x1079402a.
 //
-// Solidity: function getBridgeOperatorSlashingConfigs() view returns(uint256, uint256, uint256)
-func (_SlashIndicator *SlashIndicatorCallerSession) GetBridgeOperatorSlashingConfigs() (*big.Int, *big.Int, *big.Int, error) {
+// Solidity: function getBridgeOperatorSlashingConfigs() view returns(uint256, uint256, uint256, uint256)
+func (_SlashIndicator *SlashIndicatorCallerSession) GetBridgeOperatorSlashingConfigs() (*big.Int, *big.Int, *big.Int, *big.Int, error) {
 	return _SlashIndicator.Contract.GetBridgeOperatorSlashingConfigs(&_SlashIndicator.CallOpts)
 }
 
@@ -399,37 +307,6 @@ func (_SlashIndicator *SlashIndicatorCallerSession) GetBridgeVotingSlashingConfi
 	return _SlashIndicator.Contract.GetBridgeVotingSlashingConfigs(&_SlashIndicator.CallOpts)
 }
 
-// GetBulkCreditScore is a free data retrieval call binding the contract method 0x9c0b57d8.
-//
-// Solidity: function getBulkCreditScore(address[] _validators) view returns(uint256[] _resultList)
-func (_SlashIndicator *SlashIndicatorCaller) GetBulkCreditScore(opts *bind.CallOpts, _validators []common.Address) ([]*big.Int, error) {
-	var out []interface{}
-	err := _SlashIndicator.contract.Call(opts, &out, "getBulkCreditScore", _validators)
-
-	if err != nil {
-		return *new([]*big.Int), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new([]*big.Int)).(*[]*big.Int)
-
-	return out0, err
-
-}
-
-// GetBulkCreditScore is a free data retrieval call binding the contract method 0x9c0b57d8.
-//
-// Solidity: function getBulkCreditScore(address[] _validators) view returns(uint256[] _resultList)
-func (_SlashIndicator *SlashIndicatorSession) GetBulkCreditScore(_validators []common.Address) ([]*big.Int, error) {
-	return _SlashIndicator.Contract.GetBulkCreditScore(&_SlashIndicator.CallOpts, _validators)
-}
-
-// GetBulkCreditScore is a free data retrieval call binding the contract method 0x9c0b57d8.
-//
-// Solidity: function getBulkCreditScore(address[] _validators) view returns(uint256[] _resultList)
-func (_SlashIndicator *SlashIndicatorCallerSession) GetBulkCreditScore(_validators []common.Address) ([]*big.Int, error) {
-	return _SlashIndicator.Contract.GetBulkCreditScore(&_SlashIndicator.CallOpts, _validators)
-}
-
 // GetCreditScore is a free data retrieval call binding the contract method 0xd3dd2bdf.
 //
 // Solidity: function getCreditScore(address _validator) view returns(uint256)
@@ -463,56 +340,35 @@ func (_SlashIndicator *SlashIndicatorCallerSession) GetCreditScore(_validator co
 
 // GetCreditScoreConfigs is a free data retrieval call binding the contract method 0xc6391fa2.
 //
-// Solidity: function getCreditScoreConfigs() view returns(uint256 _gainCreditScore, uint256 _maxCreditScore, uint256 _bailOutCostMultiplier, uint256 _cutOffPercentageAfterBailout)
-func (_SlashIndicator *SlashIndicatorCaller) GetCreditScoreConfigs(opts *bind.CallOpts) (struct {
-	GainCreditScore              *big.Int
-	MaxCreditScore               *big.Int
-	BailOutCostMultiplier        *big.Int
-	CutOffPercentageAfterBailout *big.Int
-}, error) {
+// Solidity: function getCreditScoreConfigs() view returns(uint256, uint256, uint256, uint256)
+func (_SlashIndicator *SlashIndicatorCaller) GetCreditScoreConfigs(opts *bind.CallOpts) (*big.Int, *big.Int, *big.Int, *big.Int, error) {
 	var out []interface{}
 	err := _SlashIndicator.contract.Call(opts, &out, "getCreditScoreConfigs")
 
-	outstruct := new(struct {
-		GainCreditScore              *big.Int
-		MaxCreditScore               *big.Int
-		BailOutCostMultiplier        *big.Int
-		CutOffPercentageAfterBailout *big.Int
-	})
 	if err != nil {
-		return *outstruct, err
+		return *new(*big.Int), *new(*big.Int), *new(*big.Int), *new(*big.Int), err
 	}
 
-	outstruct.GainCreditScore = *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
-	outstruct.MaxCreditScore = *abi.ConvertType(out[1], new(*big.Int)).(**big.Int)
-	outstruct.BailOutCostMultiplier = *abi.ConvertType(out[2], new(*big.Int)).(**big.Int)
-	outstruct.CutOffPercentageAfterBailout = *abi.ConvertType(out[3], new(*big.Int)).(**big.Int)
+	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+	out1 := *abi.ConvertType(out[1], new(*big.Int)).(**big.Int)
+	out2 := *abi.ConvertType(out[2], new(*big.Int)).(**big.Int)
+	out3 := *abi.ConvertType(out[3], new(*big.Int)).(**big.Int)
 
-	return *outstruct, err
+	return out0, out1, out2, out3, err
 
 }
 
 // GetCreditScoreConfigs is a free data retrieval call binding the contract method 0xc6391fa2.
 //
-// Solidity: function getCreditScoreConfigs() view returns(uint256 _gainCreditScore, uint256 _maxCreditScore, uint256 _bailOutCostMultiplier, uint256 _cutOffPercentageAfterBailout)
-func (_SlashIndicator *SlashIndicatorSession) GetCreditScoreConfigs() (struct {
-	GainCreditScore              *big.Int
-	MaxCreditScore               *big.Int
-	BailOutCostMultiplier        *big.Int
-	CutOffPercentageAfterBailout *big.Int
-}, error) {
+// Solidity: function getCreditScoreConfigs() view returns(uint256, uint256, uint256, uint256)
+func (_SlashIndicator *SlashIndicatorSession) GetCreditScoreConfigs() (*big.Int, *big.Int, *big.Int, *big.Int, error) {
 	return _SlashIndicator.Contract.GetCreditScoreConfigs(&_SlashIndicator.CallOpts)
 }
 
 // GetCreditScoreConfigs is a free data retrieval call binding the contract method 0xc6391fa2.
 //
-// Solidity: function getCreditScoreConfigs() view returns(uint256 _gainCreditScore, uint256 _maxCreditScore, uint256 _bailOutCostMultiplier, uint256 _cutOffPercentageAfterBailout)
-func (_SlashIndicator *SlashIndicatorCallerSession) GetCreditScoreConfigs() (struct {
-	GainCreditScore              *big.Int
-	MaxCreditScore               *big.Int
-	BailOutCostMultiplier        *big.Int
-	CutOffPercentageAfterBailout *big.Int
-}, error) {
+// Solidity: function getCreditScoreConfigs() view returns(uint256, uint256, uint256, uint256)
+func (_SlashIndicator *SlashIndicatorCallerSession) GetCreditScoreConfigs() (*big.Int, *big.Int, *big.Int, *big.Int, error) {
 	return _SlashIndicator.Contract.GetCreditScoreConfigs(&_SlashIndicator.CallOpts)
 }
 
@@ -546,6 +402,37 @@ func (_SlashIndicator *SlashIndicatorSession) GetDoubleSignSlashingConfigs() (*b
 // Solidity: function getDoubleSignSlashingConfigs() view returns(uint256, uint256)
 func (_SlashIndicator *SlashIndicatorCallerSession) GetDoubleSignSlashingConfigs() (*big.Int, *big.Int, error) {
 	return _SlashIndicator.Contract.GetDoubleSignSlashingConfigs(&_SlashIndicator.CallOpts)
+}
+
+// GetManyCreditScores is a free data retrieval call binding the contract method 0xf1001e78.
+//
+// Solidity: function getManyCreditScores(address[] _validators) view returns(uint256[] _resultList)
+func (_SlashIndicator *SlashIndicatorCaller) GetManyCreditScores(opts *bind.CallOpts, _validators []common.Address) ([]*big.Int, error) {
+	var out []interface{}
+	err := _SlashIndicator.contract.Call(opts, &out, "getManyCreditScores", _validators)
+
+	if err != nil {
+		return *new([]*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([]*big.Int)).(*[]*big.Int)
+
+	return out0, err
+
+}
+
+// GetManyCreditScores is a free data retrieval call binding the contract method 0xf1001e78.
+//
+// Solidity: function getManyCreditScores(address[] _validators) view returns(uint256[] _resultList)
+func (_SlashIndicator *SlashIndicatorSession) GetManyCreditScores(_validators []common.Address) ([]*big.Int, error) {
+	return _SlashIndicator.Contract.GetManyCreditScores(&_SlashIndicator.CallOpts, _validators)
+}
+
+// GetManyCreditScores is a free data retrieval call binding the contract method 0xf1001e78.
+//
+// Solidity: function getManyCreditScores(address[] _validators) view returns(uint256[] _resultList)
+func (_SlashIndicator *SlashIndicatorCallerSession) GetManyCreditScores(_validators []common.Address) ([]*big.Int, error) {
+	return _SlashIndicator.Contract.GetManyCreditScores(&_SlashIndicator.CallOpts, _validators)
 }
 
 // GetUnavailabilityIndicator is a free data retrieval call binding the contract method 0x62ffe6cb.
@@ -673,37 +560,6 @@ func (_SlashIndicator *SlashIndicatorSession) MaintenanceContract() (common.Addr
 // Solidity: function maintenanceContract() view returns(address)
 func (_SlashIndicator *SlashIndicatorCallerSession) MaintenanceContract() (common.Address, error) {
 	return _SlashIndicator.Contract.MaintenanceContract(&_SlashIndicator.CallOpts)
-}
-
-// MaxCreditScore is a free data retrieval call binding the contract method 0x4ee38230.
-//
-// Solidity: function maxCreditScore() view returns(uint256)
-func (_SlashIndicator *SlashIndicatorCaller) MaxCreditScore(opts *bind.CallOpts) (*big.Int, error) {
-	var out []interface{}
-	err := _SlashIndicator.contract.Call(opts, &out, "maxCreditScore")
-
-	if err != nil {
-		return *new(*big.Int), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
-
-	return out0, err
-
-}
-
-// MaxCreditScore is a free data retrieval call binding the contract method 0x4ee38230.
-//
-// Solidity: function maxCreditScore() view returns(uint256)
-func (_SlashIndicator *SlashIndicatorSession) MaxCreditScore() (*big.Int, error) {
-	return _SlashIndicator.Contract.MaxCreditScore(&_SlashIndicator.CallOpts)
-}
-
-// MaxCreditScore is a free data retrieval call binding the contract method 0x4ee38230.
-//
-// Solidity: function maxCreditScore() view returns(uint256)
-func (_SlashIndicator *SlashIndicatorCallerSession) MaxCreditScore() (*big.Int, error) {
-	return _SlashIndicator.Contract.MaxCreditScore(&_SlashIndicator.CallOpts)
 }
 
 // PrecompileValidateDoubleSignAddress is a free data retrieval call binding the contract method 0x7c2b55a0.
@@ -851,46 +707,46 @@ func (_SlashIndicator *SlashIndicatorTransactorSession) BailOut(_consensusAddr c
 	return _SlashIndicator.Contract.BailOut(&_SlashIndicator.TransactOpts, _consensusAddr)
 }
 
-// Initialize is a paid mutator transaction binding the contract method 0xbbf94d5c.
+// Initialize is a paid mutator transaction binding the contract method 0xe79b3f67.
 //
-// Solidity: function initialize(address __validatorContract, address __maintenanceContract, address __roninTrustedOrganizationContract, address __roninGovernanceAdminContract, uint256[3] _bridgeOperatorSlashingConfigs, uint256[2] _bridgeVotingSlashingConfigs, uint256[2] _doubleSignSlashingConfigs, uint256[4] _unavailabilitySlashingConfigs, uint256[4] _creditScoreConfigs) returns()
-func (_SlashIndicator *SlashIndicatorTransactor) Initialize(opts *bind.TransactOpts, __validatorContract common.Address, __maintenanceContract common.Address, __roninTrustedOrganizationContract common.Address, __roninGovernanceAdminContract common.Address, _bridgeOperatorSlashingConfigs [3]*big.Int, _bridgeVotingSlashingConfigs [2]*big.Int, _doubleSignSlashingConfigs [2]*big.Int, _unavailabilitySlashingConfigs [4]*big.Int, _creditScoreConfigs [4]*big.Int) (*types.Transaction, error) {
+// Solidity: function initialize(address __validatorContract, address __maintenanceContract, address __roninTrustedOrganizationContract, address __roninGovernanceAdminContract, uint256[4] _bridgeOperatorSlashingConfigs, uint256[2] _bridgeVotingSlashingConfigs, uint256[2] _doubleSignSlashingConfigs, uint256[4] _unavailabilitySlashingConfigs, uint256[4] _creditScoreConfigs) returns()
+func (_SlashIndicator *SlashIndicatorTransactor) Initialize(opts *bind.TransactOpts, __validatorContract common.Address, __maintenanceContract common.Address, __roninTrustedOrganizationContract common.Address, __roninGovernanceAdminContract common.Address, _bridgeOperatorSlashingConfigs [4]*big.Int, _bridgeVotingSlashingConfigs [2]*big.Int, _doubleSignSlashingConfigs [2]*big.Int, _unavailabilitySlashingConfigs [4]*big.Int, _creditScoreConfigs [4]*big.Int) (*types.Transaction, error) {
 	return _SlashIndicator.contract.Transact(opts, "initialize", __validatorContract, __maintenanceContract, __roninTrustedOrganizationContract, __roninGovernanceAdminContract, _bridgeOperatorSlashingConfigs, _bridgeVotingSlashingConfigs, _doubleSignSlashingConfigs, _unavailabilitySlashingConfigs, _creditScoreConfigs)
 }
 
-// Initialize is a paid mutator transaction binding the contract method 0xbbf94d5c.
+// Initialize is a paid mutator transaction binding the contract method 0xe79b3f67.
 //
-// Solidity: function initialize(address __validatorContract, address __maintenanceContract, address __roninTrustedOrganizationContract, address __roninGovernanceAdminContract, uint256[3] _bridgeOperatorSlashingConfigs, uint256[2] _bridgeVotingSlashingConfigs, uint256[2] _doubleSignSlashingConfigs, uint256[4] _unavailabilitySlashingConfigs, uint256[4] _creditScoreConfigs) returns()
-func (_SlashIndicator *SlashIndicatorSession) Initialize(__validatorContract common.Address, __maintenanceContract common.Address, __roninTrustedOrganizationContract common.Address, __roninGovernanceAdminContract common.Address, _bridgeOperatorSlashingConfigs [3]*big.Int, _bridgeVotingSlashingConfigs [2]*big.Int, _doubleSignSlashingConfigs [2]*big.Int, _unavailabilitySlashingConfigs [4]*big.Int, _creditScoreConfigs [4]*big.Int) (*types.Transaction, error) {
+// Solidity: function initialize(address __validatorContract, address __maintenanceContract, address __roninTrustedOrganizationContract, address __roninGovernanceAdminContract, uint256[4] _bridgeOperatorSlashingConfigs, uint256[2] _bridgeVotingSlashingConfigs, uint256[2] _doubleSignSlashingConfigs, uint256[4] _unavailabilitySlashingConfigs, uint256[4] _creditScoreConfigs) returns()
+func (_SlashIndicator *SlashIndicatorSession) Initialize(__validatorContract common.Address, __maintenanceContract common.Address, __roninTrustedOrganizationContract common.Address, __roninGovernanceAdminContract common.Address, _bridgeOperatorSlashingConfigs [4]*big.Int, _bridgeVotingSlashingConfigs [2]*big.Int, _doubleSignSlashingConfigs [2]*big.Int, _unavailabilitySlashingConfigs [4]*big.Int, _creditScoreConfigs [4]*big.Int) (*types.Transaction, error) {
 	return _SlashIndicator.Contract.Initialize(&_SlashIndicator.TransactOpts, __validatorContract, __maintenanceContract, __roninTrustedOrganizationContract, __roninGovernanceAdminContract, _bridgeOperatorSlashingConfigs, _bridgeVotingSlashingConfigs, _doubleSignSlashingConfigs, _unavailabilitySlashingConfigs, _creditScoreConfigs)
 }
 
-// Initialize is a paid mutator transaction binding the contract method 0xbbf94d5c.
+// Initialize is a paid mutator transaction binding the contract method 0xe79b3f67.
 //
-// Solidity: function initialize(address __validatorContract, address __maintenanceContract, address __roninTrustedOrganizationContract, address __roninGovernanceAdminContract, uint256[3] _bridgeOperatorSlashingConfigs, uint256[2] _bridgeVotingSlashingConfigs, uint256[2] _doubleSignSlashingConfigs, uint256[4] _unavailabilitySlashingConfigs, uint256[4] _creditScoreConfigs) returns()
-func (_SlashIndicator *SlashIndicatorTransactorSession) Initialize(__validatorContract common.Address, __maintenanceContract common.Address, __roninTrustedOrganizationContract common.Address, __roninGovernanceAdminContract common.Address, _bridgeOperatorSlashingConfigs [3]*big.Int, _bridgeVotingSlashingConfigs [2]*big.Int, _doubleSignSlashingConfigs [2]*big.Int, _unavailabilitySlashingConfigs [4]*big.Int, _creditScoreConfigs [4]*big.Int) (*types.Transaction, error) {
+// Solidity: function initialize(address __validatorContract, address __maintenanceContract, address __roninTrustedOrganizationContract, address __roninGovernanceAdminContract, uint256[4] _bridgeOperatorSlashingConfigs, uint256[2] _bridgeVotingSlashingConfigs, uint256[2] _doubleSignSlashingConfigs, uint256[4] _unavailabilitySlashingConfigs, uint256[4] _creditScoreConfigs) returns()
+func (_SlashIndicator *SlashIndicatorTransactorSession) Initialize(__validatorContract common.Address, __maintenanceContract common.Address, __roninTrustedOrganizationContract common.Address, __roninGovernanceAdminContract common.Address, _bridgeOperatorSlashingConfigs [4]*big.Int, _bridgeVotingSlashingConfigs [2]*big.Int, _doubleSignSlashingConfigs [2]*big.Int, _unavailabilitySlashingConfigs [4]*big.Int, _creditScoreConfigs [4]*big.Int) (*types.Transaction, error) {
 	return _SlashIndicator.Contract.Initialize(&_SlashIndicator.TransactOpts, __validatorContract, __maintenanceContract, __roninTrustedOrganizationContract, __roninGovernanceAdminContract, _bridgeOperatorSlashingConfigs, _bridgeVotingSlashingConfigs, _doubleSignSlashingConfigs, _unavailabilitySlashingConfigs, _creditScoreConfigs)
 }
 
-// SetBridgeOperatorSlashingConfigs is a paid mutator transaction binding the contract method 0xbe2be2b1.
+// SetBridgeOperatorSlashingConfigs is a paid mutator transaction binding the contract method 0x0e1512ac.
 //
-// Solidity: function setBridgeOperatorSlashingConfigs(uint256 _ratioTier1, uint256 _ratioTier2, uint256 _jailDurationTier2) returns()
-func (_SlashIndicator *SlashIndicatorTransactor) SetBridgeOperatorSlashingConfigs(opts *bind.TransactOpts, _ratioTier1 *big.Int, _ratioTier2 *big.Int, _jailDurationTier2 *big.Int) (*types.Transaction, error) {
-	return _SlashIndicator.contract.Transact(opts, "setBridgeOperatorSlashingConfigs", _ratioTier1, _ratioTier2, _jailDurationTier2)
+// Solidity: function setBridgeOperatorSlashingConfigs(uint256 _ratioTier1, uint256 _ratioTier2, uint256 _jailDurationTier2, uint256 _skipSlashingThreshold) returns()
+func (_SlashIndicator *SlashIndicatorTransactor) SetBridgeOperatorSlashingConfigs(opts *bind.TransactOpts, _ratioTier1 *big.Int, _ratioTier2 *big.Int, _jailDurationTier2 *big.Int, _skipSlashingThreshold *big.Int) (*types.Transaction, error) {
+	return _SlashIndicator.contract.Transact(opts, "setBridgeOperatorSlashingConfigs", _ratioTier1, _ratioTier2, _jailDurationTier2, _skipSlashingThreshold)
 }
 
-// SetBridgeOperatorSlashingConfigs is a paid mutator transaction binding the contract method 0xbe2be2b1.
+// SetBridgeOperatorSlashingConfigs is a paid mutator transaction binding the contract method 0x0e1512ac.
 //
-// Solidity: function setBridgeOperatorSlashingConfigs(uint256 _ratioTier1, uint256 _ratioTier2, uint256 _jailDurationTier2) returns()
-func (_SlashIndicator *SlashIndicatorSession) SetBridgeOperatorSlashingConfigs(_ratioTier1 *big.Int, _ratioTier2 *big.Int, _jailDurationTier2 *big.Int) (*types.Transaction, error) {
-	return _SlashIndicator.Contract.SetBridgeOperatorSlashingConfigs(&_SlashIndicator.TransactOpts, _ratioTier1, _ratioTier2, _jailDurationTier2)
+// Solidity: function setBridgeOperatorSlashingConfigs(uint256 _ratioTier1, uint256 _ratioTier2, uint256 _jailDurationTier2, uint256 _skipSlashingThreshold) returns()
+func (_SlashIndicator *SlashIndicatorSession) SetBridgeOperatorSlashingConfigs(_ratioTier1 *big.Int, _ratioTier2 *big.Int, _jailDurationTier2 *big.Int, _skipSlashingThreshold *big.Int) (*types.Transaction, error) {
+	return _SlashIndicator.Contract.SetBridgeOperatorSlashingConfigs(&_SlashIndicator.TransactOpts, _ratioTier1, _ratioTier2, _jailDurationTier2, _skipSlashingThreshold)
 }
 
-// SetBridgeOperatorSlashingConfigs is a paid mutator transaction binding the contract method 0xbe2be2b1.
+// SetBridgeOperatorSlashingConfigs is a paid mutator transaction binding the contract method 0x0e1512ac.
 //
-// Solidity: function setBridgeOperatorSlashingConfigs(uint256 _ratioTier1, uint256 _ratioTier2, uint256 _jailDurationTier2) returns()
-func (_SlashIndicator *SlashIndicatorTransactorSession) SetBridgeOperatorSlashingConfigs(_ratioTier1 *big.Int, _ratioTier2 *big.Int, _jailDurationTier2 *big.Int) (*types.Transaction, error) {
-	return _SlashIndicator.Contract.SetBridgeOperatorSlashingConfigs(&_SlashIndicator.TransactOpts, _ratioTier1, _ratioTier2, _jailDurationTier2)
+// Solidity: function setBridgeOperatorSlashingConfigs(uint256 _ratioTier1, uint256 _ratioTier2, uint256 _jailDurationTier2, uint256 _skipSlashingThreshold) returns()
+func (_SlashIndicator *SlashIndicatorTransactorSession) SetBridgeOperatorSlashingConfigs(_ratioTier1 *big.Int, _ratioTier2 *big.Int, _jailDurationTier2 *big.Int, _skipSlashingThreshold *big.Int) (*types.Transaction, error) {
+	return _SlashIndicator.Contract.SetBridgeOperatorSlashingConfigs(&_SlashIndicator.TransactOpts, _ratioTier1, _ratioTier2, _jailDurationTier2, _skipSlashingThreshold)
 }
 
 // SetBridgeVotingSlashingConfigs is a paid mutator transaction binding the contract method 0x853af1b7.
@@ -916,23 +772,23 @@ func (_SlashIndicator *SlashIndicatorTransactorSession) SetBridgeVotingSlashingC
 
 // SetCreditScoreConfigs is a paid mutator transaction binding the contract method 0xccbb72ed.
 //
-// Solidity: function setCreditScoreConfigs(uint256 _gainCreditScore, uint256 _maxCreditScore, uint256 _bailOutCostMultiplier, uint256 _cutOffPercentageAfterBailout) returns()
-func (_SlashIndicator *SlashIndicatorTransactor) SetCreditScoreConfigs(opts *bind.TransactOpts, _gainCreditScore *big.Int, _maxCreditScore *big.Int, _bailOutCostMultiplier *big.Int, _cutOffPercentageAfterBailout *big.Int) (*types.Transaction, error) {
-	return _SlashIndicator.contract.Transact(opts, "setCreditScoreConfigs", _gainCreditScore, _maxCreditScore, _bailOutCostMultiplier, _cutOffPercentageAfterBailout)
+// Solidity: function setCreditScoreConfigs(uint256 _gainScore, uint256 _maxScore, uint256 _bailOutMultiplier, uint256 _cutOffPercentage) returns()
+func (_SlashIndicator *SlashIndicatorTransactor) SetCreditScoreConfigs(opts *bind.TransactOpts, _gainScore *big.Int, _maxScore *big.Int, _bailOutMultiplier *big.Int, _cutOffPercentage *big.Int) (*types.Transaction, error) {
+	return _SlashIndicator.contract.Transact(opts, "setCreditScoreConfigs", _gainScore, _maxScore, _bailOutMultiplier, _cutOffPercentage)
 }
 
 // SetCreditScoreConfigs is a paid mutator transaction binding the contract method 0xccbb72ed.
 //
-// Solidity: function setCreditScoreConfigs(uint256 _gainCreditScore, uint256 _maxCreditScore, uint256 _bailOutCostMultiplier, uint256 _cutOffPercentageAfterBailout) returns()
-func (_SlashIndicator *SlashIndicatorSession) SetCreditScoreConfigs(_gainCreditScore *big.Int, _maxCreditScore *big.Int, _bailOutCostMultiplier *big.Int, _cutOffPercentageAfterBailout *big.Int) (*types.Transaction, error) {
-	return _SlashIndicator.Contract.SetCreditScoreConfigs(&_SlashIndicator.TransactOpts, _gainCreditScore, _maxCreditScore, _bailOutCostMultiplier, _cutOffPercentageAfterBailout)
+// Solidity: function setCreditScoreConfigs(uint256 _gainScore, uint256 _maxScore, uint256 _bailOutMultiplier, uint256 _cutOffPercentage) returns()
+func (_SlashIndicator *SlashIndicatorSession) SetCreditScoreConfigs(_gainScore *big.Int, _maxScore *big.Int, _bailOutMultiplier *big.Int, _cutOffPercentage *big.Int) (*types.Transaction, error) {
+	return _SlashIndicator.Contract.SetCreditScoreConfigs(&_SlashIndicator.TransactOpts, _gainScore, _maxScore, _bailOutMultiplier, _cutOffPercentage)
 }
 
 // SetCreditScoreConfigs is a paid mutator transaction binding the contract method 0xccbb72ed.
 //
-// Solidity: function setCreditScoreConfigs(uint256 _gainCreditScore, uint256 _maxCreditScore, uint256 _bailOutCostMultiplier, uint256 _cutOffPercentageAfterBailout) returns()
-func (_SlashIndicator *SlashIndicatorTransactorSession) SetCreditScoreConfigs(_gainCreditScore *big.Int, _maxCreditScore *big.Int, _bailOutCostMultiplier *big.Int, _cutOffPercentageAfterBailout *big.Int) (*types.Transaction, error) {
-	return _SlashIndicator.Contract.SetCreditScoreConfigs(&_SlashIndicator.TransactOpts, _gainCreditScore, _maxCreditScore, _bailOutCostMultiplier, _cutOffPercentageAfterBailout)
+// Solidity: function setCreditScoreConfigs(uint256 _gainScore, uint256 _maxScore, uint256 _bailOutMultiplier, uint256 _cutOffPercentage) returns()
+func (_SlashIndicator *SlashIndicatorTransactorSession) SetCreditScoreConfigs(_gainScore *big.Int, _maxScore *big.Int, _bailOutMultiplier *big.Int, _cutOffPercentage *big.Int) (*types.Transaction, error) {
+	return _SlashIndicator.Contract.SetCreditScoreConfigs(&_SlashIndicator.TransactOpts, _gainScore, _maxScore, _bailOutMultiplier, _cutOffPercentage)
 }
 
 // SetDoubleSignSlashingConfigs is a paid mutator transaction binding the contract method 0x61d3b60b.
@@ -1124,25 +980,25 @@ func (_SlashIndicator *SlashIndicatorTransactorSession) SlashUnavailability(_val
 	return _SlashIndicator.Contract.SlashUnavailability(&_SlashIndicator.TransactOpts, _validatorAddr)
 }
 
-// UpdateCreditScore is a paid mutator transaction binding the contract method 0x129fccc1.
+// UpdateCreditScores is a paid mutator transaction binding the contract method 0x7680850c.
 //
-// Solidity: function updateCreditScore(address[] _validators, uint256 _period) returns()
-func (_SlashIndicator *SlashIndicatorTransactor) UpdateCreditScore(opts *bind.TransactOpts, _validators []common.Address, _period *big.Int) (*types.Transaction, error) {
-	return _SlashIndicator.contract.Transact(opts, "updateCreditScore", _validators, _period)
+// Solidity: function updateCreditScores(address[] _validators, uint256 _period) returns()
+func (_SlashIndicator *SlashIndicatorTransactor) UpdateCreditScores(opts *bind.TransactOpts, _validators []common.Address, _period *big.Int) (*types.Transaction, error) {
+	return _SlashIndicator.contract.Transact(opts, "updateCreditScores", _validators, _period)
 }
 
-// UpdateCreditScore is a paid mutator transaction binding the contract method 0x129fccc1.
+// UpdateCreditScores is a paid mutator transaction binding the contract method 0x7680850c.
 //
-// Solidity: function updateCreditScore(address[] _validators, uint256 _period) returns()
-func (_SlashIndicator *SlashIndicatorSession) UpdateCreditScore(_validators []common.Address, _period *big.Int) (*types.Transaction, error) {
-	return _SlashIndicator.Contract.UpdateCreditScore(&_SlashIndicator.TransactOpts, _validators, _period)
+// Solidity: function updateCreditScores(address[] _validators, uint256 _period) returns()
+func (_SlashIndicator *SlashIndicatorSession) UpdateCreditScores(_validators []common.Address, _period *big.Int) (*types.Transaction, error) {
+	return _SlashIndicator.Contract.UpdateCreditScores(&_SlashIndicator.TransactOpts, _validators, _period)
 }
 
-// UpdateCreditScore is a paid mutator transaction binding the contract method 0x129fccc1.
+// UpdateCreditScores is a paid mutator transaction binding the contract method 0x7680850c.
 //
-// Solidity: function updateCreditScore(address[] _validators, uint256 _period) returns()
-func (_SlashIndicator *SlashIndicatorTransactorSession) UpdateCreditScore(_validators []common.Address, _period *big.Int) (*types.Transaction, error) {
-	return _SlashIndicator.Contract.UpdateCreditScore(&_SlashIndicator.TransactOpts, _validators, _period)
+// Solidity: function updateCreditScores(address[] _validators, uint256 _period) returns()
+func (_SlashIndicator *SlashIndicatorTransactorSession) UpdateCreditScores(_validators []common.Address, _period *big.Int) (*types.Transaction, error) {
+	return _SlashIndicator.Contract.UpdateCreditScores(&_SlashIndicator.TransactOpts, _validators, _period)
 }
 
 // SlashIndicatorBailedOutIterator is returned from FilterBailedOut and is used to iterate over the raw logs and unpacked data for BailedOut events raised by the SlashIndicator contract.
@@ -1362,12 +1218,13 @@ type SlashIndicatorBridgeOperatorSlashingConfigsUpdated struct {
 	MissingVotesRatioTier1                *big.Int
 	MissingVotesRatioTier2                *big.Int
 	JailDurationForMissingVotesRatioTier2 *big.Int
+	SkipBridgeOperatorSlashingThreshold   *big.Int
 	Raw                                   types.Log // Blockchain specific contextual infos
 }
 
-// FilterBridgeOperatorSlashingConfigsUpdated is a free log retrieval operation binding the contract event 0x48b79bd792893e8ce8de399a7c03796ca95a43d5782307ff7c775f492cdf7c82.
+// FilterBridgeOperatorSlashingConfigsUpdated is a free log retrieval operation binding the contract event 0xd24c671da2227c139fe1a5b34de15e5a67bef9b46e912916b9e0d025d51b3e3b.
 //
-// Solidity: event BridgeOperatorSlashingConfigsUpdated(uint256 missingVotesRatioTier1, uint256 missingVotesRatioTier2, uint256 jailDurationForMissingVotesRatioTier2)
+// Solidity: event BridgeOperatorSlashingConfigsUpdated(uint256 missingVotesRatioTier1, uint256 missingVotesRatioTier2, uint256 jailDurationForMissingVotesRatioTier2, uint256 skipBridgeOperatorSlashingThreshold)
 func (_SlashIndicator *SlashIndicatorFilterer) FilterBridgeOperatorSlashingConfigsUpdated(opts *bind.FilterOpts) (*SlashIndicatorBridgeOperatorSlashingConfigsUpdatedIterator, error) {
 
 	logs, sub, err := _SlashIndicator.contract.FilterLogs(opts, "BridgeOperatorSlashingConfigsUpdated")
@@ -1377,9 +1234,9 @@ func (_SlashIndicator *SlashIndicatorFilterer) FilterBridgeOperatorSlashingConfi
 	return &SlashIndicatorBridgeOperatorSlashingConfigsUpdatedIterator{contract: _SlashIndicator.contract, event: "BridgeOperatorSlashingConfigsUpdated", logs: logs, sub: sub}, nil
 }
 
-// WatchBridgeOperatorSlashingConfigsUpdated is a free log subscription operation binding the contract event 0x48b79bd792893e8ce8de399a7c03796ca95a43d5782307ff7c775f492cdf7c82.
+// WatchBridgeOperatorSlashingConfigsUpdated is a free log subscription operation binding the contract event 0xd24c671da2227c139fe1a5b34de15e5a67bef9b46e912916b9e0d025d51b3e3b.
 //
-// Solidity: event BridgeOperatorSlashingConfigsUpdated(uint256 missingVotesRatioTier1, uint256 missingVotesRatioTier2, uint256 jailDurationForMissingVotesRatioTier2)
+// Solidity: event BridgeOperatorSlashingConfigsUpdated(uint256 missingVotesRatioTier1, uint256 missingVotesRatioTier2, uint256 jailDurationForMissingVotesRatioTier2, uint256 skipBridgeOperatorSlashingThreshold)
 func (_SlashIndicator *SlashIndicatorFilterer) WatchBridgeOperatorSlashingConfigsUpdated(opts *bind.WatchOpts, sink chan<- *SlashIndicatorBridgeOperatorSlashingConfigsUpdated) (event.Subscription, error) {
 
 	logs, sub, err := _SlashIndicator.contract.WatchLogs(opts, "BridgeOperatorSlashingConfigsUpdated")
@@ -1414,9 +1271,9 @@ func (_SlashIndicator *SlashIndicatorFilterer) WatchBridgeOperatorSlashingConfig
 	}), nil
 }
 
-// ParseBridgeOperatorSlashingConfigsUpdated is a log parse operation binding the contract event 0x48b79bd792893e8ce8de399a7c03796ca95a43d5782307ff7c775f492cdf7c82.
+// ParseBridgeOperatorSlashingConfigsUpdated is a log parse operation binding the contract event 0xd24c671da2227c139fe1a5b34de15e5a67bef9b46e912916b9e0d025d51b3e3b.
 //
-// Solidity: event BridgeOperatorSlashingConfigsUpdated(uint256 missingVotesRatioTier1, uint256 missingVotesRatioTier2, uint256 jailDurationForMissingVotesRatioTier2)
+// Solidity: event BridgeOperatorSlashingConfigsUpdated(uint256 missingVotesRatioTier1, uint256 missingVotesRatioTier2, uint256 jailDurationForMissingVotesRatioTier2, uint256 skipBridgeOperatorSlashingThreshold)
 func (_SlashIndicator *SlashIndicatorFilterer) ParseBridgeOperatorSlashingConfigsUpdated(log types.Log) (*SlashIndicatorBridgeOperatorSlashingConfigsUpdated, error) {
 	event := new(SlashIndicatorBridgeOperatorSlashingConfigsUpdated)
 	if err := _SlashIndicator.contract.UnpackLog(event, "BridgeOperatorSlashingConfigsUpdated", log); err != nil {

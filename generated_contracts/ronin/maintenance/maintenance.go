@@ -37,7 +37,7 @@ type Struct0 struct {
 
 // MaintenanceMetaData contains all meta data concerning the Maintenance contract.
 var MaintenanceMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"minMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maxMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"minOffsetToStartSchedule\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maxOffsetToStartSchedule\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maxSchedules\",\"type\":\"uint256\"}],\"name\":\"MaintenanceConfigUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"from\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"to\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lastUpdatedBlock\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"structIMaintenance.Schedule\",\"name\":\"\",\"type\":\"tuple\"}],\"name\":\"MaintenanceScheduled\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"ValidatorContractUpdated\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_addrList\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"name\":\"bulkMaintaining\",\"outputs\":[{\"internalType\":\"bool[]\",\"name\":\"_resList\",\"type\":\"bool[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_addrList\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_fromBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_toBlock\",\"type\":\"uint256\"}],\"name\":\"bulkMaintainingInBlockRange\",\"outputs\":[{\"internalType\":\"bool[]\",\"name\":\"_resList\",\"type\":\"bool[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"getSchedule\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"from\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"to\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lastUpdatedBlock\",\"type\":\"uint256\"}],\"internalType\":\"structIMaintenance.Schedule\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"__validatorContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_minMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOffsetToStartSchedule\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxOffsetToStartSchedule\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxSchedules\",\"type\":\"uint256\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"name\":\"maintaining\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_fromBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_toBlock\",\"type\":\"uint256\"}],\"name\":\"maintainingInBlockRange\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxMaintenanceDurationInBlock\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxOffsetToStartSchedule\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxSchedules\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minMaintenanceDurationInBlock\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minOffsetToStartSchedule\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_startedAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_endedAtBlock\",\"type\":\"uint256\"}],\"name\":\"schedule\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"scheduled\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_minMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOffsetToStartSchedule\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxOffsetToStartSchedule\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxSchedules\",\"type\":\"uint256\"}],\"name\":\"setMaintenanceConfig\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setValidatorContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSchedules\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_count\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"validatorContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
+	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"minMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maxMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"minOffsetToStartSchedule\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maxOffsetToStartSchedule\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maxSchedules\",\"type\":\"uint256\"}],\"name\":\"MaintenanceConfigUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"from\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"to\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lastUpdatedBlock\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"structIMaintenance.Schedule\",\"name\":\"\",\"type\":\"tuple\"}],\"name\":\"MaintenanceScheduled\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"ValidatorContractUpdated\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"name\":\"checkMaintained\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_fromBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_toBlock\",\"type\":\"uint256\"}],\"name\":\"checkMaintainedInBlockRange\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_addrList\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"name\":\"checkManyMaintained\",\"outputs\":[{\"internalType\":\"bool[]\",\"name\":\"_resList\",\"type\":\"bool[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_addrList\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_fromBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_toBlock\",\"type\":\"uint256\"}],\"name\":\"checkManyMaintainedInBlockRange\",\"outputs\":[{\"internalType\":\"bool[]\",\"name\":\"_resList\",\"type\":\"bool[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"checkScheduled\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"getSchedule\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"from\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"to\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lastUpdatedBlock\",\"type\":\"uint256\"}],\"internalType\":\"structIMaintenance.Schedule\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"__validatorContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_minMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOffsetToStartSchedule\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxOffsetToStartSchedule\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxSchedules\",\"type\":\"uint256\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxMaintenanceDurationInBlock\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxOffsetToStartSchedule\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxSchedules\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minMaintenanceDurationInBlock\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minOffsetToStartSchedule\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_startedAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_endedAtBlock\",\"type\":\"uint256\"}],\"name\":\"schedule\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_minMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOffsetToStartSchedule\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxOffsetToStartSchedule\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxSchedules\",\"type\":\"uint256\"}],\"name\":\"setMaintenanceConfig\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setValidatorContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSchedules\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_count\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"validatorContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
 }
 
 // MaintenanceABI is the input ABI used to generate the binding from.
@@ -186,12 +186,74 @@ func (_Maintenance *MaintenanceTransactorRaw) Transact(opts *bind.TransactOpts, 
 	return _Maintenance.Contract.contract.Transact(opts, method, params...)
 }
 
-// BulkMaintaining is a free data retrieval call binding the contract method 0xf0a46709.
+// CheckMaintained is a free data retrieval call binding the contract method 0x0fbeb37f.
 //
-// Solidity: function bulkMaintaining(address[] _addrList, uint256 _block) view returns(bool[] _resList)
-func (_Maintenance *MaintenanceCaller) BulkMaintaining(opts *bind.CallOpts, _addrList []common.Address, _block *big.Int) ([]bool, error) {
+// Solidity: function checkMaintained(address _consensusAddr, uint256 _block) view returns(bool)
+func (_Maintenance *MaintenanceCaller) CheckMaintained(opts *bind.CallOpts, _consensusAddr common.Address, _block *big.Int) (bool, error) {
 	var out []interface{}
-	err := _Maintenance.contract.Call(opts, &out, "bulkMaintaining", _addrList, _block)
+	err := _Maintenance.contract.Call(opts, &out, "checkMaintained", _consensusAddr, _block)
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
+}
+
+// CheckMaintained is a free data retrieval call binding the contract method 0x0fbeb37f.
+//
+// Solidity: function checkMaintained(address _consensusAddr, uint256 _block) view returns(bool)
+func (_Maintenance *MaintenanceSession) CheckMaintained(_consensusAddr common.Address, _block *big.Int) (bool, error) {
+	return _Maintenance.Contract.CheckMaintained(&_Maintenance.CallOpts, _consensusAddr, _block)
+}
+
+// CheckMaintained is a free data retrieval call binding the contract method 0x0fbeb37f.
+//
+// Solidity: function checkMaintained(address _consensusAddr, uint256 _block) view returns(bool)
+func (_Maintenance *MaintenanceCallerSession) CheckMaintained(_consensusAddr common.Address, _block *big.Int) (bool, error) {
+	return _Maintenance.Contract.CheckMaintained(&_Maintenance.CallOpts, _consensusAddr, _block)
+}
+
+// CheckMaintainedInBlockRange is a free data retrieval call binding the contract method 0x088e8de7.
+//
+// Solidity: function checkMaintainedInBlockRange(address _consensusAddr, uint256 _fromBlock, uint256 _toBlock) view returns(bool)
+func (_Maintenance *MaintenanceCaller) CheckMaintainedInBlockRange(opts *bind.CallOpts, _consensusAddr common.Address, _fromBlock *big.Int, _toBlock *big.Int) (bool, error) {
+	var out []interface{}
+	err := _Maintenance.contract.Call(opts, &out, "checkMaintainedInBlockRange", _consensusAddr, _fromBlock, _toBlock)
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
+}
+
+// CheckMaintainedInBlockRange is a free data retrieval call binding the contract method 0x088e8de7.
+//
+// Solidity: function checkMaintainedInBlockRange(address _consensusAddr, uint256 _fromBlock, uint256 _toBlock) view returns(bool)
+func (_Maintenance *MaintenanceSession) CheckMaintainedInBlockRange(_consensusAddr common.Address, _fromBlock *big.Int, _toBlock *big.Int) (bool, error) {
+	return _Maintenance.Contract.CheckMaintainedInBlockRange(&_Maintenance.CallOpts, _consensusAddr, _fromBlock, _toBlock)
+}
+
+// CheckMaintainedInBlockRange is a free data retrieval call binding the contract method 0x088e8de7.
+//
+// Solidity: function checkMaintainedInBlockRange(address _consensusAddr, uint256 _fromBlock, uint256 _toBlock) view returns(bool)
+func (_Maintenance *MaintenanceCallerSession) CheckMaintainedInBlockRange(_consensusAddr common.Address, _fromBlock *big.Int, _toBlock *big.Int) (bool, error) {
+	return _Maintenance.Contract.CheckMaintainedInBlockRange(&_Maintenance.CallOpts, _consensusAddr, _fromBlock, _toBlock)
+}
+
+// CheckManyMaintained is a free data retrieval call binding the contract method 0xfdadda81.
+//
+// Solidity: function checkManyMaintained(address[] _addrList, uint256 _block) view returns(bool[] _resList)
+func (_Maintenance *MaintenanceCaller) CheckManyMaintained(opts *bind.CallOpts, _addrList []common.Address, _block *big.Int) ([]bool, error) {
+	var out []interface{}
+	err := _Maintenance.contract.Call(opts, &out, "checkManyMaintained", _addrList, _block)
 
 	if err != nil {
 		return *new([]bool), err
@@ -203,26 +265,26 @@ func (_Maintenance *MaintenanceCaller) BulkMaintaining(opts *bind.CallOpts, _add
 
 }
 
-// BulkMaintaining is a free data retrieval call binding the contract method 0xf0a46709.
+// CheckManyMaintained is a free data retrieval call binding the contract method 0xfdadda81.
 //
-// Solidity: function bulkMaintaining(address[] _addrList, uint256 _block) view returns(bool[] _resList)
-func (_Maintenance *MaintenanceSession) BulkMaintaining(_addrList []common.Address, _block *big.Int) ([]bool, error) {
-	return _Maintenance.Contract.BulkMaintaining(&_Maintenance.CallOpts, _addrList, _block)
+// Solidity: function checkManyMaintained(address[] _addrList, uint256 _block) view returns(bool[] _resList)
+func (_Maintenance *MaintenanceSession) CheckManyMaintained(_addrList []common.Address, _block *big.Int) ([]bool, error) {
+	return _Maintenance.Contract.CheckManyMaintained(&_Maintenance.CallOpts, _addrList, _block)
 }
 
-// BulkMaintaining is a free data retrieval call binding the contract method 0xf0a46709.
+// CheckManyMaintained is a free data retrieval call binding the contract method 0xfdadda81.
 //
-// Solidity: function bulkMaintaining(address[] _addrList, uint256 _block) view returns(bool[] _resList)
-func (_Maintenance *MaintenanceCallerSession) BulkMaintaining(_addrList []common.Address, _block *big.Int) ([]bool, error) {
-	return _Maintenance.Contract.BulkMaintaining(&_Maintenance.CallOpts, _addrList, _block)
+// Solidity: function checkManyMaintained(address[] _addrList, uint256 _block) view returns(bool[] _resList)
+func (_Maintenance *MaintenanceCallerSession) CheckManyMaintained(_addrList []common.Address, _block *big.Int) ([]bool, error) {
+	return _Maintenance.Contract.CheckManyMaintained(&_Maintenance.CallOpts, _addrList, _block)
 }
 
-// BulkMaintainingInBlockRange is a free data retrieval call binding the contract method 0x1033af36.
+// CheckManyMaintainedInBlockRange is a free data retrieval call binding the contract method 0xba303755.
 //
-// Solidity: function bulkMaintainingInBlockRange(address[] _addrList, uint256 _fromBlock, uint256 _toBlock) view returns(bool[] _resList)
-func (_Maintenance *MaintenanceCaller) BulkMaintainingInBlockRange(opts *bind.CallOpts, _addrList []common.Address, _fromBlock *big.Int, _toBlock *big.Int) ([]bool, error) {
+// Solidity: function checkManyMaintainedInBlockRange(address[] _addrList, uint256 _fromBlock, uint256 _toBlock) view returns(bool[] _resList)
+func (_Maintenance *MaintenanceCaller) CheckManyMaintainedInBlockRange(opts *bind.CallOpts, _addrList []common.Address, _fromBlock *big.Int, _toBlock *big.Int) ([]bool, error) {
 	var out []interface{}
-	err := _Maintenance.contract.Call(opts, &out, "bulkMaintainingInBlockRange", _addrList, _fromBlock, _toBlock)
+	err := _Maintenance.contract.Call(opts, &out, "checkManyMaintainedInBlockRange", _addrList, _fromBlock, _toBlock)
 
 	if err != nil {
 		return *new([]bool), err
@@ -234,18 +296,49 @@ func (_Maintenance *MaintenanceCaller) BulkMaintainingInBlockRange(opts *bind.Ca
 
 }
 
-// BulkMaintainingInBlockRange is a free data retrieval call binding the contract method 0x1033af36.
+// CheckManyMaintainedInBlockRange is a free data retrieval call binding the contract method 0xba303755.
 //
-// Solidity: function bulkMaintainingInBlockRange(address[] _addrList, uint256 _fromBlock, uint256 _toBlock) view returns(bool[] _resList)
-func (_Maintenance *MaintenanceSession) BulkMaintainingInBlockRange(_addrList []common.Address, _fromBlock *big.Int, _toBlock *big.Int) ([]bool, error) {
-	return _Maintenance.Contract.BulkMaintainingInBlockRange(&_Maintenance.CallOpts, _addrList, _fromBlock, _toBlock)
+// Solidity: function checkManyMaintainedInBlockRange(address[] _addrList, uint256 _fromBlock, uint256 _toBlock) view returns(bool[] _resList)
+func (_Maintenance *MaintenanceSession) CheckManyMaintainedInBlockRange(_addrList []common.Address, _fromBlock *big.Int, _toBlock *big.Int) ([]bool, error) {
+	return _Maintenance.Contract.CheckManyMaintainedInBlockRange(&_Maintenance.CallOpts, _addrList, _fromBlock, _toBlock)
 }
 
-// BulkMaintainingInBlockRange is a free data retrieval call binding the contract method 0x1033af36.
+// CheckManyMaintainedInBlockRange is a free data retrieval call binding the contract method 0xba303755.
 //
-// Solidity: function bulkMaintainingInBlockRange(address[] _addrList, uint256 _fromBlock, uint256 _toBlock) view returns(bool[] _resList)
-func (_Maintenance *MaintenanceCallerSession) BulkMaintainingInBlockRange(_addrList []common.Address, _fromBlock *big.Int, _toBlock *big.Int) ([]bool, error) {
-	return _Maintenance.Contract.BulkMaintainingInBlockRange(&_Maintenance.CallOpts, _addrList, _fromBlock, _toBlock)
+// Solidity: function checkManyMaintainedInBlockRange(address[] _addrList, uint256 _fromBlock, uint256 _toBlock) view returns(bool[] _resList)
+func (_Maintenance *MaintenanceCallerSession) CheckManyMaintainedInBlockRange(_addrList []common.Address, _fromBlock *big.Int, _toBlock *big.Int) ([]bool, error) {
+	return _Maintenance.Contract.CheckManyMaintainedInBlockRange(&_Maintenance.CallOpts, _addrList, _fromBlock, _toBlock)
+}
+
+// CheckScheduled is a free data retrieval call binding the contract method 0x2ddc08a2.
+//
+// Solidity: function checkScheduled(address _consensusAddr) view returns(bool)
+func (_Maintenance *MaintenanceCaller) CheckScheduled(opts *bind.CallOpts, _consensusAddr common.Address) (bool, error) {
+	var out []interface{}
+	err := _Maintenance.contract.Call(opts, &out, "checkScheduled", _consensusAddr)
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
+}
+
+// CheckScheduled is a free data retrieval call binding the contract method 0x2ddc08a2.
+//
+// Solidity: function checkScheduled(address _consensusAddr) view returns(bool)
+func (_Maintenance *MaintenanceSession) CheckScheduled(_consensusAddr common.Address) (bool, error) {
+	return _Maintenance.Contract.CheckScheduled(&_Maintenance.CallOpts, _consensusAddr)
+}
+
+// CheckScheduled is a free data retrieval call binding the contract method 0x2ddc08a2.
+//
+// Solidity: function checkScheduled(address _consensusAddr) view returns(bool)
+func (_Maintenance *MaintenanceCallerSession) CheckScheduled(_consensusAddr common.Address) (bool, error) {
+	return _Maintenance.Contract.CheckScheduled(&_Maintenance.CallOpts, _consensusAddr)
 }
 
 // GetSchedule is a free data retrieval call binding the contract method 0xd39fee34.
@@ -277,68 +370,6 @@ func (_Maintenance *MaintenanceSession) GetSchedule(_consensusAddr common.Addres
 // Solidity: function getSchedule(address _consensusAddr) view returns((uint256,uint256,uint256))
 func (_Maintenance *MaintenanceCallerSession) GetSchedule(_consensusAddr common.Address) (Struct0, error) {
 	return _Maintenance.Contract.GetSchedule(&_Maintenance.CallOpts, _consensusAddr)
-}
-
-// Maintaining is a free data retrieval call binding the contract method 0x934e9a03.
-//
-// Solidity: function maintaining(address _consensusAddr, uint256 _block) view returns(bool)
-func (_Maintenance *MaintenanceCaller) Maintaining(opts *bind.CallOpts, _consensusAddr common.Address, _block *big.Int) (bool, error) {
-	var out []interface{}
-	err := _Maintenance.contract.Call(opts, &out, "maintaining", _consensusAddr, _block)
-
-	if err != nil {
-		return *new(bool), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
-
-	return out0, err
-
-}
-
-// Maintaining is a free data retrieval call binding the contract method 0x934e9a03.
-//
-// Solidity: function maintaining(address _consensusAddr, uint256 _block) view returns(bool)
-func (_Maintenance *MaintenanceSession) Maintaining(_consensusAddr common.Address, _block *big.Int) (bool, error) {
-	return _Maintenance.Contract.Maintaining(&_Maintenance.CallOpts, _consensusAddr, _block)
-}
-
-// Maintaining is a free data retrieval call binding the contract method 0x934e9a03.
-//
-// Solidity: function maintaining(address _consensusAddr, uint256 _block) view returns(bool)
-func (_Maintenance *MaintenanceCallerSession) Maintaining(_consensusAddr common.Address, _block *big.Int) (bool, error) {
-	return _Maintenance.Contract.Maintaining(&_Maintenance.CallOpts, _consensusAddr, _block)
-}
-
-// MaintainingInBlockRange is a free data retrieval call binding the contract method 0x799f3d4b.
-//
-// Solidity: function maintainingInBlockRange(address _consensusAddr, uint256 _fromBlock, uint256 _toBlock) view returns(bool)
-func (_Maintenance *MaintenanceCaller) MaintainingInBlockRange(opts *bind.CallOpts, _consensusAddr common.Address, _fromBlock *big.Int, _toBlock *big.Int) (bool, error) {
-	var out []interface{}
-	err := _Maintenance.contract.Call(opts, &out, "maintainingInBlockRange", _consensusAddr, _fromBlock, _toBlock)
-
-	if err != nil {
-		return *new(bool), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
-
-	return out0, err
-
-}
-
-// MaintainingInBlockRange is a free data retrieval call binding the contract method 0x799f3d4b.
-//
-// Solidity: function maintainingInBlockRange(address _consensusAddr, uint256 _fromBlock, uint256 _toBlock) view returns(bool)
-func (_Maintenance *MaintenanceSession) MaintainingInBlockRange(_consensusAddr common.Address, _fromBlock *big.Int, _toBlock *big.Int) (bool, error) {
-	return _Maintenance.Contract.MaintainingInBlockRange(&_Maintenance.CallOpts, _consensusAddr, _fromBlock, _toBlock)
-}
-
-// MaintainingInBlockRange is a free data retrieval call binding the contract method 0x799f3d4b.
-//
-// Solidity: function maintainingInBlockRange(address _consensusAddr, uint256 _fromBlock, uint256 _toBlock) view returns(bool)
-func (_Maintenance *MaintenanceCallerSession) MaintainingInBlockRange(_consensusAddr common.Address, _fromBlock *big.Int, _toBlock *big.Int) (bool, error) {
-	return _Maintenance.Contract.MaintainingInBlockRange(&_Maintenance.CallOpts, _consensusAddr, _fromBlock, _toBlock)
 }
 
 // MaxMaintenanceDurationInBlock is a free data retrieval call binding the contract method 0xbfa89b9b.
@@ -494,37 +525,6 @@ func (_Maintenance *MaintenanceSession) MinOffsetToStartSchedule() (*big.Int, er
 // Solidity: function minOffsetToStartSchedule() view returns(uint256)
 func (_Maintenance *MaintenanceCallerSession) MinOffsetToStartSchedule() (*big.Int, error) {
 	return _Maintenance.Contract.MinOffsetToStartSchedule(&_Maintenance.CallOpts)
-}
-
-// Scheduled is a free data retrieval call binding the contract method 0x374f6d0e.
-//
-// Solidity: function scheduled(address _consensusAddr) view returns(bool)
-func (_Maintenance *MaintenanceCaller) Scheduled(opts *bind.CallOpts, _consensusAddr common.Address) (bool, error) {
-	var out []interface{}
-	err := _Maintenance.contract.Call(opts, &out, "scheduled", _consensusAddr)
-
-	if err != nil {
-		return *new(bool), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
-
-	return out0, err
-
-}
-
-// Scheduled is a free data retrieval call binding the contract method 0x374f6d0e.
-//
-// Solidity: function scheduled(address _consensusAddr) view returns(bool)
-func (_Maintenance *MaintenanceSession) Scheduled(_consensusAddr common.Address) (bool, error) {
-	return _Maintenance.Contract.Scheduled(&_Maintenance.CallOpts, _consensusAddr)
-}
-
-// Scheduled is a free data retrieval call binding the contract method 0x374f6d0e.
-//
-// Solidity: function scheduled(address _consensusAddr) view returns(bool)
-func (_Maintenance *MaintenanceCallerSession) Scheduled(_consensusAddr common.Address) (bool, error) {
-	return _Maintenance.Contract.Scheduled(&_Maintenance.CallOpts, _consensusAddr)
 }
 
 // TotalSchedules is a free data retrieval call binding the contract method 0x965720af.
