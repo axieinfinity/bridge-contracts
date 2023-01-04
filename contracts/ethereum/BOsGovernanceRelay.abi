@@ -1,1 +1,1 @@
-[]
+[{"inputs":[],"name":"lastSyncedBridgeOperatorSetInfo","outputs":[{"components":[{"internalType":"uint256","name":"period","type":"uint256"},{"internalType":"uint256","name":"epoch","type":"uint256"},{"internalType":"address[]","name":"operators","type":"address[]"}],"internalType":"struct BridgeOperatorsBallot.BridgeOperatorSet","name":"","type":"tuple"}],"stateMutability":"view","type":"function"}]
