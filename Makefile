@@ -1,4 +1,4 @@
-contract_path = "../ronin-dpos-contracts"
+contract_path = ../ronin-dpos-contracts
 generate:
 	solc --abi --bin "${contract_path}/contracts/ronin/RoninGovernanceAdmin.sol" -o "./contracts/ronin" --include-path "${contract_path}/node_modules/" --base-path ${contract_path} --overwrite --optimize
 	abigen --abi "./contracts/ronin/RoninGovernanceAdmin.abi" --bin "./contracts/ronin/RoninGovernanceAdmin.bin" --pkg "governance" --out "./generated_contracts/ronin/governance/ronin_governance_admin.go"
