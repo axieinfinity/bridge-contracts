@@ -13,6 +13,7 @@ import (
 	stakingVesting "github.com/axieinfinity/bridge-contracts/generated_contracts/ronin/staking_vesting"
 	roninTrustedOrganization "github.com/axieinfinity/bridge-contracts/generated_contracts/ronin/trusted_organization"
 	"github.com/axieinfinity/bridge-contracts/generated_contracts/ronin/validator"
+	"github.com/axieinfinity/bridge-contracts/generated_contracts/ronin/wron"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 )
 
@@ -32,4 +33,5 @@ var ABIMaps = map[string]*bind.MetaData{
 	"Staking":        ronStaking.RonStakingMetaData,
 	"KatanaPair":     katana.KatanaPairMetaData,
 	"KatanaRouter":   katana.KatanaRouterMetaData,
+	"WRON":           wron.WRONMetaData,
 }
