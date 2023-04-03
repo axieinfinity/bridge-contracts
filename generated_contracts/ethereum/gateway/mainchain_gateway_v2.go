@@ -26,49 +26,50 @@ var (
 	_ = common.Big1
 	_ = types.BloomLookup
 	_ = event.NewSubscription
+	_ = abi.ConvertType
 )
 
-// Struct5 is an auto generated low-level Go binding around an user-defined struct.
-type Struct5 struct {
-	RecipientAddr common.Address
-	TokenAddr     common.Address
-	Info          Struct2
-}
-
-// Struct1 is an auto generated low-level Go binding around an user-defined struct.
-type Struct1 struct {
-	Addr      common.Address
-	TokenAddr common.Address
-	ChainId   *big.Int
-}
-
-// Struct3 is an auto generated low-level Go binding around an user-defined struct.
-type Struct3 struct {
-	Id        *big.Int
-	Kind      uint8
-	Mainchain Struct1
-	Ronin     Struct1
-	Info      Struct2
-}
-
-// Struct0 is an auto generated low-level Go binding around an user-defined struct.
-type Struct0 struct {
+// MappedTokenConsumerMappedToken is an auto generated low-level Go binding around an user-defined struct.
+type MappedTokenConsumerMappedToken struct {
 	Erc       uint8
 	TokenAddr common.Address
 }
 
-// Struct4 is an auto generated low-level Go binding around an user-defined struct.
-type Struct4 struct {
+// SignatureConsumerSignature is an auto generated low-level Go binding around an user-defined struct.
+type SignatureConsumerSignature struct {
 	V uint8
 	R [32]byte
 	S [32]byte
 }
 
-// Struct2 is an auto generated low-level Go binding around an user-defined struct.
-type Struct2 struct {
+// TokenInfo is an auto generated low-level Go binding around an user-defined struct.
+type TokenInfo struct {
 	Erc      uint8
 	Id       *big.Int
 	Quantity *big.Int
+}
+
+// TokenOwner is an auto generated low-level Go binding around an user-defined struct.
+type TokenOwner struct {
+	Addr      common.Address
+	TokenAddr common.Address
+	ChainId   *big.Int
+}
+
+// TransferReceipt is an auto generated low-level Go binding around an user-defined struct.
+type TransferReceipt struct {
+	Id        *big.Int
+	Kind      uint8
+	Mainchain TokenOwner
+	Ronin     TokenOwner
+	Info      TokenInfo
+}
+
+// TransferRequest is an auto generated low-level Go binding around an user-defined struct.
+type TransferRequest struct {
+	RecipientAddr common.Address
+	TokenAddr     common.Address
+	Info          TokenInfo
 }
 
 // GatewayMetaData contains all meta data concerning the Gateway contract.
@@ -177,11 +178,11 @@ func NewGatewayFilterer(address common.Address, filterer bind.ContractFilterer) 
 
 // bindGateway binds a generic wrapper to an already deployed contract.
 func bindGateway(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
-	parsed, err := abi.JSON(strings.NewReader(GatewayABI))
+	parsed, err := GatewayMetaData.GetAbi()
 	if err != nil {
 		return nil, err
 	}
-	return bind.NewBoundContract(address, parsed, caller, transactor, filterer), nil
+	return bind.NewBoundContract(address, *parsed, caller, transactor, filterer), nil
 }
 
 // Call invokes the (constant) contract method with params as input values and
@@ -660,15 +661,15 @@ func (_Gateway *GatewayCallerSession) GetRoleMemberCount(role [32]byte) (*big.In
 // GetRoninToken is a free data retrieval call binding the contract method 0xb2975794.
 //
 // Solidity: function getRoninToken(address _mainchainToken) view returns((uint8,address) _token)
-func (_Gateway *GatewayCaller) GetRoninToken(opts *bind.CallOpts, _mainchainToken common.Address) (Struct0, error) {
+func (_Gateway *GatewayCaller) GetRoninToken(opts *bind.CallOpts, _mainchainToken common.Address) (MappedTokenConsumerMappedToken, error) {
 	var out []interface{}
 	err := _Gateway.contract.Call(opts, &out, "getRoninToken", _mainchainToken)
 
 	if err != nil {
-		return *new(Struct0), err
+		return *new(MappedTokenConsumerMappedToken), err
 	}
 
-	out0 := *abi.ConvertType(out[0], new(Struct0)).(*Struct0)
+	out0 := *abi.ConvertType(out[0], new(MappedTokenConsumerMappedToken)).(*MappedTokenConsumerMappedToken)
 
 	return out0, err
 
@@ -677,14 +678,14 @@ func (_Gateway *GatewayCaller) GetRoninToken(opts *bind.CallOpts, _mainchainToke
 // GetRoninToken is a free data retrieval call binding the contract method 0xb2975794.
 //
 // Solidity: function getRoninToken(address _mainchainToken) view returns((uint8,address) _token)
-func (_Gateway *GatewaySession) GetRoninToken(_mainchainToken common.Address) (Struct0, error) {
+func (_Gateway *GatewaySession) GetRoninToken(_mainchainToken common.Address) (MappedTokenConsumerMappedToken, error) {
 	return _Gateway.Contract.GetRoninToken(&_Gateway.CallOpts, _mainchainToken)
 }
 
 // GetRoninToken is a free data retrieval call binding the contract method 0xb2975794.
 //
 // Solidity: function getRoninToken(address _mainchainToken) view returns((uint8,address) _token)
-func (_Gateway *GatewayCallerSession) GetRoninToken(_mainchainToken common.Address) (Struct0, error) {
+func (_Gateway *GatewayCallerSession) GetRoninToken(_mainchainToken common.Address) (MappedTokenConsumerMappedToken, error) {
 	return _Gateway.Contract.GetRoninToken(&_Gateway.CallOpts, _mainchainToken)
 }
 
@@ -1369,21 +1370,21 @@ func (_Gateway *GatewayTransactorSession) ReplaceBridgeOperators(_list []common.
 // RequestDepositFor is a paid mutator transaction binding the contract method 0x4b14557e.
 //
 // Solidity: function requestDepositFor((address,address,(uint8,uint256,uint256)) _request) payable returns()
-func (_Gateway *GatewayTransactor) RequestDepositFor(opts *bind.TransactOpts, _request Struct5) (*types.Transaction, error) {
+func (_Gateway *GatewayTransactor) RequestDepositFor(opts *bind.TransactOpts, _request TransferRequest) (*types.Transaction, error) {
 	return _Gateway.contract.Transact(opts, "requestDepositFor", _request)
 }
 
 // RequestDepositFor is a paid mutator transaction binding the contract method 0x4b14557e.
 //
 // Solidity: function requestDepositFor((address,address,(uint8,uint256,uint256)) _request) payable returns()
-func (_Gateway *GatewaySession) RequestDepositFor(_request Struct5) (*types.Transaction, error) {
+func (_Gateway *GatewaySession) RequestDepositFor(_request TransferRequest) (*types.Transaction, error) {
 	return _Gateway.Contract.RequestDepositFor(&_Gateway.TransactOpts, _request)
 }
 
 // RequestDepositFor is a paid mutator transaction binding the contract method 0x4b14557e.
 //
 // Solidity: function requestDepositFor((address,address,(uint8,uint256,uint256)) _request) payable returns()
-func (_Gateway *GatewayTransactorSession) RequestDepositFor(_request Struct5) (*types.Transaction, error) {
+func (_Gateway *GatewayTransactorSession) RequestDepositFor(_request TransferRequest) (*types.Transaction, error) {
 	return _Gateway.Contract.RequestDepositFor(&_Gateway.TransactOpts, _request)
 }
 
@@ -1579,42 +1580,42 @@ func (_Gateway *GatewayTransactorSession) SetWrappedNativeTokenContract(_wrapped
 // SubmitWithdrawal is a paid mutator transaction binding the contract method 0x4d0d6673.
 //
 // Solidity: function submitWithdrawal((uint256,uint8,(address,address,uint256),(address,address,uint256),(uint8,uint256,uint256)) _receipt, (uint8,bytes32,bytes32)[] _signatures) returns(bool _locked)
-func (_Gateway *GatewayTransactor) SubmitWithdrawal(opts *bind.TransactOpts, _receipt Struct3, _signatures []Struct4) (*types.Transaction, error) {
+func (_Gateway *GatewayTransactor) SubmitWithdrawal(opts *bind.TransactOpts, _receipt TransferReceipt, _signatures []SignatureConsumerSignature) (*types.Transaction, error) {
 	return _Gateway.contract.Transact(opts, "submitWithdrawal", _receipt, _signatures)
 }
 
 // SubmitWithdrawal is a paid mutator transaction binding the contract method 0x4d0d6673.
 //
 // Solidity: function submitWithdrawal((uint256,uint8,(address,address,uint256),(address,address,uint256),(uint8,uint256,uint256)) _receipt, (uint8,bytes32,bytes32)[] _signatures) returns(bool _locked)
-func (_Gateway *GatewaySession) SubmitWithdrawal(_receipt Struct3, _signatures []Struct4) (*types.Transaction, error) {
+func (_Gateway *GatewaySession) SubmitWithdrawal(_receipt TransferReceipt, _signatures []SignatureConsumerSignature) (*types.Transaction, error) {
 	return _Gateway.Contract.SubmitWithdrawal(&_Gateway.TransactOpts, _receipt, _signatures)
 }
 
 // SubmitWithdrawal is a paid mutator transaction binding the contract method 0x4d0d6673.
 //
 // Solidity: function submitWithdrawal((uint256,uint8,(address,address,uint256),(address,address,uint256),(uint8,uint256,uint256)) _receipt, (uint8,bytes32,bytes32)[] _signatures) returns(bool _locked)
-func (_Gateway *GatewayTransactorSession) SubmitWithdrawal(_receipt Struct3, _signatures []Struct4) (*types.Transaction, error) {
+func (_Gateway *GatewayTransactorSession) SubmitWithdrawal(_receipt TransferReceipt, _signatures []SignatureConsumerSignature) (*types.Transaction, error) {
 	return _Gateway.Contract.SubmitWithdrawal(&_Gateway.TransactOpts, _receipt, _signatures)
 }
 
 // UnlockWithdrawal is a paid mutator transaction binding the contract method 0x9157921c.
 //
 // Solidity: function unlockWithdrawal((uint256,uint8,(address,address,uint256),(address,address,uint256),(uint8,uint256,uint256)) _receipt) returns()
-func (_Gateway *GatewayTransactor) UnlockWithdrawal(opts *bind.TransactOpts, _receipt Struct3) (*types.Transaction, error) {
+func (_Gateway *GatewayTransactor) UnlockWithdrawal(opts *bind.TransactOpts, _receipt TransferReceipt) (*types.Transaction, error) {
 	return _Gateway.contract.Transact(opts, "unlockWithdrawal", _receipt)
 }
 
 // UnlockWithdrawal is a paid mutator transaction binding the contract method 0x9157921c.
 //
 // Solidity: function unlockWithdrawal((uint256,uint8,(address,address,uint256),(address,address,uint256),(uint8,uint256,uint256)) _receipt) returns()
-func (_Gateway *GatewaySession) UnlockWithdrawal(_receipt Struct3) (*types.Transaction, error) {
+func (_Gateway *GatewaySession) UnlockWithdrawal(_receipt TransferReceipt) (*types.Transaction, error) {
 	return _Gateway.Contract.UnlockWithdrawal(&_Gateway.TransactOpts, _receipt)
 }
 
 // UnlockWithdrawal is a paid mutator transaction binding the contract method 0x9157921c.
 //
 // Solidity: function unlockWithdrawal((uint256,uint8,(address,address,uint256),(address,address,uint256),(uint8,uint256,uint256)) _receipt) returns()
-func (_Gateway *GatewayTransactorSession) UnlockWithdrawal(_receipt Struct3) (*types.Transaction, error) {
+func (_Gateway *GatewayTransactorSession) UnlockWithdrawal(_receipt TransferReceipt) (*types.Transaction, error) {
 	return _Gateway.Contract.UnlockWithdrawal(&_Gateway.TransactOpts, _receipt)
 }
 
@@ -2020,7 +2021,7 @@ func (it *GatewayDepositRequestedIterator) Close() error {
 // GatewayDepositRequested represents a DepositRequested event raised by the Gateway contract.
 type GatewayDepositRequested struct {
 	ReceiptHash [32]byte
-	Receipt     Struct3
+	Receipt     TransferReceipt
 	Raw         types.Log // Blockchain specific contextual infos
 }
 
@@ -3912,7 +3913,7 @@ func (it *GatewayWithdrawalLockedIterator) Close() error {
 // GatewayWithdrawalLocked represents a WithdrawalLocked event raised by the Gateway contract.
 type GatewayWithdrawalLocked struct {
 	ReceiptHash [32]byte
-	Receipt     Struct3
+	Receipt     TransferReceipt
 	Raw         types.Log // Blockchain specific contextual infos
 }
 
@@ -4047,7 +4048,7 @@ func (it *GatewayWithdrawalUnlockedIterator) Close() error {
 // GatewayWithdrawalUnlocked represents a WithdrawalUnlocked event raised by the Gateway contract.
 type GatewayWithdrawalUnlocked struct {
 	ReceiptHash [32]byte
-	Receipt     Struct3
+	Receipt     TransferReceipt
 	Raw         types.Log // Blockchain specific contextual infos
 }
 
@@ -4182,7 +4183,7 @@ func (it *GatewayWithdrewIterator) Close() error {
 // GatewayWithdrew represents a Withdrew event raised by the Gateway contract.
 type GatewayWithdrew struct {
 	ReceiptHash [32]byte
-	Receipt     Struct3
+	Receipt     TransferReceipt
 	Raw         types.Log // Blockchain specific contextual infos
 }
 
