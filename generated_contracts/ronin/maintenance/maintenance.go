@@ -26,18 +26,20 @@ var (
 	_ = common.Big1
 	_ = types.BloomLookup
 	_ = event.NewSubscription
+	_ = abi.ConvertType
 )
 
-// Struct0 is an auto generated low-level Go binding around an user-defined struct.
-type Struct0 struct {
+// IMaintenanceSchedule is an auto generated low-level Go binding around an user-defined struct.
+type IMaintenanceSchedule struct {
 	From             *big.Int
 	To               *big.Int
 	LastUpdatedBlock *big.Int
+	RequestTimestamp *big.Int
 }
 
 // MaintenanceMetaData contains all meta data concerning the Maintenance contract.
 var MaintenanceMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"minMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maxMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"minOffsetToStartSchedule\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maxOffsetToStartSchedule\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maxSchedules\",\"type\":\"uint256\"}],\"name\":\"MaintenanceConfigUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"from\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"to\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lastUpdatedBlock\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"structIMaintenance.Schedule\",\"name\":\"\",\"type\":\"tuple\"}],\"name\":\"MaintenanceScheduled\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"ValidatorContractUpdated\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"name\":\"checkMaintained\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_fromBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_toBlock\",\"type\":\"uint256\"}],\"name\":\"checkMaintainedInBlockRange\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_addrList\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"name\":\"checkManyMaintained\",\"outputs\":[{\"internalType\":\"bool[]\",\"name\":\"_resList\",\"type\":\"bool[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_addrList\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_fromBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_toBlock\",\"type\":\"uint256\"}],\"name\":\"checkManyMaintainedInBlockRange\",\"outputs\":[{\"internalType\":\"bool[]\",\"name\":\"_resList\",\"type\":\"bool[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"checkScheduled\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"getSchedule\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"from\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"to\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lastUpdatedBlock\",\"type\":\"uint256\"}],\"internalType\":\"structIMaintenance.Schedule\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"__validatorContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_minMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOffsetToStartSchedule\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxOffsetToStartSchedule\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxSchedules\",\"type\":\"uint256\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxMaintenanceDurationInBlock\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxOffsetToStartSchedule\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxSchedules\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minMaintenanceDurationInBlock\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minOffsetToStartSchedule\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_startedAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_endedAtBlock\",\"type\":\"uint256\"}],\"name\":\"schedule\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_minMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOffsetToStartSchedule\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxOffsetToStartSchedule\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxSchedules\",\"type\":\"uint256\"}],\"name\":\"setMaintenanceConfig\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setValidatorContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSchedules\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_count\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"validatorContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
+	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"ErrCallerMustBeValidatorContract\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrZeroCodeContract\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"minMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maxMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"minOffsetToStartSchedule\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maxOffsetToStartSchedule\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maxSchedules\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"cooldownSecsToMaintain\",\"type\":\"uint256\"}],\"name\":\"MaintenanceConfigUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"}],\"name\":\"MaintenanceScheduleCancelled\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"from\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"to\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lastUpdatedBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"requestTimestamp\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"structIMaintenance.Schedule\",\"name\":\"\",\"type\":\"tuple\"}],\"name\":\"MaintenanceScheduled\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"ValidatorContractUpdated\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"cancelSchedule\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"checkCooldownEnds\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"name\":\"checkMaintained\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_fromBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_toBlock\",\"type\":\"uint256\"}],\"name\":\"checkMaintainedInBlockRange\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_addrList\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"name\":\"checkManyMaintained\",\"outputs\":[{\"internalType\":\"bool[]\",\"name\":\"_resList\",\"type\":\"bool[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_addrList\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_fromBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_toBlock\",\"type\":\"uint256\"}],\"name\":\"checkManyMaintainedInBlockRange\",\"outputs\":[{\"internalType\":\"bool[]\",\"name\":\"_resList\",\"type\":\"bool[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"checkScheduled\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"cooldownSecsToMaintain\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"getSchedule\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"from\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"to\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lastUpdatedBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"requestTimestamp\",\"type\":\"uint256\"}],\"internalType\":\"structIMaintenance.Schedule\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"__validatorContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_minMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOffsetToStartSchedule\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxOffsetToStartSchedule\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxSchedules\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_cooldownSecsToMaintain\",\"type\":\"uint256\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxMaintenanceDurationInBlock\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxOffsetToStartSchedule\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxSchedules\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minMaintenanceDurationInBlock\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minOffsetToStartSchedule\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_startedAtBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_endedAtBlock\",\"type\":\"uint256\"}],\"name\":\"schedule\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_minMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxMaintenanceDurationInBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOffsetToStartSchedule\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxOffsetToStartSchedule\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxSchedules\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_cooldownSecsToMaintain\",\"type\":\"uint256\"}],\"name\":\"setMaintenanceConfig\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setValidatorContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSchedules\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_count\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"validatorContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
 }
 
 // MaintenanceABI is the input ABI used to generate the binding from.
@@ -141,11 +143,11 @@ func NewMaintenanceFilterer(address common.Address, filterer bind.ContractFilter
 
 // bindMaintenance binds a generic wrapper to an already deployed contract.
 func bindMaintenance(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
-	parsed, err := abi.JSON(strings.NewReader(MaintenanceABI))
+	parsed, err := MaintenanceMetaData.GetAbi()
 	if err != nil {
 		return nil, err
 	}
-	return bind.NewBoundContract(address, parsed, caller, transactor, filterer), nil
+	return bind.NewBoundContract(address, *parsed, caller, transactor, filterer), nil
 }
 
 // Call invokes the (constant) contract method with params as input values and
@@ -184,6 +186,37 @@ func (_Maintenance *MaintenanceTransactorRaw) Transfer(opts *bind.TransactOpts) 
 // Transact invokes the (paid) contract method with params as input values.
 func (_Maintenance *MaintenanceTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
 	return _Maintenance.Contract.contract.Transact(opts, method, params...)
+}
+
+// CheckCooldownEnds is a free data retrieval call binding the contract method 0xb59f403e.
+//
+// Solidity: function checkCooldownEnds(address _consensusAddr) view returns(bool)
+func (_Maintenance *MaintenanceCaller) CheckCooldownEnds(opts *bind.CallOpts, _consensusAddr common.Address) (bool, error) {
+	var out []interface{}
+	err := _Maintenance.contract.Call(opts, &out, "checkCooldownEnds", _consensusAddr)
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
+}
+
+// CheckCooldownEnds is a free data retrieval call binding the contract method 0xb59f403e.
+//
+// Solidity: function checkCooldownEnds(address _consensusAddr) view returns(bool)
+func (_Maintenance *MaintenanceSession) CheckCooldownEnds(_consensusAddr common.Address) (bool, error) {
+	return _Maintenance.Contract.CheckCooldownEnds(&_Maintenance.CallOpts, _consensusAddr)
+}
+
+// CheckCooldownEnds is a free data retrieval call binding the contract method 0xb59f403e.
+//
+// Solidity: function checkCooldownEnds(address _consensusAddr) view returns(bool)
+func (_Maintenance *MaintenanceCallerSession) CheckCooldownEnds(_consensusAddr common.Address) (bool, error) {
+	return _Maintenance.Contract.CheckCooldownEnds(&_Maintenance.CallOpts, _consensusAddr)
 }
 
 // CheckMaintained is a free data retrieval call binding the contract method 0x0fbeb37f.
@@ -341,18 +374,49 @@ func (_Maintenance *MaintenanceCallerSession) CheckScheduled(_consensusAddr comm
 	return _Maintenance.Contract.CheckScheduled(&_Maintenance.CallOpts, _consensusAddr)
 }
 
+// CooldownSecsToMaintain is a free data retrieval call binding the contract method 0xdec36284.
+//
+// Solidity: function cooldownSecsToMaintain() view returns(uint256)
+func (_Maintenance *MaintenanceCaller) CooldownSecsToMaintain(opts *bind.CallOpts) (*big.Int, error) {
+	var out []interface{}
+	err := _Maintenance.contract.Call(opts, &out, "cooldownSecsToMaintain")
+
+	if err != nil {
+		return *new(*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+
+	return out0, err
+
+}
+
+// CooldownSecsToMaintain is a free data retrieval call binding the contract method 0xdec36284.
+//
+// Solidity: function cooldownSecsToMaintain() view returns(uint256)
+func (_Maintenance *MaintenanceSession) CooldownSecsToMaintain() (*big.Int, error) {
+	return _Maintenance.Contract.CooldownSecsToMaintain(&_Maintenance.CallOpts)
+}
+
+// CooldownSecsToMaintain is a free data retrieval call binding the contract method 0xdec36284.
+//
+// Solidity: function cooldownSecsToMaintain() view returns(uint256)
+func (_Maintenance *MaintenanceCallerSession) CooldownSecsToMaintain() (*big.Int, error) {
+	return _Maintenance.Contract.CooldownSecsToMaintain(&_Maintenance.CallOpts)
+}
+
 // GetSchedule is a free data retrieval call binding the contract method 0xd39fee34.
 //
-// Solidity: function getSchedule(address _consensusAddr) view returns((uint256,uint256,uint256))
-func (_Maintenance *MaintenanceCaller) GetSchedule(opts *bind.CallOpts, _consensusAddr common.Address) (Struct0, error) {
+// Solidity: function getSchedule(address _consensusAddr) view returns((uint256,uint256,uint256,uint256))
+func (_Maintenance *MaintenanceCaller) GetSchedule(opts *bind.CallOpts, _consensusAddr common.Address) (IMaintenanceSchedule, error) {
 	var out []interface{}
 	err := _Maintenance.contract.Call(opts, &out, "getSchedule", _consensusAddr)
 
 	if err != nil {
-		return *new(Struct0), err
+		return *new(IMaintenanceSchedule), err
 	}
 
-	out0 := *abi.ConvertType(out[0], new(Struct0)).(*Struct0)
+	out0 := *abi.ConvertType(out[0], new(IMaintenanceSchedule)).(*IMaintenanceSchedule)
 
 	return out0, err
 
@@ -360,15 +424,15 @@ func (_Maintenance *MaintenanceCaller) GetSchedule(opts *bind.CallOpts, _consens
 
 // GetSchedule is a free data retrieval call binding the contract method 0xd39fee34.
 //
-// Solidity: function getSchedule(address _consensusAddr) view returns((uint256,uint256,uint256))
-func (_Maintenance *MaintenanceSession) GetSchedule(_consensusAddr common.Address) (Struct0, error) {
+// Solidity: function getSchedule(address _consensusAddr) view returns((uint256,uint256,uint256,uint256))
+func (_Maintenance *MaintenanceSession) GetSchedule(_consensusAddr common.Address) (IMaintenanceSchedule, error) {
 	return _Maintenance.Contract.GetSchedule(&_Maintenance.CallOpts, _consensusAddr)
 }
 
 // GetSchedule is a free data retrieval call binding the contract method 0xd39fee34.
 //
-// Solidity: function getSchedule(address _consensusAddr) view returns((uint256,uint256,uint256))
-func (_Maintenance *MaintenanceCallerSession) GetSchedule(_consensusAddr common.Address) (Struct0, error) {
+// Solidity: function getSchedule(address _consensusAddr) view returns((uint256,uint256,uint256,uint256))
+func (_Maintenance *MaintenanceCallerSession) GetSchedule(_consensusAddr common.Address) (IMaintenanceSchedule, error) {
 	return _Maintenance.Contract.GetSchedule(&_Maintenance.CallOpts, _consensusAddr)
 }
 
@@ -589,25 +653,46 @@ func (_Maintenance *MaintenanceCallerSession) ValidatorContract() (common.Addres
 	return _Maintenance.Contract.ValidatorContract(&_Maintenance.CallOpts)
 }
 
-// Initialize is a paid mutator transaction binding the contract method 0x45ff4c80.
+// CancelSchedule is a paid mutator transaction binding the contract method 0xf0caaafb.
 //
-// Solidity: function initialize(address __validatorContract, uint256 _minMaintenanceDurationInBlock, uint256 _maxMaintenanceDurationInBlock, uint256 _minOffsetToStartSchedule, uint256 _maxOffsetToStartSchedule, uint256 _maxSchedules) returns()
-func (_Maintenance *MaintenanceTransactor) Initialize(opts *bind.TransactOpts, __validatorContract common.Address, _minMaintenanceDurationInBlock *big.Int, _maxMaintenanceDurationInBlock *big.Int, _minOffsetToStartSchedule *big.Int, _maxOffsetToStartSchedule *big.Int, _maxSchedules *big.Int) (*types.Transaction, error) {
-	return _Maintenance.contract.Transact(opts, "initialize", __validatorContract, _minMaintenanceDurationInBlock, _maxMaintenanceDurationInBlock, _minOffsetToStartSchedule, _maxOffsetToStartSchedule, _maxSchedules)
+// Solidity: function cancelSchedule(address _consensusAddr) returns()
+func (_Maintenance *MaintenanceTransactor) CancelSchedule(opts *bind.TransactOpts, _consensusAddr common.Address) (*types.Transaction, error) {
+	return _Maintenance.contract.Transact(opts, "cancelSchedule", _consensusAddr)
 }
 
-// Initialize is a paid mutator transaction binding the contract method 0x45ff4c80.
+// CancelSchedule is a paid mutator transaction binding the contract method 0xf0caaafb.
 //
-// Solidity: function initialize(address __validatorContract, uint256 _minMaintenanceDurationInBlock, uint256 _maxMaintenanceDurationInBlock, uint256 _minOffsetToStartSchedule, uint256 _maxOffsetToStartSchedule, uint256 _maxSchedules) returns()
-func (_Maintenance *MaintenanceSession) Initialize(__validatorContract common.Address, _minMaintenanceDurationInBlock *big.Int, _maxMaintenanceDurationInBlock *big.Int, _minOffsetToStartSchedule *big.Int, _maxOffsetToStartSchedule *big.Int, _maxSchedules *big.Int) (*types.Transaction, error) {
-	return _Maintenance.Contract.Initialize(&_Maintenance.TransactOpts, __validatorContract, _minMaintenanceDurationInBlock, _maxMaintenanceDurationInBlock, _minOffsetToStartSchedule, _maxOffsetToStartSchedule, _maxSchedules)
+// Solidity: function cancelSchedule(address _consensusAddr) returns()
+func (_Maintenance *MaintenanceSession) CancelSchedule(_consensusAddr common.Address) (*types.Transaction, error) {
+	return _Maintenance.Contract.CancelSchedule(&_Maintenance.TransactOpts, _consensusAddr)
 }
 
-// Initialize is a paid mutator transaction binding the contract method 0x45ff4c80.
+// CancelSchedule is a paid mutator transaction binding the contract method 0xf0caaafb.
 //
-// Solidity: function initialize(address __validatorContract, uint256 _minMaintenanceDurationInBlock, uint256 _maxMaintenanceDurationInBlock, uint256 _minOffsetToStartSchedule, uint256 _maxOffsetToStartSchedule, uint256 _maxSchedules) returns()
-func (_Maintenance *MaintenanceTransactorSession) Initialize(__validatorContract common.Address, _minMaintenanceDurationInBlock *big.Int, _maxMaintenanceDurationInBlock *big.Int, _minOffsetToStartSchedule *big.Int, _maxOffsetToStartSchedule *big.Int, _maxSchedules *big.Int) (*types.Transaction, error) {
-	return _Maintenance.Contract.Initialize(&_Maintenance.TransactOpts, __validatorContract, _minMaintenanceDurationInBlock, _maxMaintenanceDurationInBlock, _minOffsetToStartSchedule, _maxOffsetToStartSchedule, _maxSchedules)
+// Solidity: function cancelSchedule(address _consensusAddr) returns()
+func (_Maintenance *MaintenanceTransactorSession) CancelSchedule(_consensusAddr common.Address) (*types.Transaction, error) {
+	return _Maintenance.Contract.CancelSchedule(&_Maintenance.TransactOpts, _consensusAddr)
+}
+
+// Initialize is a paid mutator transaction binding the contract method 0x8142951a.
+//
+// Solidity: function initialize(address __validatorContract, uint256 _minMaintenanceDurationInBlock, uint256 _maxMaintenanceDurationInBlock, uint256 _minOffsetToStartSchedule, uint256 _maxOffsetToStartSchedule, uint256 _maxSchedules, uint256 _cooldownSecsToMaintain) returns()
+func (_Maintenance *MaintenanceTransactor) Initialize(opts *bind.TransactOpts, __validatorContract common.Address, _minMaintenanceDurationInBlock *big.Int, _maxMaintenanceDurationInBlock *big.Int, _minOffsetToStartSchedule *big.Int, _maxOffsetToStartSchedule *big.Int, _maxSchedules *big.Int, _cooldownSecsToMaintain *big.Int) (*types.Transaction, error) {
+	return _Maintenance.contract.Transact(opts, "initialize", __validatorContract, _minMaintenanceDurationInBlock, _maxMaintenanceDurationInBlock, _minOffsetToStartSchedule, _maxOffsetToStartSchedule, _maxSchedules, _cooldownSecsToMaintain)
+}
+
+// Initialize is a paid mutator transaction binding the contract method 0x8142951a.
+//
+// Solidity: function initialize(address __validatorContract, uint256 _minMaintenanceDurationInBlock, uint256 _maxMaintenanceDurationInBlock, uint256 _minOffsetToStartSchedule, uint256 _maxOffsetToStartSchedule, uint256 _maxSchedules, uint256 _cooldownSecsToMaintain) returns()
+func (_Maintenance *MaintenanceSession) Initialize(__validatorContract common.Address, _minMaintenanceDurationInBlock *big.Int, _maxMaintenanceDurationInBlock *big.Int, _minOffsetToStartSchedule *big.Int, _maxOffsetToStartSchedule *big.Int, _maxSchedules *big.Int, _cooldownSecsToMaintain *big.Int) (*types.Transaction, error) {
+	return _Maintenance.Contract.Initialize(&_Maintenance.TransactOpts, __validatorContract, _minMaintenanceDurationInBlock, _maxMaintenanceDurationInBlock, _minOffsetToStartSchedule, _maxOffsetToStartSchedule, _maxSchedules, _cooldownSecsToMaintain)
+}
+
+// Initialize is a paid mutator transaction binding the contract method 0x8142951a.
+//
+// Solidity: function initialize(address __validatorContract, uint256 _minMaintenanceDurationInBlock, uint256 _maxMaintenanceDurationInBlock, uint256 _minOffsetToStartSchedule, uint256 _maxOffsetToStartSchedule, uint256 _maxSchedules, uint256 _cooldownSecsToMaintain) returns()
+func (_Maintenance *MaintenanceTransactorSession) Initialize(__validatorContract common.Address, _minMaintenanceDurationInBlock *big.Int, _maxMaintenanceDurationInBlock *big.Int, _minOffsetToStartSchedule *big.Int, _maxOffsetToStartSchedule *big.Int, _maxSchedules *big.Int, _cooldownSecsToMaintain *big.Int) (*types.Transaction, error) {
+	return _Maintenance.Contract.Initialize(&_Maintenance.TransactOpts, __validatorContract, _minMaintenanceDurationInBlock, _maxMaintenanceDurationInBlock, _minOffsetToStartSchedule, _maxOffsetToStartSchedule, _maxSchedules, _cooldownSecsToMaintain)
 }
 
 // Schedule is a paid mutator transaction binding the contract method 0x2d538c2c.
@@ -631,25 +716,25 @@ func (_Maintenance *MaintenanceTransactorSession) Schedule(_consensusAddr common
 	return _Maintenance.Contract.Schedule(&_Maintenance.TransactOpts, _consensusAddr, _startedAtBlock, _endedAtBlock)
 }
 
-// SetMaintenanceConfig is a paid mutator transaction binding the contract method 0x0c4cea59.
+// SetMaintenanceConfig is a paid mutator transaction binding the contract method 0xc09fe460.
 //
-// Solidity: function setMaintenanceConfig(uint256 _minMaintenanceDurationInBlock, uint256 _maxMaintenanceDurationInBlock, uint256 _minOffsetToStartSchedule, uint256 _maxOffsetToStartSchedule, uint256 _maxSchedules) returns()
-func (_Maintenance *MaintenanceTransactor) SetMaintenanceConfig(opts *bind.TransactOpts, _minMaintenanceDurationInBlock *big.Int, _maxMaintenanceDurationInBlock *big.Int, _minOffsetToStartSchedule *big.Int, _maxOffsetToStartSchedule *big.Int, _maxSchedules *big.Int) (*types.Transaction, error) {
-	return _Maintenance.contract.Transact(opts, "setMaintenanceConfig", _minMaintenanceDurationInBlock, _maxMaintenanceDurationInBlock, _minOffsetToStartSchedule, _maxOffsetToStartSchedule, _maxSchedules)
+// Solidity: function setMaintenanceConfig(uint256 _minMaintenanceDurationInBlock, uint256 _maxMaintenanceDurationInBlock, uint256 _minOffsetToStartSchedule, uint256 _maxOffsetToStartSchedule, uint256 _maxSchedules, uint256 _cooldownSecsToMaintain) returns()
+func (_Maintenance *MaintenanceTransactor) SetMaintenanceConfig(opts *bind.TransactOpts, _minMaintenanceDurationInBlock *big.Int, _maxMaintenanceDurationInBlock *big.Int, _minOffsetToStartSchedule *big.Int, _maxOffsetToStartSchedule *big.Int, _maxSchedules *big.Int, _cooldownSecsToMaintain *big.Int) (*types.Transaction, error) {
+	return _Maintenance.contract.Transact(opts, "setMaintenanceConfig", _minMaintenanceDurationInBlock, _maxMaintenanceDurationInBlock, _minOffsetToStartSchedule, _maxOffsetToStartSchedule, _maxSchedules, _cooldownSecsToMaintain)
 }
 
-// SetMaintenanceConfig is a paid mutator transaction binding the contract method 0x0c4cea59.
+// SetMaintenanceConfig is a paid mutator transaction binding the contract method 0xc09fe460.
 //
-// Solidity: function setMaintenanceConfig(uint256 _minMaintenanceDurationInBlock, uint256 _maxMaintenanceDurationInBlock, uint256 _minOffsetToStartSchedule, uint256 _maxOffsetToStartSchedule, uint256 _maxSchedules) returns()
-func (_Maintenance *MaintenanceSession) SetMaintenanceConfig(_minMaintenanceDurationInBlock *big.Int, _maxMaintenanceDurationInBlock *big.Int, _minOffsetToStartSchedule *big.Int, _maxOffsetToStartSchedule *big.Int, _maxSchedules *big.Int) (*types.Transaction, error) {
-	return _Maintenance.Contract.SetMaintenanceConfig(&_Maintenance.TransactOpts, _minMaintenanceDurationInBlock, _maxMaintenanceDurationInBlock, _minOffsetToStartSchedule, _maxOffsetToStartSchedule, _maxSchedules)
+// Solidity: function setMaintenanceConfig(uint256 _minMaintenanceDurationInBlock, uint256 _maxMaintenanceDurationInBlock, uint256 _minOffsetToStartSchedule, uint256 _maxOffsetToStartSchedule, uint256 _maxSchedules, uint256 _cooldownSecsToMaintain) returns()
+func (_Maintenance *MaintenanceSession) SetMaintenanceConfig(_minMaintenanceDurationInBlock *big.Int, _maxMaintenanceDurationInBlock *big.Int, _minOffsetToStartSchedule *big.Int, _maxOffsetToStartSchedule *big.Int, _maxSchedules *big.Int, _cooldownSecsToMaintain *big.Int) (*types.Transaction, error) {
+	return _Maintenance.Contract.SetMaintenanceConfig(&_Maintenance.TransactOpts, _minMaintenanceDurationInBlock, _maxMaintenanceDurationInBlock, _minOffsetToStartSchedule, _maxOffsetToStartSchedule, _maxSchedules, _cooldownSecsToMaintain)
 }
 
-// SetMaintenanceConfig is a paid mutator transaction binding the contract method 0x0c4cea59.
+// SetMaintenanceConfig is a paid mutator transaction binding the contract method 0xc09fe460.
 //
-// Solidity: function setMaintenanceConfig(uint256 _minMaintenanceDurationInBlock, uint256 _maxMaintenanceDurationInBlock, uint256 _minOffsetToStartSchedule, uint256 _maxOffsetToStartSchedule, uint256 _maxSchedules) returns()
-func (_Maintenance *MaintenanceTransactorSession) SetMaintenanceConfig(_minMaintenanceDurationInBlock *big.Int, _maxMaintenanceDurationInBlock *big.Int, _minOffsetToStartSchedule *big.Int, _maxOffsetToStartSchedule *big.Int, _maxSchedules *big.Int) (*types.Transaction, error) {
-	return _Maintenance.Contract.SetMaintenanceConfig(&_Maintenance.TransactOpts, _minMaintenanceDurationInBlock, _maxMaintenanceDurationInBlock, _minOffsetToStartSchedule, _maxOffsetToStartSchedule, _maxSchedules)
+// Solidity: function setMaintenanceConfig(uint256 _minMaintenanceDurationInBlock, uint256 _maxMaintenanceDurationInBlock, uint256 _minOffsetToStartSchedule, uint256 _maxOffsetToStartSchedule, uint256 _maxSchedules, uint256 _cooldownSecsToMaintain) returns()
+func (_Maintenance *MaintenanceTransactorSession) SetMaintenanceConfig(_minMaintenanceDurationInBlock *big.Int, _maxMaintenanceDurationInBlock *big.Int, _minOffsetToStartSchedule *big.Int, _maxOffsetToStartSchedule *big.Int, _maxSchedules *big.Int, _cooldownSecsToMaintain *big.Int) (*types.Transaction, error) {
+	return _Maintenance.Contract.SetMaintenanceConfig(&_Maintenance.TransactOpts, _minMaintenanceDurationInBlock, _maxMaintenanceDurationInBlock, _minOffsetToStartSchedule, _maxOffsetToStartSchedule, _maxSchedules, _cooldownSecsToMaintain)
 }
 
 // SetValidatorContract is a paid mutator transaction binding the contract method 0xcdf64a76.
@@ -881,12 +966,13 @@ type MaintenanceMaintenanceConfigUpdated struct {
 	MinOffsetToStartSchedule      *big.Int
 	MaxOffsetToStartSchedule      *big.Int
 	MaxSchedules                  *big.Int
+	CooldownSecsToMaintain        *big.Int
 	Raw                           types.Log // Blockchain specific contextual infos
 }
 
-// FilterMaintenanceConfigUpdated is a free log retrieval operation binding the contract event 0xa95659ec997f7f4e9eb2cc9d46f0c1a257b876d8ebbb8938ff0bd4d5c7cce4fa.
+// FilterMaintenanceConfigUpdated is a free log retrieval operation binding the contract event 0x4edb6adef66a4b8e1ffbc8c67640d4f244ce904193fd65e5cc316bbb74b2e59b.
 //
-// Solidity: event MaintenanceConfigUpdated(uint256 minMaintenanceDurationInBlock, uint256 maxMaintenanceDurationInBlock, uint256 minOffsetToStartSchedule, uint256 maxOffsetToStartSchedule, uint256 maxSchedules)
+// Solidity: event MaintenanceConfigUpdated(uint256 minMaintenanceDurationInBlock, uint256 maxMaintenanceDurationInBlock, uint256 minOffsetToStartSchedule, uint256 maxOffsetToStartSchedule, uint256 maxSchedules, uint256 cooldownSecsToMaintain)
 func (_Maintenance *MaintenanceFilterer) FilterMaintenanceConfigUpdated(opts *bind.FilterOpts) (*MaintenanceMaintenanceConfigUpdatedIterator, error) {
 
 	logs, sub, err := _Maintenance.contract.FilterLogs(opts, "MaintenanceConfigUpdated")
@@ -896,9 +982,9 @@ func (_Maintenance *MaintenanceFilterer) FilterMaintenanceConfigUpdated(opts *bi
 	return &MaintenanceMaintenanceConfigUpdatedIterator{contract: _Maintenance.contract, event: "MaintenanceConfigUpdated", logs: logs, sub: sub}, nil
 }
 
-// WatchMaintenanceConfigUpdated is a free log subscription operation binding the contract event 0xa95659ec997f7f4e9eb2cc9d46f0c1a257b876d8ebbb8938ff0bd4d5c7cce4fa.
+// WatchMaintenanceConfigUpdated is a free log subscription operation binding the contract event 0x4edb6adef66a4b8e1ffbc8c67640d4f244ce904193fd65e5cc316bbb74b2e59b.
 //
-// Solidity: event MaintenanceConfigUpdated(uint256 minMaintenanceDurationInBlock, uint256 maxMaintenanceDurationInBlock, uint256 minOffsetToStartSchedule, uint256 maxOffsetToStartSchedule, uint256 maxSchedules)
+// Solidity: event MaintenanceConfigUpdated(uint256 minMaintenanceDurationInBlock, uint256 maxMaintenanceDurationInBlock, uint256 minOffsetToStartSchedule, uint256 maxOffsetToStartSchedule, uint256 maxSchedules, uint256 cooldownSecsToMaintain)
 func (_Maintenance *MaintenanceFilterer) WatchMaintenanceConfigUpdated(opts *bind.WatchOpts, sink chan<- *MaintenanceMaintenanceConfigUpdated) (event.Subscription, error) {
 
 	logs, sub, err := _Maintenance.contract.WatchLogs(opts, "MaintenanceConfigUpdated")
@@ -933,12 +1019,156 @@ func (_Maintenance *MaintenanceFilterer) WatchMaintenanceConfigUpdated(opts *bin
 	}), nil
 }
 
-// ParseMaintenanceConfigUpdated is a log parse operation binding the contract event 0xa95659ec997f7f4e9eb2cc9d46f0c1a257b876d8ebbb8938ff0bd4d5c7cce4fa.
+// ParseMaintenanceConfigUpdated is a log parse operation binding the contract event 0x4edb6adef66a4b8e1ffbc8c67640d4f244ce904193fd65e5cc316bbb74b2e59b.
 //
-// Solidity: event MaintenanceConfigUpdated(uint256 minMaintenanceDurationInBlock, uint256 maxMaintenanceDurationInBlock, uint256 minOffsetToStartSchedule, uint256 maxOffsetToStartSchedule, uint256 maxSchedules)
+// Solidity: event MaintenanceConfigUpdated(uint256 minMaintenanceDurationInBlock, uint256 maxMaintenanceDurationInBlock, uint256 minOffsetToStartSchedule, uint256 maxOffsetToStartSchedule, uint256 maxSchedules, uint256 cooldownSecsToMaintain)
 func (_Maintenance *MaintenanceFilterer) ParseMaintenanceConfigUpdated(log types.Log) (*MaintenanceMaintenanceConfigUpdated, error) {
 	event := new(MaintenanceMaintenanceConfigUpdated)
 	if err := _Maintenance.contract.UnpackLog(event, "MaintenanceConfigUpdated", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// MaintenanceMaintenanceScheduleCancelledIterator is returned from FilterMaintenanceScheduleCancelled and is used to iterate over the raw logs and unpacked data for MaintenanceScheduleCancelled events raised by the Maintenance contract.
+type MaintenanceMaintenanceScheduleCancelledIterator struct {
+	Event *MaintenanceMaintenanceScheduleCancelled // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *MaintenanceMaintenanceScheduleCancelledIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(MaintenanceMaintenanceScheduleCancelled)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(MaintenanceMaintenanceScheduleCancelled)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *MaintenanceMaintenanceScheduleCancelledIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *MaintenanceMaintenanceScheduleCancelledIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// MaintenanceMaintenanceScheduleCancelled represents a MaintenanceScheduleCancelled event raised by the Maintenance contract.
+type MaintenanceMaintenanceScheduleCancelled struct {
+	ConsensusAddr common.Address
+	Raw           types.Log // Blockchain specific contextual infos
+}
+
+// FilterMaintenanceScheduleCancelled is a free log retrieval operation binding the contract event 0x72720a31deb222f77bbf95b88a540154648466770e5f41328ee1e25e50507377.
+//
+// Solidity: event MaintenanceScheduleCancelled(address indexed consensusAddr)
+func (_Maintenance *MaintenanceFilterer) FilterMaintenanceScheduleCancelled(opts *bind.FilterOpts, consensusAddr []common.Address) (*MaintenanceMaintenanceScheduleCancelledIterator, error) {
+
+	var consensusAddrRule []interface{}
+	for _, consensusAddrItem := range consensusAddr {
+		consensusAddrRule = append(consensusAddrRule, consensusAddrItem)
+	}
+
+	logs, sub, err := _Maintenance.contract.FilterLogs(opts, "MaintenanceScheduleCancelled", consensusAddrRule)
+	if err != nil {
+		return nil, err
+	}
+	return &MaintenanceMaintenanceScheduleCancelledIterator{contract: _Maintenance.contract, event: "MaintenanceScheduleCancelled", logs: logs, sub: sub}, nil
+}
+
+// WatchMaintenanceScheduleCancelled is a free log subscription operation binding the contract event 0x72720a31deb222f77bbf95b88a540154648466770e5f41328ee1e25e50507377.
+//
+// Solidity: event MaintenanceScheduleCancelled(address indexed consensusAddr)
+func (_Maintenance *MaintenanceFilterer) WatchMaintenanceScheduleCancelled(opts *bind.WatchOpts, sink chan<- *MaintenanceMaintenanceScheduleCancelled, consensusAddr []common.Address) (event.Subscription, error) {
+
+	var consensusAddrRule []interface{}
+	for _, consensusAddrItem := range consensusAddr {
+		consensusAddrRule = append(consensusAddrRule, consensusAddrItem)
+	}
+
+	logs, sub, err := _Maintenance.contract.WatchLogs(opts, "MaintenanceScheduleCancelled", consensusAddrRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(MaintenanceMaintenanceScheduleCancelled)
+				if err := _Maintenance.contract.UnpackLog(event, "MaintenanceScheduleCancelled", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseMaintenanceScheduleCancelled is a log parse operation binding the contract event 0x72720a31deb222f77bbf95b88a540154648466770e5f41328ee1e25e50507377.
+//
+// Solidity: event MaintenanceScheduleCancelled(address indexed consensusAddr)
+func (_Maintenance *MaintenanceFilterer) ParseMaintenanceScheduleCancelled(log types.Log) (*MaintenanceMaintenanceScheduleCancelled, error) {
+	event := new(MaintenanceMaintenanceScheduleCancelled)
+	if err := _Maintenance.contract.UnpackLog(event, "MaintenanceScheduleCancelled", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
@@ -1015,13 +1245,13 @@ func (it *MaintenanceMaintenanceScheduledIterator) Close() error {
 // MaintenanceMaintenanceScheduled represents a MaintenanceScheduled event raised by the Maintenance contract.
 type MaintenanceMaintenanceScheduled struct {
 	ConsensusAddr common.Address
-	Arg1          Struct0
+	Arg1          IMaintenanceSchedule
 	Raw           types.Log // Blockchain specific contextual infos
 }
 
-// FilterMaintenanceScheduled is a free log retrieval operation binding the contract event 0x3136fc9202ed1c3f8bc7ea3afb46704719833536485624cea83d7076f8785f43.
+// FilterMaintenanceScheduled is a free log retrieval operation binding the contract event 0x48e8b2f7348b1ec693bbb999258a8d6bd514732a19c6057b6e2a56a4c405253b.
 //
-// Solidity: event MaintenanceScheduled(address indexed consensusAddr, (uint256,uint256,uint256) arg1)
+// Solidity: event MaintenanceScheduled(address indexed consensusAddr, (uint256,uint256,uint256,uint256) arg1)
 func (_Maintenance *MaintenanceFilterer) FilterMaintenanceScheduled(opts *bind.FilterOpts, consensusAddr []common.Address) (*MaintenanceMaintenanceScheduledIterator, error) {
 
 	var consensusAddrRule []interface{}
@@ -1036,9 +1266,9 @@ func (_Maintenance *MaintenanceFilterer) FilterMaintenanceScheduled(opts *bind.F
 	return &MaintenanceMaintenanceScheduledIterator{contract: _Maintenance.contract, event: "MaintenanceScheduled", logs: logs, sub: sub}, nil
 }
 
-// WatchMaintenanceScheduled is a free log subscription operation binding the contract event 0x3136fc9202ed1c3f8bc7ea3afb46704719833536485624cea83d7076f8785f43.
+// WatchMaintenanceScheduled is a free log subscription operation binding the contract event 0x48e8b2f7348b1ec693bbb999258a8d6bd514732a19c6057b6e2a56a4c405253b.
 //
-// Solidity: event MaintenanceScheduled(address indexed consensusAddr, (uint256,uint256,uint256) arg1)
+// Solidity: event MaintenanceScheduled(address indexed consensusAddr, (uint256,uint256,uint256,uint256) arg1)
 func (_Maintenance *MaintenanceFilterer) WatchMaintenanceScheduled(opts *bind.WatchOpts, sink chan<- *MaintenanceMaintenanceScheduled, consensusAddr []common.Address) (event.Subscription, error) {
 
 	var consensusAddrRule []interface{}
@@ -1078,9 +1308,9 @@ func (_Maintenance *MaintenanceFilterer) WatchMaintenanceScheduled(opts *bind.Wa
 	}), nil
 }
 
-// ParseMaintenanceScheduled is a log parse operation binding the contract event 0x3136fc9202ed1c3f8bc7ea3afb46704719833536485624cea83d7076f8785f43.
+// ParseMaintenanceScheduled is a log parse operation binding the contract event 0x48e8b2f7348b1ec693bbb999258a8d6bd514732a19c6057b6e2a56a4c405253b.
 //
-// Solidity: event MaintenanceScheduled(address indexed consensusAddr, (uint256,uint256,uint256) arg1)
+// Solidity: event MaintenanceScheduled(address indexed consensusAddr, (uint256,uint256,uint256,uint256) arg1)
 func (_Maintenance *MaintenanceFilterer) ParseMaintenanceScheduled(log types.Log) (*MaintenanceMaintenanceScheduled, error) {
 	event := new(MaintenanceMaintenanceScheduled)
 	if err := _Maintenance.contract.UnpackLog(event, "MaintenanceScheduled", log); err != nil {
