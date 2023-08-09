@@ -26,11 +26,12 @@ var (
 	_ = common.Big1
 	_ = types.BloomLookup
 	_ = event.NewSubscription
+	_ = abi.ConvertType
 )
 
 // BridgeTrackingMetaData contains all meta data concerning the BridgeTracking contract.
 var BridgeTrackingMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"BridgeContractUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"ValidatorContractUpdated\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"bridgeContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_period\",\"type\":\"uint256\"},{\"internalType\":\"address[]\",\"name\":\"_bridgeOperators\",\"type\":\"address[]\"}],\"name\":\"getManyTotalBallots\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"_res\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"enumIBridgeTracking.VoteKind\",\"name\":\"_kind\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"_requestId\",\"type\":\"uint256\"}],\"name\":\"handleVoteApproved\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_bridgeContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_validatorContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_startedAtBlock\",\"type\":\"uint256\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"enumIBridgeTracking.VoteKind\",\"name\":\"_kind\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"_requestId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_operator\",\"type\":\"address\"}],\"name\":\"recordVote\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setBridgeContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setValidatorContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"startedAtBlock\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_period\",\"type\":\"uint256\"}],\"name\":\"totalBallots\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_period\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_bridgeOperator\",\"type\":\"address\"}],\"name\":\"totalBallotsOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_period\",\"type\":\"uint256\"}],\"name\":\"totalVotes\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"validatorContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
+	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"enumContractType\",\"name\":\"contractType\",\"type\":\"uint8\"}],\"name\":\"ErrContractTypeNotFound\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"msgSig\",\"type\":\"bytes4\"},{\"internalType\":\"enumRoleAccess\",\"name\":\"expectedRole\",\"type\":\"uint8\"}],\"name\":\"ErrUnauthorized\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"msgSig\",\"type\":\"bytes4\"},{\"internalType\":\"enumContractType\",\"name\":\"expectedContractType\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"actual\",\"type\":\"address\"}],\"name\":\"ErrUnexpectedInternalCall\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"ErrZeroCodeContract\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"enumContractType\",\"name\":\"contractType\",\"type\":\"uint8\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"ContractUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"bytes4\",\"name\":\"msgSig\",\"type\":\"bytes4\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"reason\",\"type\":\"bytes\"}],\"name\":\"ExternalCallFailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"enumContractType\",\"name\":\"contractType\",\"type\":\"uint8\"}],\"name\":\"getContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"contract_\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"},{\"internalType\":\"address[]\",\"name\":\"operators\",\"type\":\"address[]\"}],\"name\":\"getManyTotalBallots\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"_res\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"enumIBridgeTracking.VoteKind\",\"name\":\"kind\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"requestId\",\"type\":\"uint256\"}],\"name\":\"handleVoteApproved\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"bridgeContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"validatorContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"startedAtBlock_\",\"type\":\"uint256\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"initializeV2\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"bridgeManager\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"bridgeSlash\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"bridgeReward\",\"type\":\"address\"}],\"name\":\"initializeV3\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"enumIBridgeTracking.VoteKind\",\"name\":\"kind\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"requestId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"name\":\"recordVote\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"enumContractType\",\"name\":\"contractType\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"setContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"startedAtBlock\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"}],\"name\":\"totalBallot\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"totalBallot_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"bridgeOperator\",\"type\":\"address\"}],\"name\":\"totalBallotOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"}],\"name\":\"totalVote\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"totalVote_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
 }
 
 // BridgeTrackingABI is the input ABI used to generate the binding from.
@@ -134,11 +135,11 @@ func NewBridgeTrackingFilterer(address common.Address, filterer bind.ContractFil
 
 // bindBridgeTracking binds a generic wrapper to an already deployed contract.
 func bindBridgeTracking(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
-	parsed, err := abi.JSON(strings.NewReader(BridgeTrackingABI))
+	parsed, err := BridgeTrackingMetaData.GetAbi()
 	if err != nil {
 		return nil, err
 	}
-	return bind.NewBoundContract(address, parsed, caller, transactor, filterer), nil
+	return bind.NewBoundContract(address, *parsed, caller, transactor, filterer), nil
 }
 
 // Call invokes the (constant) contract method with params as input values and
@@ -179,12 +180,12 @@ func (_BridgeTracking *BridgeTrackingTransactorRaw) Transact(opts *bind.Transact
 	return _BridgeTracking.Contract.contract.Transact(opts, method, params...)
 }
 
-// BridgeContract is a free data retrieval call binding the contract method 0xcd596583.
+// GetContract is a free data retrieval call binding the contract method 0xde981f1b.
 //
-// Solidity: function bridgeContract() view returns(address)
-func (_BridgeTracking *BridgeTrackingCaller) BridgeContract(opts *bind.CallOpts) (common.Address, error) {
+// Solidity: function getContract(uint8 contractType) view returns(address contract_)
+func (_BridgeTracking *BridgeTrackingCaller) GetContract(opts *bind.CallOpts, contractType uint8) (common.Address, error) {
 	var out []interface{}
-	err := _BridgeTracking.contract.Call(opts, &out, "bridgeContract")
+	err := _BridgeTracking.contract.Call(opts, &out, "getContract", contractType)
 
 	if err != nil {
 		return *new(common.Address), err
@@ -196,26 +197,26 @@ func (_BridgeTracking *BridgeTrackingCaller) BridgeContract(opts *bind.CallOpts)
 
 }
 
-// BridgeContract is a free data retrieval call binding the contract method 0xcd596583.
+// GetContract is a free data retrieval call binding the contract method 0xde981f1b.
 //
-// Solidity: function bridgeContract() view returns(address)
-func (_BridgeTracking *BridgeTrackingSession) BridgeContract() (common.Address, error) {
-	return _BridgeTracking.Contract.BridgeContract(&_BridgeTracking.CallOpts)
+// Solidity: function getContract(uint8 contractType) view returns(address contract_)
+func (_BridgeTracking *BridgeTrackingSession) GetContract(contractType uint8) (common.Address, error) {
+	return _BridgeTracking.Contract.GetContract(&_BridgeTracking.CallOpts, contractType)
 }
 
-// BridgeContract is a free data retrieval call binding the contract method 0xcd596583.
+// GetContract is a free data retrieval call binding the contract method 0xde981f1b.
 //
-// Solidity: function bridgeContract() view returns(address)
-func (_BridgeTracking *BridgeTrackingCallerSession) BridgeContract() (common.Address, error) {
-	return _BridgeTracking.Contract.BridgeContract(&_BridgeTracking.CallOpts)
+// Solidity: function getContract(uint8 contractType) view returns(address contract_)
+func (_BridgeTracking *BridgeTrackingCallerSession) GetContract(contractType uint8) (common.Address, error) {
+	return _BridgeTracking.Contract.GetContract(&_BridgeTracking.CallOpts, contractType)
 }
 
 // GetManyTotalBallots is a free data retrieval call binding the contract method 0xf67e8152.
 //
-// Solidity: function getManyTotalBallots(uint256 _period, address[] _bridgeOperators) view returns(uint256[] _res)
-func (_BridgeTracking *BridgeTrackingCaller) GetManyTotalBallots(opts *bind.CallOpts, _period *big.Int, _bridgeOperators []common.Address) ([]*big.Int, error) {
+// Solidity: function getManyTotalBallots(uint256 period, address[] operators) view returns(uint256[] _res)
+func (_BridgeTracking *BridgeTrackingCaller) GetManyTotalBallots(opts *bind.CallOpts, period *big.Int, operators []common.Address) ([]*big.Int, error) {
 	var out []interface{}
-	err := _BridgeTracking.contract.Call(opts, &out, "getManyTotalBallots", _period, _bridgeOperators)
+	err := _BridgeTracking.contract.Call(opts, &out, "getManyTotalBallots", period, operators)
 
 	if err != nil {
 		return *new([]*big.Int), err
@@ -229,16 +230,16 @@ func (_BridgeTracking *BridgeTrackingCaller) GetManyTotalBallots(opts *bind.Call
 
 // GetManyTotalBallots is a free data retrieval call binding the contract method 0xf67e8152.
 //
-// Solidity: function getManyTotalBallots(uint256 _period, address[] _bridgeOperators) view returns(uint256[] _res)
-func (_BridgeTracking *BridgeTrackingSession) GetManyTotalBallots(_period *big.Int, _bridgeOperators []common.Address) ([]*big.Int, error) {
-	return _BridgeTracking.Contract.GetManyTotalBallots(&_BridgeTracking.CallOpts, _period, _bridgeOperators)
+// Solidity: function getManyTotalBallots(uint256 period, address[] operators) view returns(uint256[] _res)
+func (_BridgeTracking *BridgeTrackingSession) GetManyTotalBallots(period *big.Int, operators []common.Address) ([]*big.Int, error) {
+	return _BridgeTracking.Contract.GetManyTotalBallots(&_BridgeTracking.CallOpts, period, operators)
 }
 
 // GetManyTotalBallots is a free data retrieval call binding the contract method 0xf67e8152.
 //
-// Solidity: function getManyTotalBallots(uint256 _period, address[] _bridgeOperators) view returns(uint256[] _res)
-func (_BridgeTracking *BridgeTrackingCallerSession) GetManyTotalBallots(_period *big.Int, _bridgeOperators []common.Address) ([]*big.Int, error) {
-	return _BridgeTracking.Contract.GetManyTotalBallots(&_BridgeTracking.CallOpts, _period, _bridgeOperators)
+// Solidity: function getManyTotalBallots(uint256 period, address[] operators) view returns(uint256[] _res)
+func (_BridgeTracking *BridgeTrackingCallerSession) GetManyTotalBallots(period *big.Int, operators []common.Address) ([]*big.Int, error) {
+	return _BridgeTracking.Contract.GetManyTotalBallots(&_BridgeTracking.CallOpts, period, operators)
 }
 
 // StartedAtBlock is a free data retrieval call binding the contract method 0xf84bd121.
@@ -272,12 +273,12 @@ func (_BridgeTracking *BridgeTrackingCallerSession) StartedAtBlock() (*big.Int, 
 	return _BridgeTracking.Contract.StartedAtBlock(&_BridgeTracking.CallOpts)
 }
 
-// TotalBallots is a free data retrieval call binding the contract method 0x889998ef.
+// TotalBallot is a free data retrieval call binding the contract method 0xd25ed4c6.
 //
-// Solidity: function totalBallots(uint256 _period) view returns(uint256)
-func (_BridgeTracking *BridgeTrackingCaller) TotalBallots(opts *bind.CallOpts, _period *big.Int) (*big.Int, error) {
+// Solidity: function totalBallot(uint256 period) view returns(uint256 totalBallot_)
+func (_BridgeTracking *BridgeTrackingCaller) TotalBallot(opts *bind.CallOpts, period *big.Int) (*big.Int, error) {
 	var out []interface{}
-	err := _BridgeTracking.contract.Call(opts, &out, "totalBallots", _period)
+	err := _BridgeTracking.contract.Call(opts, &out, "totalBallot", period)
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -289,26 +290,26 @@ func (_BridgeTracking *BridgeTrackingCaller) TotalBallots(opts *bind.CallOpts, _
 
 }
 
-// TotalBallots is a free data retrieval call binding the contract method 0x889998ef.
+// TotalBallot is a free data retrieval call binding the contract method 0xd25ed4c6.
 //
-// Solidity: function totalBallots(uint256 _period) view returns(uint256)
-func (_BridgeTracking *BridgeTrackingSession) TotalBallots(_period *big.Int) (*big.Int, error) {
-	return _BridgeTracking.Contract.TotalBallots(&_BridgeTracking.CallOpts, _period)
+// Solidity: function totalBallot(uint256 period) view returns(uint256 totalBallot_)
+func (_BridgeTracking *BridgeTrackingSession) TotalBallot(period *big.Int) (*big.Int, error) {
+	return _BridgeTracking.Contract.TotalBallot(&_BridgeTracking.CallOpts, period)
 }
 
-// TotalBallots is a free data retrieval call binding the contract method 0x889998ef.
+// TotalBallot is a free data retrieval call binding the contract method 0xd25ed4c6.
 //
-// Solidity: function totalBallots(uint256 _period) view returns(uint256)
-func (_BridgeTracking *BridgeTrackingCallerSession) TotalBallots(_period *big.Int) (*big.Int, error) {
-	return _BridgeTracking.Contract.TotalBallots(&_BridgeTracking.CallOpts, _period)
+// Solidity: function totalBallot(uint256 period) view returns(uint256 totalBallot_)
+func (_BridgeTracking *BridgeTrackingCallerSession) TotalBallot(period *big.Int) (*big.Int, error) {
+	return _BridgeTracking.Contract.TotalBallot(&_BridgeTracking.CallOpts, period)
 }
 
-// TotalBallotsOf is a free data retrieval call binding the contract method 0x04375dcf.
+// TotalBallotOf is a free data retrieval call binding the contract method 0x4ac0bcda.
 //
-// Solidity: function totalBallotsOf(uint256 _period, address _bridgeOperator) view returns(uint256)
-func (_BridgeTracking *BridgeTrackingCaller) TotalBallotsOf(opts *bind.CallOpts, _period *big.Int, _bridgeOperator common.Address) (*big.Int, error) {
+// Solidity: function totalBallotOf(uint256 period, address bridgeOperator) view returns(uint256)
+func (_BridgeTracking *BridgeTrackingCaller) TotalBallotOf(opts *bind.CallOpts, period *big.Int, bridgeOperator common.Address) (*big.Int, error) {
 	var out []interface{}
-	err := _BridgeTracking.contract.Call(opts, &out, "totalBallotsOf", _period, _bridgeOperator)
+	err := _BridgeTracking.contract.Call(opts, &out, "totalBallotOf", period, bridgeOperator)
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -320,26 +321,26 @@ func (_BridgeTracking *BridgeTrackingCaller) TotalBallotsOf(opts *bind.CallOpts,
 
 }
 
-// TotalBallotsOf is a free data retrieval call binding the contract method 0x04375dcf.
+// TotalBallotOf is a free data retrieval call binding the contract method 0x4ac0bcda.
 //
-// Solidity: function totalBallotsOf(uint256 _period, address _bridgeOperator) view returns(uint256)
-func (_BridgeTracking *BridgeTrackingSession) TotalBallotsOf(_period *big.Int, _bridgeOperator common.Address) (*big.Int, error) {
-	return _BridgeTracking.Contract.TotalBallotsOf(&_BridgeTracking.CallOpts, _period, _bridgeOperator)
+// Solidity: function totalBallotOf(uint256 period, address bridgeOperator) view returns(uint256)
+func (_BridgeTracking *BridgeTrackingSession) TotalBallotOf(period *big.Int, bridgeOperator common.Address) (*big.Int, error) {
+	return _BridgeTracking.Contract.TotalBallotOf(&_BridgeTracking.CallOpts, period, bridgeOperator)
 }
 
-// TotalBallotsOf is a free data retrieval call binding the contract method 0x04375dcf.
+// TotalBallotOf is a free data retrieval call binding the contract method 0x4ac0bcda.
 //
-// Solidity: function totalBallotsOf(uint256 _period, address _bridgeOperator) view returns(uint256)
-func (_BridgeTracking *BridgeTrackingCallerSession) TotalBallotsOf(_period *big.Int, _bridgeOperator common.Address) (*big.Int, error) {
-	return _BridgeTracking.Contract.TotalBallotsOf(&_BridgeTracking.CallOpts, _period, _bridgeOperator)
+// Solidity: function totalBallotOf(uint256 period, address bridgeOperator) view returns(uint256)
+func (_BridgeTracking *BridgeTrackingCallerSession) TotalBallotOf(period *big.Int, bridgeOperator common.Address) (*big.Int, error) {
+	return _BridgeTracking.Contract.TotalBallotOf(&_BridgeTracking.CallOpts, period, bridgeOperator)
 }
 
-// TotalVotes is a free data retrieval call binding the contract method 0x19e6e158.
+// TotalVote is a free data retrieval call binding the contract method 0xe2a75f36.
 //
-// Solidity: function totalVotes(uint256 _period) view returns(uint256)
-func (_BridgeTracking *BridgeTrackingCaller) TotalVotes(opts *bind.CallOpts, _period *big.Int) (*big.Int, error) {
+// Solidity: function totalVote(uint256 period) view returns(uint256 totalVote_)
+func (_BridgeTracking *BridgeTrackingCaller) TotalVote(opts *bind.CallOpts, period *big.Int) (*big.Int, error) {
 	var out []interface{}
-	err := _BridgeTracking.contract.Call(opts, &out, "totalVotes", _period)
+	err := _BridgeTracking.contract.Call(opts, &out, "totalVote", period)
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -351,159 +352,149 @@ func (_BridgeTracking *BridgeTrackingCaller) TotalVotes(opts *bind.CallOpts, _pe
 
 }
 
-// TotalVotes is a free data retrieval call binding the contract method 0x19e6e158.
+// TotalVote is a free data retrieval call binding the contract method 0xe2a75f36.
 //
-// Solidity: function totalVotes(uint256 _period) view returns(uint256)
-func (_BridgeTracking *BridgeTrackingSession) TotalVotes(_period *big.Int) (*big.Int, error) {
-	return _BridgeTracking.Contract.TotalVotes(&_BridgeTracking.CallOpts, _period)
+// Solidity: function totalVote(uint256 period) view returns(uint256 totalVote_)
+func (_BridgeTracking *BridgeTrackingSession) TotalVote(period *big.Int) (*big.Int, error) {
+	return _BridgeTracking.Contract.TotalVote(&_BridgeTracking.CallOpts, period)
 }
 
-// TotalVotes is a free data retrieval call binding the contract method 0x19e6e158.
+// TotalVote is a free data retrieval call binding the contract method 0xe2a75f36.
 //
-// Solidity: function totalVotes(uint256 _period) view returns(uint256)
-func (_BridgeTracking *BridgeTrackingCallerSession) TotalVotes(_period *big.Int) (*big.Int, error) {
-	return _BridgeTracking.Contract.TotalVotes(&_BridgeTracking.CallOpts, _period)
-}
-
-// ValidatorContract is a free data retrieval call binding the contract method 0x99439089.
-//
-// Solidity: function validatorContract() view returns(address)
-func (_BridgeTracking *BridgeTrackingCaller) ValidatorContract(opts *bind.CallOpts) (common.Address, error) {
-	var out []interface{}
-	err := _BridgeTracking.contract.Call(opts, &out, "validatorContract")
-
-	if err != nil {
-		return *new(common.Address), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
-
-	return out0, err
-
-}
-
-// ValidatorContract is a free data retrieval call binding the contract method 0x99439089.
-//
-// Solidity: function validatorContract() view returns(address)
-func (_BridgeTracking *BridgeTrackingSession) ValidatorContract() (common.Address, error) {
-	return _BridgeTracking.Contract.ValidatorContract(&_BridgeTracking.CallOpts)
-}
-
-// ValidatorContract is a free data retrieval call binding the contract method 0x99439089.
-//
-// Solidity: function validatorContract() view returns(address)
-func (_BridgeTracking *BridgeTrackingCallerSession) ValidatorContract() (common.Address, error) {
-	return _BridgeTracking.Contract.ValidatorContract(&_BridgeTracking.CallOpts)
+// Solidity: function totalVote(uint256 period) view returns(uint256 totalVote_)
+func (_BridgeTracking *BridgeTrackingCallerSession) TotalVote(period *big.Int) (*big.Int, error) {
+	return _BridgeTracking.Contract.TotalVote(&_BridgeTracking.CallOpts, period)
 }
 
 // HandleVoteApproved is a paid mutator transaction binding the contract method 0x229f88ea.
 //
-// Solidity: function handleVoteApproved(uint8 _kind, uint256 _requestId) returns()
-func (_BridgeTracking *BridgeTrackingTransactor) HandleVoteApproved(opts *bind.TransactOpts, _kind uint8, _requestId *big.Int) (*types.Transaction, error) {
-	return _BridgeTracking.contract.Transact(opts, "handleVoteApproved", _kind, _requestId)
+// Solidity: function handleVoteApproved(uint8 kind, uint256 requestId) returns()
+func (_BridgeTracking *BridgeTrackingTransactor) HandleVoteApproved(opts *bind.TransactOpts, kind uint8, requestId *big.Int) (*types.Transaction, error) {
+	return _BridgeTracking.contract.Transact(opts, "handleVoteApproved", kind, requestId)
 }
 
 // HandleVoteApproved is a paid mutator transaction binding the contract method 0x229f88ea.
 //
-// Solidity: function handleVoteApproved(uint8 _kind, uint256 _requestId) returns()
-func (_BridgeTracking *BridgeTrackingSession) HandleVoteApproved(_kind uint8, _requestId *big.Int) (*types.Transaction, error) {
-	return _BridgeTracking.Contract.HandleVoteApproved(&_BridgeTracking.TransactOpts, _kind, _requestId)
+// Solidity: function handleVoteApproved(uint8 kind, uint256 requestId) returns()
+func (_BridgeTracking *BridgeTrackingSession) HandleVoteApproved(kind uint8, requestId *big.Int) (*types.Transaction, error) {
+	return _BridgeTracking.Contract.HandleVoteApproved(&_BridgeTracking.TransactOpts, kind, requestId)
 }
 
 // HandleVoteApproved is a paid mutator transaction binding the contract method 0x229f88ea.
 //
-// Solidity: function handleVoteApproved(uint8 _kind, uint256 _requestId) returns()
-func (_BridgeTracking *BridgeTrackingTransactorSession) HandleVoteApproved(_kind uint8, _requestId *big.Int) (*types.Transaction, error) {
-	return _BridgeTracking.Contract.HandleVoteApproved(&_BridgeTracking.TransactOpts, _kind, _requestId)
+// Solidity: function handleVoteApproved(uint8 kind, uint256 requestId) returns()
+func (_BridgeTracking *BridgeTrackingTransactorSession) HandleVoteApproved(kind uint8, requestId *big.Int) (*types.Transaction, error) {
+	return _BridgeTracking.Contract.HandleVoteApproved(&_BridgeTracking.TransactOpts, kind, requestId)
 }
 
 // Initialize is a paid mutator transaction binding the contract method 0x1794bb3c.
 //
-// Solidity: function initialize(address _bridgeContract, address _validatorContract, uint256 _startedAtBlock) returns()
-func (_BridgeTracking *BridgeTrackingTransactor) Initialize(opts *bind.TransactOpts, _bridgeContract common.Address, _validatorContract common.Address, _startedAtBlock *big.Int) (*types.Transaction, error) {
-	return _BridgeTracking.contract.Transact(opts, "initialize", _bridgeContract, _validatorContract, _startedAtBlock)
+// Solidity: function initialize(address bridgeContract, address validatorContract, uint256 startedAtBlock_) returns()
+func (_BridgeTracking *BridgeTrackingTransactor) Initialize(opts *bind.TransactOpts, bridgeContract common.Address, validatorContract common.Address, startedAtBlock_ *big.Int) (*types.Transaction, error) {
+	return _BridgeTracking.contract.Transact(opts, "initialize", bridgeContract, validatorContract, startedAtBlock_)
 }
 
 // Initialize is a paid mutator transaction binding the contract method 0x1794bb3c.
 //
-// Solidity: function initialize(address _bridgeContract, address _validatorContract, uint256 _startedAtBlock) returns()
-func (_BridgeTracking *BridgeTrackingSession) Initialize(_bridgeContract common.Address, _validatorContract common.Address, _startedAtBlock *big.Int) (*types.Transaction, error) {
-	return _BridgeTracking.Contract.Initialize(&_BridgeTracking.TransactOpts, _bridgeContract, _validatorContract, _startedAtBlock)
+// Solidity: function initialize(address bridgeContract, address validatorContract, uint256 startedAtBlock_) returns()
+func (_BridgeTracking *BridgeTrackingSession) Initialize(bridgeContract common.Address, validatorContract common.Address, startedAtBlock_ *big.Int) (*types.Transaction, error) {
+	return _BridgeTracking.Contract.Initialize(&_BridgeTracking.TransactOpts, bridgeContract, validatorContract, startedAtBlock_)
 }
 
 // Initialize is a paid mutator transaction binding the contract method 0x1794bb3c.
 //
-// Solidity: function initialize(address _bridgeContract, address _validatorContract, uint256 _startedAtBlock) returns()
-func (_BridgeTracking *BridgeTrackingTransactorSession) Initialize(_bridgeContract common.Address, _validatorContract common.Address, _startedAtBlock *big.Int) (*types.Transaction, error) {
-	return _BridgeTracking.Contract.Initialize(&_BridgeTracking.TransactOpts, _bridgeContract, _validatorContract, _startedAtBlock)
+// Solidity: function initialize(address bridgeContract, address validatorContract, uint256 startedAtBlock_) returns()
+func (_BridgeTracking *BridgeTrackingTransactorSession) Initialize(bridgeContract common.Address, validatorContract common.Address, startedAtBlock_ *big.Int) (*types.Transaction, error) {
+	return _BridgeTracking.Contract.Initialize(&_BridgeTracking.TransactOpts, bridgeContract, validatorContract, startedAtBlock_)
+}
+
+// InitializeV2 is a paid mutator transaction binding the contract method 0x5cd8a76b.
+//
+// Solidity: function initializeV2() returns()
+func (_BridgeTracking *BridgeTrackingTransactor) InitializeV2(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _BridgeTracking.contract.Transact(opts, "initializeV2")
+}
+
+// InitializeV2 is a paid mutator transaction binding the contract method 0x5cd8a76b.
+//
+// Solidity: function initializeV2() returns()
+func (_BridgeTracking *BridgeTrackingSession) InitializeV2() (*types.Transaction, error) {
+	return _BridgeTracking.Contract.InitializeV2(&_BridgeTracking.TransactOpts)
+}
+
+// InitializeV2 is a paid mutator transaction binding the contract method 0x5cd8a76b.
+//
+// Solidity: function initializeV2() returns()
+func (_BridgeTracking *BridgeTrackingTransactorSession) InitializeV2() (*types.Transaction, error) {
+	return _BridgeTracking.Contract.InitializeV2(&_BridgeTracking.TransactOpts)
+}
+
+// InitializeV3 is a paid mutator transaction binding the contract method 0xe7ec7b39.
+//
+// Solidity: function initializeV3(address bridgeManager, address bridgeSlash, address bridgeReward) returns()
+func (_BridgeTracking *BridgeTrackingTransactor) InitializeV3(opts *bind.TransactOpts, bridgeManager common.Address, bridgeSlash common.Address, bridgeReward common.Address) (*types.Transaction, error) {
+	return _BridgeTracking.contract.Transact(opts, "initializeV3", bridgeManager, bridgeSlash, bridgeReward)
+}
+
+// InitializeV3 is a paid mutator transaction binding the contract method 0xe7ec7b39.
+//
+// Solidity: function initializeV3(address bridgeManager, address bridgeSlash, address bridgeReward) returns()
+func (_BridgeTracking *BridgeTrackingSession) InitializeV3(bridgeManager common.Address, bridgeSlash common.Address, bridgeReward common.Address) (*types.Transaction, error) {
+	return _BridgeTracking.Contract.InitializeV3(&_BridgeTracking.TransactOpts, bridgeManager, bridgeSlash, bridgeReward)
+}
+
+// InitializeV3 is a paid mutator transaction binding the contract method 0xe7ec7b39.
+//
+// Solidity: function initializeV3(address bridgeManager, address bridgeSlash, address bridgeReward) returns()
+func (_BridgeTracking *BridgeTrackingTransactorSession) InitializeV3(bridgeManager common.Address, bridgeSlash common.Address, bridgeReward common.Address) (*types.Transaction, error) {
+	return _BridgeTracking.Contract.InitializeV3(&_BridgeTracking.TransactOpts, bridgeManager, bridgeSlash, bridgeReward)
 }
 
 // RecordVote is a paid mutator transaction binding the contract method 0xc7c4fea9.
 //
-// Solidity: function recordVote(uint8 _kind, uint256 _requestId, address _operator) returns()
-func (_BridgeTracking *BridgeTrackingTransactor) RecordVote(opts *bind.TransactOpts, _kind uint8, _requestId *big.Int, _operator common.Address) (*types.Transaction, error) {
-	return _BridgeTracking.contract.Transact(opts, "recordVote", _kind, _requestId, _operator)
+// Solidity: function recordVote(uint8 kind, uint256 requestId, address operator) returns()
+func (_BridgeTracking *BridgeTrackingTransactor) RecordVote(opts *bind.TransactOpts, kind uint8, requestId *big.Int, operator common.Address) (*types.Transaction, error) {
+	return _BridgeTracking.contract.Transact(opts, "recordVote", kind, requestId, operator)
 }
 
 // RecordVote is a paid mutator transaction binding the contract method 0xc7c4fea9.
 //
-// Solidity: function recordVote(uint8 _kind, uint256 _requestId, address _operator) returns()
-func (_BridgeTracking *BridgeTrackingSession) RecordVote(_kind uint8, _requestId *big.Int, _operator common.Address) (*types.Transaction, error) {
-	return _BridgeTracking.Contract.RecordVote(&_BridgeTracking.TransactOpts, _kind, _requestId, _operator)
+// Solidity: function recordVote(uint8 kind, uint256 requestId, address operator) returns()
+func (_BridgeTracking *BridgeTrackingSession) RecordVote(kind uint8, requestId *big.Int, operator common.Address) (*types.Transaction, error) {
+	return _BridgeTracking.Contract.RecordVote(&_BridgeTracking.TransactOpts, kind, requestId, operator)
 }
 
 // RecordVote is a paid mutator transaction binding the contract method 0xc7c4fea9.
 //
-// Solidity: function recordVote(uint8 _kind, uint256 _requestId, address _operator) returns()
-func (_BridgeTracking *BridgeTrackingTransactorSession) RecordVote(_kind uint8, _requestId *big.Int, _operator common.Address) (*types.Transaction, error) {
-	return _BridgeTracking.Contract.RecordVote(&_BridgeTracking.TransactOpts, _kind, _requestId, _operator)
+// Solidity: function recordVote(uint8 kind, uint256 requestId, address operator) returns()
+func (_BridgeTracking *BridgeTrackingTransactorSession) RecordVote(kind uint8, requestId *big.Int, operator common.Address) (*types.Transaction, error) {
+	return _BridgeTracking.Contract.RecordVote(&_BridgeTracking.TransactOpts, kind, requestId, operator)
 }
 
-// SetBridgeContract is a paid mutator transaction binding the contract method 0x0b26cf66.
+// SetContract is a paid mutator transaction binding the contract method 0x865e6fd3.
 //
-// Solidity: function setBridgeContract(address _addr) returns()
-func (_BridgeTracking *BridgeTrackingTransactor) SetBridgeContract(opts *bind.TransactOpts, _addr common.Address) (*types.Transaction, error) {
-	return _BridgeTracking.contract.Transact(opts, "setBridgeContract", _addr)
+// Solidity: function setContract(uint8 contractType, address addr) returns()
+func (_BridgeTracking *BridgeTrackingTransactor) SetContract(opts *bind.TransactOpts, contractType uint8, addr common.Address) (*types.Transaction, error) {
+	return _BridgeTracking.contract.Transact(opts, "setContract", contractType, addr)
 }
 
-// SetBridgeContract is a paid mutator transaction binding the contract method 0x0b26cf66.
+// SetContract is a paid mutator transaction binding the contract method 0x865e6fd3.
 //
-// Solidity: function setBridgeContract(address _addr) returns()
-func (_BridgeTracking *BridgeTrackingSession) SetBridgeContract(_addr common.Address) (*types.Transaction, error) {
-	return _BridgeTracking.Contract.SetBridgeContract(&_BridgeTracking.TransactOpts, _addr)
+// Solidity: function setContract(uint8 contractType, address addr) returns()
+func (_BridgeTracking *BridgeTrackingSession) SetContract(contractType uint8, addr common.Address) (*types.Transaction, error) {
+	return _BridgeTracking.Contract.SetContract(&_BridgeTracking.TransactOpts, contractType, addr)
 }
 
-// SetBridgeContract is a paid mutator transaction binding the contract method 0x0b26cf66.
+// SetContract is a paid mutator transaction binding the contract method 0x865e6fd3.
 //
-// Solidity: function setBridgeContract(address _addr) returns()
-func (_BridgeTracking *BridgeTrackingTransactorSession) SetBridgeContract(_addr common.Address) (*types.Transaction, error) {
-	return _BridgeTracking.Contract.SetBridgeContract(&_BridgeTracking.TransactOpts, _addr)
+// Solidity: function setContract(uint8 contractType, address addr) returns()
+func (_BridgeTracking *BridgeTrackingTransactorSession) SetContract(contractType uint8, addr common.Address) (*types.Transaction, error) {
+	return _BridgeTracking.Contract.SetContract(&_BridgeTracking.TransactOpts, contractType, addr)
 }
 
-// SetValidatorContract is a paid mutator transaction binding the contract method 0xcdf64a76.
-//
-// Solidity: function setValidatorContract(address _addr) returns()
-func (_BridgeTracking *BridgeTrackingTransactor) SetValidatorContract(opts *bind.TransactOpts, _addr common.Address) (*types.Transaction, error) {
-	return _BridgeTracking.contract.Transact(opts, "setValidatorContract", _addr)
-}
-
-// SetValidatorContract is a paid mutator transaction binding the contract method 0xcdf64a76.
-//
-// Solidity: function setValidatorContract(address _addr) returns()
-func (_BridgeTracking *BridgeTrackingSession) SetValidatorContract(_addr common.Address) (*types.Transaction, error) {
-	return _BridgeTracking.Contract.SetValidatorContract(&_BridgeTracking.TransactOpts, _addr)
-}
-
-// SetValidatorContract is a paid mutator transaction binding the contract method 0xcdf64a76.
-//
-// Solidity: function setValidatorContract(address _addr) returns()
-func (_BridgeTracking *BridgeTrackingTransactorSession) SetValidatorContract(_addr common.Address) (*types.Transaction, error) {
-	return _BridgeTracking.Contract.SetValidatorContract(&_BridgeTracking.TransactOpts, _addr)
-}
-
-// BridgeTrackingBridgeContractUpdatedIterator is returned from FilterBridgeContractUpdated and is used to iterate over the raw logs and unpacked data for BridgeContractUpdated events raised by the BridgeTracking contract.
-type BridgeTrackingBridgeContractUpdatedIterator struct {
-	Event *BridgeTrackingBridgeContractUpdated // Event containing the contract specifics and raw log
+// BridgeTrackingContractUpdatedIterator is returned from FilterContractUpdated and is used to iterate over the raw logs and unpacked data for ContractUpdated events raised by the BridgeTracking contract.
+type BridgeTrackingContractUpdatedIterator struct {
+	Event *BridgeTrackingContractUpdated // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -517,7 +508,7 @@ type BridgeTrackingBridgeContractUpdatedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *BridgeTrackingBridgeContractUpdatedIterator) Next() bool {
+func (it *BridgeTrackingContractUpdatedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -526,7 +517,7 @@ func (it *BridgeTrackingBridgeContractUpdatedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(BridgeTrackingBridgeContractUpdated)
+			it.Event = new(BridgeTrackingContractUpdated)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -541,7 +532,7 @@ func (it *BridgeTrackingBridgeContractUpdatedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(BridgeTrackingBridgeContractUpdated)
+		it.Event = new(BridgeTrackingContractUpdated)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -557,41 +548,60 @@ func (it *BridgeTrackingBridgeContractUpdatedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *BridgeTrackingBridgeContractUpdatedIterator) Error() error {
+func (it *BridgeTrackingContractUpdatedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *BridgeTrackingBridgeContractUpdatedIterator) Close() error {
+func (it *BridgeTrackingContractUpdatedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// BridgeTrackingBridgeContractUpdated represents a BridgeContractUpdated event raised by the BridgeTracking contract.
-type BridgeTrackingBridgeContractUpdated struct {
-	Arg0 common.Address
-	Raw  types.Log // Blockchain specific contextual infos
+// BridgeTrackingContractUpdated represents a ContractUpdated event raised by the BridgeTracking contract.
+type BridgeTrackingContractUpdated struct {
+	ContractType uint8
+	Addr         common.Address
+	Raw          types.Log // Blockchain specific contextual infos
 }
 
-// FilterBridgeContractUpdated is a free log retrieval operation binding the contract event 0x5cbd8a0bb00196365d5eb3457c6734e7f06666c3c78e5469b4c9deec7edae048.
+// FilterContractUpdated is a free log retrieval operation binding the contract event 0x865d1c228a8ea13709cfe61f346f7ff67f1bbd4a18ff31ad3e7147350d317c59.
 //
-// Solidity: event BridgeContractUpdated(address arg0)
-func (_BridgeTracking *BridgeTrackingFilterer) FilterBridgeContractUpdated(opts *bind.FilterOpts) (*BridgeTrackingBridgeContractUpdatedIterator, error) {
+// Solidity: event ContractUpdated(uint8 indexed contractType, address indexed addr)
+func (_BridgeTracking *BridgeTrackingFilterer) FilterContractUpdated(opts *bind.FilterOpts, contractType []uint8, addr []common.Address) (*BridgeTrackingContractUpdatedIterator, error) {
 
-	logs, sub, err := _BridgeTracking.contract.FilterLogs(opts, "BridgeContractUpdated")
+	var contractTypeRule []interface{}
+	for _, contractTypeItem := range contractType {
+		contractTypeRule = append(contractTypeRule, contractTypeItem)
+	}
+	var addrRule []interface{}
+	for _, addrItem := range addr {
+		addrRule = append(addrRule, addrItem)
+	}
+
+	logs, sub, err := _BridgeTracking.contract.FilterLogs(opts, "ContractUpdated", contractTypeRule, addrRule)
 	if err != nil {
 		return nil, err
 	}
-	return &BridgeTrackingBridgeContractUpdatedIterator{contract: _BridgeTracking.contract, event: "BridgeContractUpdated", logs: logs, sub: sub}, nil
+	return &BridgeTrackingContractUpdatedIterator{contract: _BridgeTracking.contract, event: "ContractUpdated", logs: logs, sub: sub}, nil
 }
 
-// WatchBridgeContractUpdated is a free log subscription operation binding the contract event 0x5cbd8a0bb00196365d5eb3457c6734e7f06666c3c78e5469b4c9deec7edae048.
+// WatchContractUpdated is a free log subscription operation binding the contract event 0x865d1c228a8ea13709cfe61f346f7ff67f1bbd4a18ff31ad3e7147350d317c59.
 //
-// Solidity: event BridgeContractUpdated(address arg0)
-func (_BridgeTracking *BridgeTrackingFilterer) WatchBridgeContractUpdated(opts *bind.WatchOpts, sink chan<- *BridgeTrackingBridgeContractUpdated) (event.Subscription, error) {
+// Solidity: event ContractUpdated(uint8 indexed contractType, address indexed addr)
+func (_BridgeTracking *BridgeTrackingFilterer) WatchContractUpdated(opts *bind.WatchOpts, sink chan<- *BridgeTrackingContractUpdated, contractType []uint8, addr []common.Address) (event.Subscription, error) {
 
-	logs, sub, err := _BridgeTracking.contract.WatchLogs(opts, "BridgeContractUpdated")
+	var contractTypeRule []interface{}
+	for _, contractTypeItem := range contractType {
+		contractTypeRule = append(contractTypeRule, contractTypeItem)
+	}
+	var addrRule []interface{}
+	for _, addrItem := range addr {
+		addrRule = append(addrRule, addrItem)
+	}
+
+	logs, sub, err := _BridgeTracking.contract.WatchLogs(opts, "ContractUpdated", contractTypeRule, addrRule)
 	if err != nil {
 		return nil, err
 	}
@@ -601,8 +611,8 @@ func (_BridgeTracking *BridgeTrackingFilterer) WatchBridgeContractUpdated(opts *
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(BridgeTrackingBridgeContractUpdated)
-				if err := _BridgeTracking.contract.UnpackLog(event, "BridgeContractUpdated", log); err != nil {
+				event := new(BridgeTrackingContractUpdated)
+				if err := _BridgeTracking.contract.UnpackLog(event, "ContractUpdated", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -623,12 +633,166 @@ func (_BridgeTracking *BridgeTrackingFilterer) WatchBridgeContractUpdated(opts *
 	}), nil
 }
 
-// ParseBridgeContractUpdated is a log parse operation binding the contract event 0x5cbd8a0bb00196365d5eb3457c6734e7f06666c3c78e5469b4c9deec7edae048.
+// ParseContractUpdated is a log parse operation binding the contract event 0x865d1c228a8ea13709cfe61f346f7ff67f1bbd4a18ff31ad3e7147350d317c59.
 //
-// Solidity: event BridgeContractUpdated(address arg0)
-func (_BridgeTracking *BridgeTrackingFilterer) ParseBridgeContractUpdated(log types.Log) (*BridgeTrackingBridgeContractUpdated, error) {
-	event := new(BridgeTrackingBridgeContractUpdated)
-	if err := _BridgeTracking.contract.UnpackLog(event, "BridgeContractUpdated", log); err != nil {
+// Solidity: event ContractUpdated(uint8 indexed contractType, address indexed addr)
+func (_BridgeTracking *BridgeTrackingFilterer) ParseContractUpdated(log types.Log) (*BridgeTrackingContractUpdated, error) {
+	event := new(BridgeTrackingContractUpdated)
+	if err := _BridgeTracking.contract.UnpackLog(event, "ContractUpdated", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// BridgeTrackingExternalCallFailedIterator is returned from FilterExternalCallFailed and is used to iterate over the raw logs and unpacked data for ExternalCallFailed events raised by the BridgeTracking contract.
+type BridgeTrackingExternalCallFailedIterator struct {
+	Event *BridgeTrackingExternalCallFailed // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *BridgeTrackingExternalCallFailedIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(BridgeTrackingExternalCallFailed)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(BridgeTrackingExternalCallFailed)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *BridgeTrackingExternalCallFailedIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *BridgeTrackingExternalCallFailedIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// BridgeTrackingExternalCallFailed represents a ExternalCallFailed event raised by the BridgeTracking contract.
+type BridgeTrackingExternalCallFailed struct {
+	To     common.Address
+	MsgSig [4]byte
+	Reason []byte
+	Raw    types.Log // Blockchain specific contextual infos
+}
+
+// FilterExternalCallFailed is a free log retrieval operation binding the contract event 0xeaa424ccc38ebcf22402729592dedf8315790e0128cb577cdeff1a3ee627f827.
+//
+// Solidity: event ExternalCallFailed(address indexed to, bytes4 indexed msgSig, bytes reason)
+func (_BridgeTracking *BridgeTrackingFilterer) FilterExternalCallFailed(opts *bind.FilterOpts, to []common.Address, msgSig [][4]byte) (*BridgeTrackingExternalCallFailedIterator, error) {
+
+	var toRule []interface{}
+	for _, toItem := range to {
+		toRule = append(toRule, toItem)
+	}
+	var msgSigRule []interface{}
+	for _, msgSigItem := range msgSig {
+		msgSigRule = append(msgSigRule, msgSigItem)
+	}
+
+	logs, sub, err := _BridgeTracking.contract.FilterLogs(opts, "ExternalCallFailed", toRule, msgSigRule)
+	if err != nil {
+		return nil, err
+	}
+	return &BridgeTrackingExternalCallFailedIterator{contract: _BridgeTracking.contract, event: "ExternalCallFailed", logs: logs, sub: sub}, nil
+}
+
+// WatchExternalCallFailed is a free log subscription operation binding the contract event 0xeaa424ccc38ebcf22402729592dedf8315790e0128cb577cdeff1a3ee627f827.
+//
+// Solidity: event ExternalCallFailed(address indexed to, bytes4 indexed msgSig, bytes reason)
+func (_BridgeTracking *BridgeTrackingFilterer) WatchExternalCallFailed(opts *bind.WatchOpts, sink chan<- *BridgeTrackingExternalCallFailed, to []common.Address, msgSig [][4]byte) (event.Subscription, error) {
+
+	var toRule []interface{}
+	for _, toItem := range to {
+		toRule = append(toRule, toItem)
+	}
+	var msgSigRule []interface{}
+	for _, msgSigItem := range msgSig {
+		msgSigRule = append(msgSigRule, msgSigItem)
+	}
+
+	logs, sub, err := _BridgeTracking.contract.WatchLogs(opts, "ExternalCallFailed", toRule, msgSigRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(BridgeTrackingExternalCallFailed)
+				if err := _BridgeTracking.contract.UnpackLog(event, "ExternalCallFailed", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseExternalCallFailed is a log parse operation binding the contract event 0xeaa424ccc38ebcf22402729592dedf8315790e0128cb577cdeff1a3ee627f827.
+//
+// Solidity: event ExternalCallFailed(address indexed to, bytes4 indexed msgSig, bytes reason)
+func (_BridgeTracking *BridgeTrackingFilterer) ParseExternalCallFailed(log types.Log) (*BridgeTrackingExternalCallFailed, error) {
+	event := new(BridgeTrackingExternalCallFailed)
+	if err := _BridgeTracking.contract.UnpackLog(event, "ExternalCallFailed", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
@@ -763,140 +927,6 @@ func (_BridgeTracking *BridgeTrackingFilterer) WatchInitialized(opts *bind.Watch
 func (_BridgeTracking *BridgeTrackingFilterer) ParseInitialized(log types.Log) (*BridgeTrackingInitialized, error) {
 	event := new(BridgeTrackingInitialized)
 	if err := _BridgeTracking.contract.UnpackLog(event, "Initialized", log); err != nil {
-		return nil, err
-	}
-	event.Raw = log
-	return event, nil
-}
-
-// BridgeTrackingValidatorContractUpdatedIterator is returned from FilterValidatorContractUpdated and is used to iterate over the raw logs and unpacked data for ValidatorContractUpdated events raised by the BridgeTracking contract.
-type BridgeTrackingValidatorContractUpdatedIterator struct {
-	Event *BridgeTrackingValidatorContractUpdated // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *BridgeTrackingValidatorContractUpdatedIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(BridgeTrackingValidatorContractUpdated)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(BridgeTrackingValidatorContractUpdated)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *BridgeTrackingValidatorContractUpdatedIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *BridgeTrackingValidatorContractUpdatedIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// BridgeTrackingValidatorContractUpdated represents a ValidatorContractUpdated event raised by the BridgeTracking contract.
-type BridgeTrackingValidatorContractUpdated struct {
-	Arg0 common.Address
-	Raw  types.Log // Blockchain specific contextual infos
-}
-
-// FilterValidatorContractUpdated is a free log retrieval operation binding the contract event 0xef40dc07567635f84f5edbd2f8dbc16b40d9d282dd8e7e6f4ff58236b6836169.
-//
-// Solidity: event ValidatorContractUpdated(address arg0)
-func (_BridgeTracking *BridgeTrackingFilterer) FilterValidatorContractUpdated(opts *bind.FilterOpts) (*BridgeTrackingValidatorContractUpdatedIterator, error) {
-
-	logs, sub, err := _BridgeTracking.contract.FilterLogs(opts, "ValidatorContractUpdated")
-	if err != nil {
-		return nil, err
-	}
-	return &BridgeTrackingValidatorContractUpdatedIterator{contract: _BridgeTracking.contract, event: "ValidatorContractUpdated", logs: logs, sub: sub}, nil
-}
-
-// WatchValidatorContractUpdated is a free log subscription operation binding the contract event 0xef40dc07567635f84f5edbd2f8dbc16b40d9d282dd8e7e6f4ff58236b6836169.
-//
-// Solidity: event ValidatorContractUpdated(address arg0)
-func (_BridgeTracking *BridgeTrackingFilterer) WatchValidatorContractUpdated(opts *bind.WatchOpts, sink chan<- *BridgeTrackingValidatorContractUpdated) (event.Subscription, error) {
-
-	logs, sub, err := _BridgeTracking.contract.WatchLogs(opts, "ValidatorContractUpdated")
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(BridgeTrackingValidatorContractUpdated)
-				if err := _BridgeTracking.contract.UnpackLog(event, "ValidatorContractUpdated", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// ParseValidatorContractUpdated is a log parse operation binding the contract event 0xef40dc07567635f84f5edbd2f8dbc16b40d9d282dd8e7e6f4ff58236b6836169.
-//
-// Solidity: event ValidatorContractUpdated(address arg0)
-func (_BridgeTracking *BridgeTrackingFilterer) ParseValidatorContractUpdated(log types.Log) (*BridgeTrackingValidatorContractUpdated, error) {
-	event := new(BridgeTrackingValidatorContractUpdated)
-	if err := _BridgeTracking.contract.UnpackLog(event, "ValidatorContractUpdated", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
