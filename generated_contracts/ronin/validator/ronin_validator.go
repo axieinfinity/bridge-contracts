@@ -28,26 +28,32 @@ var (
 	_ = event.NewSubscription
 )
 
-// Struct1 is an auto generated low-level Go binding around an user-defined struct.
-type Struct1 struct {
-	Admin              common.Address
-	ConsensusAddr      common.Address
-	TreasuryAddr       common.Address
-	BridgeOperatorAddr common.Address
+// ICandidateManagerCommissionSchedule is an auto generated low-level Go binding around an user-defined struct.
+type ICandidateManagerCommissionSchedule struct {
+	EffectiveTimestamp *big.Int
 	CommissionRate     *big.Int
-	RevokingTimestamp  *big.Int
-	TopupDeadline      *big.Int
 }
 
-// Struct0 is an auto generated low-level Go binding around an user-defined struct.
-type Struct0 struct {
+// ICandidateManagerValidatorCandidate is an auto generated low-level Go binding around an user-defined struct.
+type ICandidateManagerValidatorCandidate struct {
+	Admin                        common.Address
+	ConsensusAddr                common.Address
+	TreasuryAddr                 common.Address
+	DeprecatedbridgeOperatorAddr common.Address
+	CommissionRate               *big.Int
+	RevokingTimestamp            *big.Int
+	TopupDeadline                *big.Int
+}
+
+// ICommonInfoEmergencyExitInfo is an auto generated low-level Go binding around an user-defined struct.
+type ICommonInfoEmergencyExitInfo struct {
 	LockedAmount *big.Int
 	RecyclingAt  *big.Int
 }
 
 // ValidatorMetaData contains all meta data concerning the Validator contract.
 var ValidatorMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"ErrAlreadyRequestedEmergencyExit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrAlreadyRequestedRevokingCandidate\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrAlreadyRequestedUpdatingCommissionRate\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrAlreadyWrappedEpoch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrAtEndOfEpochOnly\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrCallPrecompiled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrCallerMustBeBridgeTrackingContract\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrCallerMustBeCoinbase\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrCallerMustBeMaintenanceContract\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrCallerMustBeRoninTrustedOrgContract\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrCallerMustBeSlashIndicatorContract\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrCallerMustBeStakingContract\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrCallerMustBeStakingVestingContract\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"validator\",\"type\":\"address\"}],\"name\":\"ErrCannotBailout\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrExceedsMaxNumberOfCandidate\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_bridgeOperatorAddr\",\"type\":\"address\"}],\"name\":\"ErrExistentBridgeOperator\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrExistentCandidate\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_candidateAdminAddr\",\"type\":\"address\"}],\"name\":\"ErrExistentCandidateAdmin\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_treasuryAddr\",\"type\":\"address\"}],\"name\":\"ErrExistentTreasury\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrInsufficientBalance\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrInvalidCommissionRate\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrInvalidEffectiveDaysOnwards\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrInvalidMaxPrioritizedValidatorNumber\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrInvalidMinEffectiveDaysOnwards\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrNonExistentCandidate\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrRecipientRevert\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrTrustedOrgCannotRenounce\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrUnauthorizedReceiveRON\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrZeroCodeContract\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NonExistentRecyclingInfo\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"epoch\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"consensusAddrs\",\"type\":\"address[]\"}],\"name\":\"BlockProducerSetUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"coinbaseAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"rewardAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"enumICoinbaseExecution.BlockRewardDeprecatedType\",\"name\":\"deprecatedType\",\"type\":\"uint8\"}],\"name\":\"BlockRewardDeprecated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"coinbaseAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"submittedAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bonusAmount\",\"type\":\"uint256\"}],\"name\":\"BlockRewardSubmitted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"bridgeOperator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipientAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"BridgeOperatorRewardDistributed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"bridgeOperator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"contractBalance\",\"type\":\"uint256\"}],\"name\":\"BridgeOperatorRewardDistributionFailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"epoch\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"bridgeOperators\",\"type\":\"address[]\"}],\"name\":\"BridgeOperatorSetUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"BridgeTrackingContractUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[],\"name\":\"BridgeTrackingIncorrectlyResponded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"treasuryAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"admin\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"bridgeOperator\",\"type\":\"address\"}],\"name\":\"CandidateGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"revokingTimestamp\",\"type\":\"uint256\"}],\"name\":\"CandidateRevokingTimestampUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"topupDeadline\",\"type\":\"uint256\"}],\"name\":\"CandidateTopupDeadlineUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"consensusAddrs\",\"type\":\"address[]\"}],\"name\":\"CandidatesRevoked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"effectiveTimestamp\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"rate\",\"type\":\"uint256\"}],\"name\":\"CommissionRateUpdateScheduled\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"rate\",\"type\":\"uint256\"}],\"name\":\"CommissionRateUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipientAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"balance\",\"type\":\"uint256\"}],\"name\":\"DeprecatedRewardRecycleFailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipientAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"DeprecatedRewardRecycled\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"EmergencyExitLockedAmountUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"unlockedAmount\",\"type\":\"uint256\"}],\"name\":\"EmergencyExitLockedFundReleased\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"unlockedAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"contractBalance\",\"type\":\"uint256\"}],\"name\":\"EmergencyExitLockedFundReleasingFailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lockedAmount\",\"type\":\"uint256\"}],\"name\":\"EmergencyExitRequested\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"EmergencyExpiryDurationUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"MaintenanceContractUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"MaxPrioritizedValidatorNumberUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"threshold\",\"type\":\"uint256\"}],\"name\":\"MaxValidatorCandidateUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"MaxValidatorNumberUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"numOfDays\",\"type\":\"uint256\"}],\"name\":\"MinEffectiveDaysOnwardsUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"MiningRewardDistributed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"contractBalance\",\"type\":\"uint256\"}],\"name\":\"MiningRewardDistributionFailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"RoninTrustedOrganizationContractUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"SlashIndicatorContractUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"StakingContractUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"totalAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"consensusAddrs\",\"type\":\"address[]\"},{\"indexed\":false,\"internalType\":\"uint256[]\",\"name\":\"amounts\",\"type\":\"uint256[]\"}],\"name\":\"StakingRewardDistributed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"totalAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"consensusAddrs\",\"type\":\"address[]\"},{\"indexed\":false,\"internalType\":\"uint256[]\",\"name\":\"amounts\",\"type\":\"uint256[]\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"contractBalance\",\"type\":\"uint256\"}],\"name\":\"StakingRewardDistributionFailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"StakingVestingContractUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"jailedUntil\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"deductedStakingAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"blockProducerRewardDeprecated\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"bridgeOperatorRewardDeprecated\",\"type\":\"bool\"}],\"name\":\"ValidatorPunished\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"consensusAddrs\",\"type\":\"address[]\"}],\"name\":\"ValidatorSetUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"validator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"}],\"name\":\"ValidatorUnjailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"periodNumber\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"epochNumber\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"periodEnding\",\"type\":\"bool\"}],\"name\":\"WrappedUpEpoch\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[],\"name\":\"DEFAULT_ADDITION_GAS\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"PERIOD_DURATION\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"bridgeTrackingContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"checkBridgeRewardDeprecatedAtLatestPeriod\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"_result\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_period\",\"type\":\"uint256\"}],\"name\":\"checkBridgeRewardDeprecatedAtPeriod\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"_result\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"checkJailed\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_blockNum\",\"type\":\"uint256\"}],\"name\":\"checkJailedAtBlock\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_addrList\",\"type\":\"address[]\"}],\"name\":\"checkManyJailed\",\"outputs\":[{\"internalType\":\"bool[]\",\"name\":\"_result\",\"type\":\"bool[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_blockProducer\",\"type\":\"address\"}],\"name\":\"checkMiningRewardDeprecated\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"_result\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_blockProducer\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_period\",\"type\":\"uint256\"}],\"name\":\"checkMiningRewardDeprecatedAtPeriod\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"_result\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"currentPeriod\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"currentPeriodStartAtBlock\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"emergencyExitLockedAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"emergencyExpiryDuration\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"name\":\"epochEndingAt\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"name\":\"epochOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_candidateAdmin\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"addresspayable\",\"name\":\"_treasuryAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_bridgeOperatorAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_commissionRate\",\"type\":\"uint256\"}],\"name\":\"execApplyValidatorCandidate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validatorAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_period\",\"type\":\"uint256\"}],\"name\":\"execBailOut\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_secLeftToRevoke\",\"type\":\"uint256\"}],\"name\":\"execEmergencyExit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"addresspayable\",\"name\":\"_recipient\",\"type\":\"address\"}],\"name\":\"execReleaseLockedFundForEmergencyExitRequest\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_secsLeft\",\"type\":\"uint256\"}],\"name\":\"execRequestRenounceCandidate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_effectiveDaysOnwards\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_commissionRate\",\"type\":\"uint256\"}],\"name\":\"execRequestUpdateCommissionRate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validatorAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_newJailedUntil\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_slashAmount\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"_cannotBailout\",\"type\":\"bool\"}],\"name\":\"execSlash\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getBlockProducers\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"_result\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getBridgeOperators\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"_result\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_validatorAddrs\",\"type\":\"address[]\"}],\"name\":\"getBridgeOperatorsOf\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"_result\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_candidate\",\"type\":\"address\"}],\"name\":\"getCandidateInfo\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"admin\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"internalType\":\"addresspayable\",\"name\":\"treasuryAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"bridgeOperatorAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"commissionRate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"revokingTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"topupDeadline\",\"type\":\"uint256\"}],\"internalType\":\"structICandidateManager.ValidatorCandidate\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCandidateInfos\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"admin\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"internalType\":\"addresspayable\",\"name\":\"treasuryAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"bridgeOperatorAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"commissionRate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"revokingTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"topupDeadline\",\"type\":\"uint256\"}],\"internalType\":\"structICandidateManager.ValidatorCandidate[]\",\"name\":\"_list\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_candidate\",\"type\":\"address\"}],\"name\":\"getCommissionChangeSchedule\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"effectiveTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"commissionRate\",\"type\":\"uint256\"}],\"internalType\":\"structICandidateManager.CommissionSchedule\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"getEmergencyExitInfo\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"lockedAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"recyclingAt\",\"type\":\"uint256\"}],\"internalType\":\"structICommonInfo.EmergencyExitInfo\",\"name\":\"_info\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"getJailedTimeLeft\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"isJailed_\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"blockLeft_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"epochLeft_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_blockNum\",\"type\":\"uint256\"}],\"name\":\"getJailedTimeLeftAtBlock\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"isJailed_\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"blockLeft_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"epochLeft_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getLastUpdatedBlock\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getValidatorCandidates\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getValidators\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"_validatorList\",\"type\":\"address[]\"},{\"internalType\":\"address[]\",\"name\":\"_bridgeOperators\",\"type\":\"address[]\"},{\"internalType\":\"enumEnumFlags.ValidatorFlag[]\",\"name\":\"_flags\",\"type\":\"uint8[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"__slashIndicatorContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"__stakingContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"__stakingVestingContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"__maintenanceContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"__roninTrustedOrganizationContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"__bridgeTrackingContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"__maxValidatorNumber\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"__maxValidatorCandidate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"__maxPrioritizedValidatorNumber\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"__minEffectiveDaysOnwards\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"__numberOfBlocksInEpoch\",\"type\":\"uint256\"},{\"internalType\":\"uint256[2]\",\"name\":\"__emergencyExitConfigs\",\"type\":\"uint256[2]\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"isBlockProducer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_bridgeOperatorAddr\",\"type\":\"address\"}],\"name\":\"isBridgeOperator\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"_isOperator\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_candidate\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_admin\",\"type\":\"address\"}],\"name\":\"isCandidateAdmin\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"isOperatingBridge\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"isPeriodEnding\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"isValidator\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"isValidatorCandidate\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maintenanceContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxPrioritizedValidatorNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_maximumPrioritizedValidatorNumber\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxValidatorCandidate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxValidatorNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_maximumValidatorNumber\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minEffectiveDaysOnwards\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"numberOfBlocksInEpoch\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_numberOfBlocks\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"precompilePickValidatorSetAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"precompileSortValidatorsAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"roninTrustedOrganizationContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setBridgeTrackingContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_emergencyExitLockedAmount\",\"type\":\"uint256\"}],\"name\":\"setEmergencyExitLockedAmount\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_emergencyExpiryDuration\",\"type\":\"uint256\"}],\"name\":\"setEmergencyExpiryDuration\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setMaintenanceContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_number\",\"type\":\"uint256\"}],\"name\":\"setMaxPrioritizedValidatorNumber\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_number\",\"type\":\"uint256\"}],\"name\":\"setMaxValidatorCandidate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_max\",\"type\":\"uint256\"}],\"name\":\"setMaxValidatorNumber\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_numOfDays\",\"type\":\"uint256\"}],\"name\":\"setMinEffectiveDaysOnwards\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setRoninTrustedOrganizationContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setSlashIndicatorContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setStakingContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setStakingVestingContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"slashIndicatorContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"stakingContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"stakingVestingContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"submitBlockReward\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalBlockProducers\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_total\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalBridgeOperators\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_total\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalDeprecatedReward\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_epoch\",\"type\":\"uint256\"}],\"name\":\"tryGetPeriodOfEpoch\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"_filled\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"_periodNumber\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"validatorCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"wrapUpEpoch\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
+	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"ErrAlreadyRequestedEmergencyExit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrAlreadyRequestedRevokingCandidate\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrAlreadyRequestedUpdatingCommissionRate\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrAlreadyWrappedEpoch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrAtEndOfEpochOnly\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrCallPrecompiled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrCallerMustBeCoinbase\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"validator\",\"type\":\"address\"}],\"name\":\"ErrCannotBailout\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"enumContractType\",\"name\":\"contractType\",\"type\":\"uint8\"}],\"name\":\"ErrContractTypeNotFound\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrExceedsMaxNumberOfCandidate\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrExistentCandidate\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_candidateAdminAddr\",\"type\":\"address\"}],\"name\":\"ErrExistentCandidateAdmin\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_treasuryAddr\",\"type\":\"address\"}],\"name\":\"ErrExistentTreasury\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"msgSig\",\"type\":\"bytes4\"},{\"internalType\":\"uint256\",\"name\":\"currentBalance\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"sendAmount\",\"type\":\"uint256\"}],\"name\":\"ErrInsufficientBalance\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrInvalidCommissionRate\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrInvalidEffectiveDaysOnwards\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrInvalidMaxPrioritizedValidatorNumber\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrInvalidMinEffectiveDaysOnwards\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrNonExistentCandidate\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"msgSig\",\"type\":\"bytes4\"}],\"name\":\"ErrRecipientRevert\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrTrustedOrgCannotRenounce\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"msgSig\",\"type\":\"bytes4\"},{\"internalType\":\"enumRoleAccess\",\"name\":\"expectedRole\",\"type\":\"uint8\"}],\"name\":\"ErrUnauthorized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ErrUnauthorizedReceiveRON\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"msgSig\",\"type\":\"bytes4\"},{\"internalType\":\"enumContractType\",\"name\":\"expectedContractType\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"actual\",\"type\":\"address\"}],\"name\":\"ErrUnexpectedInternalCall\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"ErrZeroCodeContract\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NonExistentRecyclingInfo\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"epoch\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"consensusAddrs\",\"type\":\"address[]\"}],\"name\":\"BlockProducerSetUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"coinbaseAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"rewardAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"enumICoinbaseExecution.BlockRewardDeprecatedType\",\"name\":\"deprecatedType\",\"type\":\"uint8\"}],\"name\":\"BlockRewardDeprecated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"coinbaseAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"submittedAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bonusAmount\",\"type\":\"uint256\"}],\"name\":\"BlockRewardSubmitted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"bridgeOperator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipientAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"BridgeOperatorRewardDistributed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"bridgeOperator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"contractBalance\",\"type\":\"uint256\"}],\"name\":\"BridgeOperatorRewardDistributionFailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"epoch\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"bridgeOperators\",\"type\":\"address[]\"}],\"name\":\"BridgeOperatorSetUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"treasuryAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"admin\",\"type\":\"address\"}],\"name\":\"CandidateGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"revokingTimestamp\",\"type\":\"uint256\"}],\"name\":\"CandidateRevokingTimestampUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"topupDeadline\",\"type\":\"uint256\"}],\"name\":\"CandidateTopupDeadlineUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"consensusAddrs\",\"type\":\"address[]\"}],\"name\":\"CandidatesRevoked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"effectiveTimestamp\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"rate\",\"type\":\"uint256\"}],\"name\":\"CommissionRateUpdateScheduled\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"rate\",\"type\":\"uint256\"}],\"name\":\"CommissionRateUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"enumContractType\",\"name\":\"contractType\",\"type\":\"uint8\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"ContractUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipientAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"balance\",\"type\":\"uint256\"}],\"name\":\"DeprecatedRewardRecycleFailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipientAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"DeprecatedRewardRecycled\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"EmergencyExitLockedAmountUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"unlockedAmount\",\"type\":\"uint256\"}],\"name\":\"EmergencyExitLockedFundReleased\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"unlockedAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"contractBalance\",\"type\":\"uint256\"}],\"name\":\"EmergencyExitLockedFundReleasingFailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lockedAmount\",\"type\":\"uint256\"}],\"name\":\"EmergencyExitRequested\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"EmergencyExpiryDurationUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"FastFinalityRewardDistributed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"contractBalance\",\"type\":\"uint256\"}],\"name\":\"FastFinalityRewardDistributionFailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"MaxPrioritizedValidatorNumberUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"threshold\",\"type\":\"uint256\"}],\"name\":\"MaxValidatorCandidateUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"MaxValidatorNumberUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"numOfDays\",\"type\":\"uint256\"}],\"name\":\"MinEffectiveDaysOnwardsUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"MiningRewardDistributed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"contractBalance\",\"type\":\"uint256\"}],\"name\":\"MiningRewardDistributionFailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"totalAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"consensusAddrs\",\"type\":\"address[]\"},{\"indexed\":false,\"internalType\":\"uint256[]\",\"name\":\"amounts\",\"type\":\"uint256[]\"}],\"name\":\"StakingRewardDistributed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"totalAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"consensusAddrs\",\"type\":\"address[]\"},{\"indexed\":false,\"internalType\":\"uint256[]\",\"name\":\"amounts\",\"type\":\"uint256[]\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"contractBalance\",\"type\":\"uint256\"}],\"name\":\"StakingRewardDistributionFailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"jailedUntil\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"deductedStakingAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"blockProducerRewardDeprecated\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"bridgeOperatorRewardDeprecated\",\"type\":\"bool\"}],\"name\":\"ValidatorPunished\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"consensusAddrs\",\"type\":\"address[]\"}],\"name\":\"ValidatorSetUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"validator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"}],\"name\":\"ValidatorUnjailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"periodNumber\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"epochNumber\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"periodEnding\",\"type\":\"bool\"}],\"name\":\"WrappedUpEpoch\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[],\"name\":\"DEFAULT_ADDITION_GAS\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"PERIOD_DURATION\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"checkJailed\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_blockNum\",\"type\":\"uint256\"}],\"name\":\"checkJailedAtBlock\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_addrList\",\"type\":\"address[]\"}],\"name\":\"checkManyJailed\",\"outputs\":[{\"internalType\":\"bool[]\",\"name\":\"_result\",\"type\":\"bool[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_blockProducer\",\"type\":\"address\"}],\"name\":\"checkMiningRewardDeprecated\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"_result\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_blockProducer\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_period\",\"type\":\"uint256\"}],\"name\":\"checkMiningRewardDeprecatedAtPeriod\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"_result\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"currentPeriod\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"currentPeriodStartAtBlock\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"emergencyExitLockedAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"emergencyExpiryDuration\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"name\":\"epochEndingAt\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"name\":\"epochOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_candidateAdmin\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"addresspayable\",\"name\":\"_treasuryAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_commissionRate\",\"type\":\"uint256\"}],\"name\":\"execApplyValidatorCandidate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"validatorAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"period\",\"type\":\"uint256\"}],\"name\":\"execBailOut\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_secLeftToRevoke\",\"type\":\"uint256\"}],\"name\":\"execEmergencyExit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"addresspayable\",\"name\":\"_recipient\",\"type\":\"address\"}],\"name\":\"execReleaseLockedFundForEmergencyExitRequest\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_secsLeft\",\"type\":\"uint256\"}],\"name\":\"execRequestRenounceCandidate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_effectiveDaysOnwards\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_commissionRate\",\"type\":\"uint256\"}],\"name\":\"execRequestUpdateCommissionRate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"validatorAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"newJailedUntil\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"slashAmount\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"cannotBailout\",\"type\":\"bool\"}],\"name\":\"execSlash\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getBlockProducers\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"_result\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_candidate\",\"type\":\"address\"}],\"name\":\"getCandidateInfo\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"admin\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"internalType\":\"addresspayable\",\"name\":\"treasuryAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"______deprecatedbridgeOperatorAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"commissionRate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"revokingTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"topupDeadline\",\"type\":\"uint256\"}],\"internalType\":\"structICandidateManager.ValidatorCandidate\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCandidateInfos\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"admin\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"consensusAddr\",\"type\":\"address\"},{\"internalType\":\"addresspayable\",\"name\":\"treasuryAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"______deprecatedbridgeOperatorAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"commissionRate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"revokingTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"topupDeadline\",\"type\":\"uint256\"}],\"internalType\":\"structICandidateManager.ValidatorCandidate[]\",\"name\":\"_list\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_candidate\",\"type\":\"address\"}],\"name\":\"getCommissionChangeSchedule\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"effectiveTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"commissionRate\",\"type\":\"uint256\"}],\"internalType\":\"structICandidateManager.CommissionSchedule\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"enumContractType\",\"name\":\"contractType\",\"type\":\"uint8\"}],\"name\":\"getContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"contract_\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusAddr\",\"type\":\"address\"}],\"name\":\"getEmergencyExitInfo\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"lockedAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"recyclingAt\",\"type\":\"uint256\"}],\"internalType\":\"structICommonInfo.EmergencyExitInfo\",\"name\":\"_info\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"getJailedTimeLeft\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"isJailed_\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"blockLeft_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"epochLeft_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_blockNum\",\"type\":\"uint256\"}],\"name\":\"getJailedTimeLeftAtBlock\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"isJailed_\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"blockLeft_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"epochLeft_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getLastUpdatedBlock\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getValidatorCandidates\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getValidators\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"_validatorList\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"__slashIndicatorContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"__stakingContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"__stakingVestingContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"__maintenanceContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"__roninTrustedOrganizationContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"__maxValidatorNumber\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"__maxValidatorCandidate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"__maxPrioritizedValidatorNumber\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"__minEffectiveDaysOnwards\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"__numberOfBlocksInEpoch\",\"type\":\"uint256\"},{\"internalType\":\"uint256[2]\",\"name\":\"__emergencyExitConfigs\",\"type\":\"uint256[2]\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"initializeV2\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"fastFinalityTrackingContract\",\"type\":\"address\"}],\"name\":\"initializeV3\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"isBlockProducer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_candidate\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_admin\",\"type\":\"address\"}],\"name\":\"isCandidateAdmin\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"isPeriodEnding\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"isValidatorCandidate\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxPrioritizedValidatorNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_maximumPrioritizedValidatorNumber\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxValidatorCandidate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxValidatorNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_maximumValidatorNumber\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minEffectiveDaysOnward\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"numberOfBlocksInEpoch\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_numberOfBlocks\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"precompilePickValidatorSetAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"precompileSortValidatorsAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"enumContractType\",\"name\":\"contractType\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"setContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_emergencyExitLockedAmount\",\"type\":\"uint256\"}],\"name\":\"setEmergencyExitLockedAmount\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_emergencyExpiryDuration\",\"type\":\"uint256\"}],\"name\":\"setEmergencyExpiryDuration\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_number\",\"type\":\"uint256\"}],\"name\":\"setMaxPrioritizedValidatorNumber\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_number\",\"type\":\"uint256\"}],\"name\":\"setMaxValidatorCandidate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_max\",\"type\":\"uint256\"}],\"name\":\"setMaxValidatorNumber\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_numOfDays\",\"type\":\"uint256\"}],\"name\":\"setMinEffectiveDaysOnwards\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"submitBlockReward\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalBlockProducer\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_total\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalDeprecatedReward\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_epoch\",\"type\":\"uint256\"}],\"name\":\"tryGetPeriodOfEpoch\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"_filled\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"_periodNumber\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"validatorCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"wrapUpEpoch\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
 }
 
 // ValidatorABI is the input ABI used to generate the binding from.
@@ -256,99 +262,6 @@ func (_Validator *ValidatorSession) PERIODDURATION() (*big.Int, error) {
 // Solidity: function PERIOD_DURATION() view returns(uint256)
 func (_Validator *ValidatorCallerSession) PERIODDURATION() (*big.Int, error) {
 	return _Validator.Contract.PERIODDURATION(&_Validator.CallOpts)
-}
-
-// BridgeTrackingContract is a free data retrieval call binding the contract method 0x4493421e.
-//
-// Solidity: function bridgeTrackingContract() view returns(address)
-func (_Validator *ValidatorCaller) BridgeTrackingContract(opts *bind.CallOpts) (common.Address, error) {
-	var out []interface{}
-	err := _Validator.contract.Call(opts, &out, "bridgeTrackingContract")
-
-	if err != nil {
-		return *new(common.Address), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
-
-	return out0, err
-
-}
-
-// BridgeTrackingContract is a free data retrieval call binding the contract method 0x4493421e.
-//
-// Solidity: function bridgeTrackingContract() view returns(address)
-func (_Validator *ValidatorSession) BridgeTrackingContract() (common.Address, error) {
-	return _Validator.Contract.BridgeTrackingContract(&_Validator.CallOpts)
-}
-
-// BridgeTrackingContract is a free data retrieval call binding the contract method 0x4493421e.
-//
-// Solidity: function bridgeTrackingContract() view returns(address)
-func (_Validator *ValidatorCallerSession) BridgeTrackingContract() (common.Address, error) {
-	return _Validator.Contract.BridgeTrackingContract(&_Validator.CallOpts)
-}
-
-// CheckBridgeRewardDeprecatedAtLatestPeriod is a free data retrieval call binding the contract method 0x1ab4a34c.
-//
-// Solidity: function checkBridgeRewardDeprecatedAtLatestPeriod(address _consensusAddr) view returns(bool _result)
-func (_Validator *ValidatorCaller) CheckBridgeRewardDeprecatedAtLatestPeriod(opts *bind.CallOpts, _consensusAddr common.Address) (bool, error) {
-	var out []interface{}
-	err := _Validator.contract.Call(opts, &out, "checkBridgeRewardDeprecatedAtLatestPeriod", _consensusAddr)
-
-	if err != nil {
-		return *new(bool), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
-
-	return out0, err
-
-}
-
-// CheckBridgeRewardDeprecatedAtLatestPeriod is a free data retrieval call binding the contract method 0x1ab4a34c.
-//
-// Solidity: function checkBridgeRewardDeprecatedAtLatestPeriod(address _consensusAddr) view returns(bool _result)
-func (_Validator *ValidatorSession) CheckBridgeRewardDeprecatedAtLatestPeriod(_consensusAddr common.Address) (bool, error) {
-	return _Validator.Contract.CheckBridgeRewardDeprecatedAtLatestPeriod(&_Validator.CallOpts, _consensusAddr)
-}
-
-// CheckBridgeRewardDeprecatedAtLatestPeriod is a free data retrieval call binding the contract method 0x1ab4a34c.
-//
-// Solidity: function checkBridgeRewardDeprecatedAtLatestPeriod(address _consensusAddr) view returns(bool _result)
-func (_Validator *ValidatorCallerSession) CheckBridgeRewardDeprecatedAtLatestPeriod(_consensusAddr common.Address) (bool, error) {
-	return _Validator.Contract.CheckBridgeRewardDeprecatedAtLatestPeriod(&_Validator.CallOpts, _consensusAddr)
-}
-
-// CheckBridgeRewardDeprecatedAtPeriod is a free data retrieval call binding the contract method 0xd5a0744f.
-//
-// Solidity: function checkBridgeRewardDeprecatedAtPeriod(address _consensusAddr, uint256 _period) view returns(bool _result)
-func (_Validator *ValidatorCaller) CheckBridgeRewardDeprecatedAtPeriod(opts *bind.CallOpts, _consensusAddr common.Address, _period *big.Int) (bool, error) {
-	var out []interface{}
-	err := _Validator.contract.Call(opts, &out, "checkBridgeRewardDeprecatedAtPeriod", _consensusAddr, _period)
-
-	if err != nil {
-		return *new(bool), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
-
-	return out0, err
-
-}
-
-// CheckBridgeRewardDeprecatedAtPeriod is a free data retrieval call binding the contract method 0xd5a0744f.
-//
-// Solidity: function checkBridgeRewardDeprecatedAtPeriod(address _consensusAddr, uint256 _period) view returns(bool _result)
-func (_Validator *ValidatorSession) CheckBridgeRewardDeprecatedAtPeriod(_consensusAddr common.Address, _period *big.Int) (bool, error) {
-	return _Validator.Contract.CheckBridgeRewardDeprecatedAtPeriod(&_Validator.CallOpts, _consensusAddr, _period)
-}
-
-// CheckBridgeRewardDeprecatedAtPeriod is a free data retrieval call binding the contract method 0xd5a0744f.
-//
-// Solidity: function checkBridgeRewardDeprecatedAtPeriod(address _consensusAddr, uint256 _period) view returns(bool _result)
-func (_Validator *ValidatorCallerSession) CheckBridgeRewardDeprecatedAtPeriod(_consensusAddr common.Address, _period *big.Int) (bool, error) {
-	return _Validator.Contract.CheckBridgeRewardDeprecatedAtPeriod(&_Validator.CallOpts, _consensusAddr, _period)
 }
 
 // CheckJailed is a free data retrieval call binding the contract method 0x2924de71.
@@ -723,80 +636,18 @@ func (_Validator *ValidatorCallerSession) GetBlockProducers() ([]common.Address,
 	return _Validator.Contract.GetBlockProducers(&_Validator.CallOpts)
 }
 
-// GetBridgeOperators is a free data retrieval call binding the contract method 0x9b19dbfd.
-//
-// Solidity: function getBridgeOperators() view returns(address[] _result)
-func (_Validator *ValidatorCaller) GetBridgeOperators(opts *bind.CallOpts) ([]common.Address, error) {
-	var out []interface{}
-	err := _Validator.contract.Call(opts, &out, "getBridgeOperators")
-
-	if err != nil {
-		return *new([]common.Address), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new([]common.Address)).(*[]common.Address)
-
-	return out0, err
-
-}
-
-// GetBridgeOperators is a free data retrieval call binding the contract method 0x9b19dbfd.
-//
-// Solidity: function getBridgeOperators() view returns(address[] _result)
-func (_Validator *ValidatorSession) GetBridgeOperators() ([]common.Address, error) {
-	return _Validator.Contract.GetBridgeOperators(&_Validator.CallOpts)
-}
-
-// GetBridgeOperators is a free data retrieval call binding the contract method 0x9b19dbfd.
-//
-// Solidity: function getBridgeOperators() view returns(address[] _result)
-func (_Validator *ValidatorCallerSession) GetBridgeOperators() ([]common.Address, error) {
-	return _Validator.Contract.GetBridgeOperators(&_Validator.CallOpts)
-}
-
-// GetBridgeOperatorsOf is a free data retrieval call binding the contract method 0x4244d4c9.
-//
-// Solidity: function getBridgeOperatorsOf(address[] _validatorAddrs) view returns(address[] _result)
-func (_Validator *ValidatorCaller) GetBridgeOperatorsOf(opts *bind.CallOpts, _validatorAddrs []common.Address) ([]common.Address, error) {
-	var out []interface{}
-	err := _Validator.contract.Call(opts, &out, "getBridgeOperatorsOf", _validatorAddrs)
-
-	if err != nil {
-		return *new([]common.Address), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new([]common.Address)).(*[]common.Address)
-
-	return out0, err
-
-}
-
-// GetBridgeOperatorsOf is a free data retrieval call binding the contract method 0x4244d4c9.
-//
-// Solidity: function getBridgeOperatorsOf(address[] _validatorAddrs) view returns(address[] _result)
-func (_Validator *ValidatorSession) GetBridgeOperatorsOf(_validatorAddrs []common.Address) ([]common.Address, error) {
-	return _Validator.Contract.GetBridgeOperatorsOf(&_Validator.CallOpts, _validatorAddrs)
-}
-
-// GetBridgeOperatorsOf is a free data retrieval call binding the contract method 0x4244d4c9.
-//
-// Solidity: function getBridgeOperatorsOf(address[] _validatorAddrs) view returns(address[] _result)
-func (_Validator *ValidatorCallerSession) GetBridgeOperatorsOf(_validatorAddrs []common.Address) ([]common.Address, error) {
-	return _Validator.Contract.GetBridgeOperatorsOf(&_Validator.CallOpts, _validatorAddrs)
-}
-
 // GetCandidateInfo is a free data retrieval call binding the contract method 0x28bde1e1.
 //
 // Solidity: function getCandidateInfo(address _candidate) view returns((address,address,address,address,uint256,uint256,uint256))
-func (_Validator *ValidatorCaller) GetCandidateInfo(opts *bind.CallOpts, _candidate common.Address) (Struct1, error) {
+func (_Validator *ValidatorCaller) GetCandidateInfo(opts *bind.CallOpts, _candidate common.Address) (ICandidateManagerValidatorCandidate, error) {
 	var out []interface{}
 	err := _Validator.contract.Call(opts, &out, "getCandidateInfo", _candidate)
 
 	if err != nil {
-		return *new(Struct1), err
+		return *new(ICandidateManagerValidatorCandidate), err
 	}
 
-	out0 := *abi.ConvertType(out[0], new(Struct1)).(*Struct1)
+	out0 := *abi.ConvertType(out[0], new(ICandidateManagerValidatorCandidate)).(*ICandidateManagerValidatorCandidate)
 
 	return out0, err
 
@@ -805,29 +656,29 @@ func (_Validator *ValidatorCaller) GetCandidateInfo(opts *bind.CallOpts, _candid
 // GetCandidateInfo is a free data retrieval call binding the contract method 0x28bde1e1.
 //
 // Solidity: function getCandidateInfo(address _candidate) view returns((address,address,address,address,uint256,uint256,uint256))
-func (_Validator *ValidatorSession) GetCandidateInfo(_candidate common.Address) (Struct1, error) {
+func (_Validator *ValidatorSession) GetCandidateInfo(_candidate common.Address) (ICandidateManagerValidatorCandidate, error) {
 	return _Validator.Contract.GetCandidateInfo(&_Validator.CallOpts, _candidate)
 }
 
 // GetCandidateInfo is a free data retrieval call binding the contract method 0x28bde1e1.
 //
 // Solidity: function getCandidateInfo(address _candidate) view returns((address,address,address,address,uint256,uint256,uint256))
-func (_Validator *ValidatorCallerSession) GetCandidateInfo(_candidate common.Address) (Struct1, error) {
+func (_Validator *ValidatorCallerSession) GetCandidateInfo(_candidate common.Address) (ICandidateManagerValidatorCandidate, error) {
 	return _Validator.Contract.GetCandidateInfo(&_Validator.CallOpts, _candidate)
 }
 
 // GetCandidateInfos is a free data retrieval call binding the contract method 0x5248184a.
 //
 // Solidity: function getCandidateInfos() view returns((address,address,address,address,uint256,uint256,uint256)[] _list)
-func (_Validator *ValidatorCaller) GetCandidateInfos(opts *bind.CallOpts) ([]Struct1, error) {
+func (_Validator *ValidatorCaller) GetCandidateInfos(opts *bind.CallOpts) ([]ICandidateManagerValidatorCandidate, error) {
 	var out []interface{}
 	err := _Validator.contract.Call(opts, &out, "getCandidateInfos")
 
 	if err != nil {
-		return *new([]Struct1), err
+		return *new([]ICandidateManagerValidatorCandidate), err
 	}
 
-	out0 := *abi.ConvertType(out[0], new([]Struct1)).(*[]Struct1)
+	out0 := *abi.ConvertType(out[0], new([]ICandidateManagerValidatorCandidate)).(*[]ICandidateManagerValidatorCandidate)
 
 	return out0, err
 
@@ -836,29 +687,29 @@ func (_Validator *ValidatorCaller) GetCandidateInfos(opts *bind.CallOpts) ([]Str
 // GetCandidateInfos is a free data retrieval call binding the contract method 0x5248184a.
 //
 // Solidity: function getCandidateInfos() view returns((address,address,address,address,uint256,uint256,uint256)[] _list)
-func (_Validator *ValidatorSession) GetCandidateInfos() ([]Struct1, error) {
+func (_Validator *ValidatorSession) GetCandidateInfos() ([]ICandidateManagerValidatorCandidate, error) {
 	return _Validator.Contract.GetCandidateInfos(&_Validator.CallOpts)
 }
 
 // GetCandidateInfos is a free data retrieval call binding the contract method 0x5248184a.
 //
 // Solidity: function getCandidateInfos() view returns((address,address,address,address,uint256,uint256,uint256)[] _list)
-func (_Validator *ValidatorCallerSession) GetCandidateInfos() ([]Struct1, error) {
+func (_Validator *ValidatorCallerSession) GetCandidateInfos() ([]ICandidateManagerValidatorCandidate, error) {
 	return _Validator.Contract.GetCandidateInfos(&_Validator.CallOpts)
 }
 
 // GetCommissionChangeSchedule is a free data retrieval call binding the contract method 0xedb194bb.
 //
 // Solidity: function getCommissionChangeSchedule(address _candidate) view returns((uint256,uint256))
-func (_Validator *ValidatorCaller) GetCommissionChangeSchedule(opts *bind.CallOpts, _candidate common.Address) (Struct0, error) {
+func (_Validator *ValidatorCaller) GetCommissionChangeSchedule(opts *bind.CallOpts, _candidate common.Address) (ICandidateManagerCommissionSchedule, error) {
 	var out []interface{}
 	err := _Validator.contract.Call(opts, &out, "getCommissionChangeSchedule", _candidate)
 
 	if err != nil {
-		return *new(Struct0), err
+		return *new(ICandidateManagerCommissionSchedule), err
 	}
 
-	out0 := *abi.ConvertType(out[0], new(Struct0)).(*Struct0)
+	out0 := *abi.ConvertType(out[0], new(ICandidateManagerCommissionSchedule)).(*ICandidateManagerCommissionSchedule)
 
 	return out0, err
 
@@ -867,29 +718,60 @@ func (_Validator *ValidatorCaller) GetCommissionChangeSchedule(opts *bind.CallOp
 // GetCommissionChangeSchedule is a free data retrieval call binding the contract method 0xedb194bb.
 //
 // Solidity: function getCommissionChangeSchedule(address _candidate) view returns((uint256,uint256))
-func (_Validator *ValidatorSession) GetCommissionChangeSchedule(_candidate common.Address) (Struct0, error) {
+func (_Validator *ValidatorSession) GetCommissionChangeSchedule(_candidate common.Address) (ICandidateManagerCommissionSchedule, error) {
 	return _Validator.Contract.GetCommissionChangeSchedule(&_Validator.CallOpts, _candidate)
 }
 
 // GetCommissionChangeSchedule is a free data retrieval call binding the contract method 0xedb194bb.
 //
 // Solidity: function getCommissionChangeSchedule(address _candidate) view returns((uint256,uint256))
-func (_Validator *ValidatorCallerSession) GetCommissionChangeSchedule(_candidate common.Address) (Struct0, error) {
+func (_Validator *ValidatorCallerSession) GetCommissionChangeSchedule(_candidate common.Address) (ICandidateManagerCommissionSchedule, error) {
 	return _Validator.Contract.GetCommissionChangeSchedule(&_Validator.CallOpts, _candidate)
+}
+
+// GetContract is a free data retrieval call binding the contract method 0xde981f1b.
+//
+// Solidity: function getContract(uint8 contractType) view returns(address contract_)
+func (_Validator *ValidatorCaller) GetContract(opts *bind.CallOpts, contractType uint8) (common.Address, error) {
+	var out []interface{}
+	err := _Validator.contract.Call(opts, &out, "getContract", contractType)
+
+	if err != nil {
+		return *new(common.Address), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
+
+	return out0, err
+
+}
+
+// GetContract is a free data retrieval call binding the contract method 0xde981f1b.
+//
+// Solidity: function getContract(uint8 contractType) view returns(address contract_)
+func (_Validator *ValidatorSession) GetContract(contractType uint8) (common.Address, error) {
+	return _Validator.Contract.GetContract(&_Validator.CallOpts, contractType)
+}
+
+// GetContract is a free data retrieval call binding the contract method 0xde981f1b.
+//
+// Solidity: function getContract(uint8 contractType) view returns(address contract_)
+func (_Validator *ValidatorCallerSession) GetContract(contractType uint8) (common.Address, error) {
+	return _Validator.Contract.GetContract(&_Validator.CallOpts, contractType)
 }
 
 // GetEmergencyExitInfo is a free data retrieval call binding the contract method 0x2d784a98.
 //
 // Solidity: function getEmergencyExitInfo(address _consensusAddr) view returns((uint256,uint256) _info)
-func (_Validator *ValidatorCaller) GetEmergencyExitInfo(opts *bind.CallOpts, _consensusAddr common.Address) (Struct0, error) {
+func (_Validator *ValidatorCaller) GetEmergencyExitInfo(opts *bind.CallOpts, _consensusAddr common.Address) (ICommonInfoEmergencyExitInfo, error) {
 	var out []interface{}
 	err := _Validator.contract.Call(opts, &out, "getEmergencyExitInfo", _consensusAddr)
 
 	if err != nil {
-		return *new(Struct0), err
+		return *new(ICommonInfoEmergencyExitInfo), err
 	}
 
-	out0 := *abi.ConvertType(out[0], new(Struct0)).(*Struct0)
+	out0 := *abi.ConvertType(out[0], new(ICommonInfoEmergencyExitInfo)).(*ICommonInfoEmergencyExitInfo)
 
 	return out0, err
 
@@ -898,14 +780,14 @@ func (_Validator *ValidatorCaller) GetEmergencyExitInfo(opts *bind.CallOpts, _co
 // GetEmergencyExitInfo is a free data retrieval call binding the contract method 0x2d784a98.
 //
 // Solidity: function getEmergencyExitInfo(address _consensusAddr) view returns((uint256,uint256) _info)
-func (_Validator *ValidatorSession) GetEmergencyExitInfo(_consensusAddr common.Address) (Struct0, error) {
+func (_Validator *ValidatorSession) GetEmergencyExitInfo(_consensusAddr common.Address) (ICommonInfoEmergencyExitInfo, error) {
 	return _Validator.Contract.GetEmergencyExitInfo(&_Validator.CallOpts, _consensusAddr)
 }
 
 // GetEmergencyExitInfo is a free data retrieval call binding the contract method 0x2d784a98.
 //
 // Solidity: function getEmergencyExitInfo(address _consensusAddr) view returns((uint256,uint256) _info)
-func (_Validator *ValidatorCallerSession) GetEmergencyExitInfo(_consensusAddr common.Address) (Struct0, error) {
+func (_Validator *ValidatorCallerSession) GetEmergencyExitInfo(_consensusAddr common.Address) (ICommonInfoEmergencyExitInfo, error) {
 	return _Validator.Contract.GetEmergencyExitInfo(&_Validator.CallOpts, _consensusAddr)
 }
 
@@ -1073,51 +955,32 @@ func (_Validator *ValidatorCallerSession) GetValidatorCandidates() ([]common.Add
 
 // GetValidators is a free data retrieval call binding the contract method 0xb7ab4db5.
 //
-// Solidity: function getValidators() view returns(address[] _validatorList, address[] _bridgeOperators, uint8[] _flags)
-func (_Validator *ValidatorCaller) GetValidators(opts *bind.CallOpts) (struct {
-	ValidatorList   []common.Address
-	BridgeOperators []common.Address
-	Flags           []uint8
-}, error) {
+// Solidity: function getValidators() view returns(address[] _validatorList)
+func (_Validator *ValidatorCaller) GetValidators(opts *bind.CallOpts) ([]common.Address, error) {
 	var out []interface{}
 	err := _Validator.contract.Call(opts, &out, "getValidators")
 
-	outstruct := new(struct {
-		ValidatorList   []common.Address
-		BridgeOperators []common.Address
-		Flags           []uint8
-	})
 	if err != nil {
-		return *outstruct, err
+		return *new([]common.Address), err
 	}
 
-	outstruct.ValidatorList = *abi.ConvertType(out[0], new([]common.Address)).(*[]common.Address)
-	outstruct.BridgeOperators = *abi.ConvertType(out[1], new([]common.Address)).(*[]common.Address)
-	outstruct.Flags = *abi.ConvertType(out[2], new([]uint8)).(*[]uint8)
+	out0 := *abi.ConvertType(out[0], new([]common.Address)).(*[]common.Address)
 
-	return *outstruct, err
+	return out0, err
 
 }
 
 // GetValidators is a free data retrieval call binding the contract method 0xb7ab4db5.
 //
-// Solidity: function getValidators() view returns(address[] _validatorList, address[] _bridgeOperators, uint8[] _flags)
-func (_Validator *ValidatorSession) GetValidators() (struct {
-	ValidatorList   []common.Address
-	BridgeOperators []common.Address
-	Flags           []uint8
-}, error) {
+// Solidity: function getValidators() view returns(address[] _validatorList)
+func (_Validator *ValidatorSession) GetValidators() ([]common.Address, error) {
 	return _Validator.Contract.GetValidators(&_Validator.CallOpts)
 }
 
 // GetValidators is a free data retrieval call binding the contract method 0xb7ab4db5.
 //
-// Solidity: function getValidators() view returns(address[] _validatorList, address[] _bridgeOperators, uint8[] _flags)
-func (_Validator *ValidatorCallerSession) GetValidators() (struct {
-	ValidatorList   []common.Address
-	BridgeOperators []common.Address
-	Flags           []uint8
-}, error) {
+// Solidity: function getValidators() view returns(address[] _validatorList)
+func (_Validator *ValidatorCallerSession) GetValidators() ([]common.Address, error) {
 	return _Validator.Contract.GetValidators(&_Validator.CallOpts)
 }
 
@@ -1152,37 +1015,6 @@ func (_Validator *ValidatorCallerSession) IsBlockProducer(_addr common.Address) 
 	return _Validator.Contract.IsBlockProducer(&_Validator.CallOpts, _addr)
 }
 
-// IsBridgeOperator is a free data retrieval call binding the contract method 0xb405aaf2.
-//
-// Solidity: function isBridgeOperator(address _bridgeOperatorAddr) view returns(bool _isOperator)
-func (_Validator *ValidatorCaller) IsBridgeOperator(opts *bind.CallOpts, _bridgeOperatorAddr common.Address) (bool, error) {
-	var out []interface{}
-	err := _Validator.contract.Call(opts, &out, "isBridgeOperator", _bridgeOperatorAddr)
-
-	if err != nil {
-		return *new(bool), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
-
-	return out0, err
-
-}
-
-// IsBridgeOperator is a free data retrieval call binding the contract method 0xb405aaf2.
-//
-// Solidity: function isBridgeOperator(address _bridgeOperatorAddr) view returns(bool _isOperator)
-func (_Validator *ValidatorSession) IsBridgeOperator(_bridgeOperatorAddr common.Address) (bool, error) {
-	return _Validator.Contract.IsBridgeOperator(&_Validator.CallOpts, _bridgeOperatorAddr)
-}
-
-// IsBridgeOperator is a free data retrieval call binding the contract method 0xb405aaf2.
-//
-// Solidity: function isBridgeOperator(address _bridgeOperatorAddr) view returns(bool _isOperator)
-func (_Validator *ValidatorCallerSession) IsBridgeOperator(_bridgeOperatorAddr common.Address) (bool, error) {
-	return _Validator.Contract.IsBridgeOperator(&_Validator.CallOpts, _bridgeOperatorAddr)
-}
-
 // IsCandidateAdmin is a free data retrieval call binding the contract method 0x04d971ab.
 //
 // Solidity: function isCandidateAdmin(address _candidate, address _admin) view returns(bool)
@@ -1212,37 +1044,6 @@ func (_Validator *ValidatorSession) IsCandidateAdmin(_candidate common.Address, 
 // Solidity: function isCandidateAdmin(address _candidate, address _admin) view returns(bool)
 func (_Validator *ValidatorCallerSession) IsCandidateAdmin(_candidate common.Address, _admin common.Address) (bool, error) {
 	return _Validator.Contract.IsCandidateAdmin(&_Validator.CallOpts, _candidate, _admin)
-}
-
-// IsOperatingBridge is a free data retrieval call binding the contract method 0x1f628801.
-//
-// Solidity: function isOperatingBridge(address _consensusAddr) view returns(bool)
-func (_Validator *ValidatorCaller) IsOperatingBridge(opts *bind.CallOpts, _consensusAddr common.Address) (bool, error) {
-	var out []interface{}
-	err := _Validator.contract.Call(opts, &out, "isOperatingBridge", _consensusAddr)
-
-	if err != nil {
-		return *new(bool), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
-
-	return out0, err
-
-}
-
-// IsOperatingBridge is a free data retrieval call binding the contract method 0x1f628801.
-//
-// Solidity: function isOperatingBridge(address _consensusAddr) view returns(bool)
-func (_Validator *ValidatorSession) IsOperatingBridge(_consensusAddr common.Address) (bool, error) {
-	return _Validator.Contract.IsOperatingBridge(&_Validator.CallOpts, _consensusAddr)
-}
-
-// IsOperatingBridge is a free data retrieval call binding the contract method 0x1f628801.
-//
-// Solidity: function isOperatingBridge(address _consensusAddr) view returns(bool)
-func (_Validator *ValidatorCallerSession) IsOperatingBridge(_consensusAddr common.Address) (bool, error) {
-	return _Validator.Contract.IsOperatingBridge(&_Validator.CallOpts, _consensusAddr)
 }
 
 // IsPeriodEnding is a free data retrieval call binding the contract method 0x217f35c2.
@@ -1276,37 +1077,6 @@ func (_Validator *ValidatorCallerSession) IsPeriodEnding() (bool, error) {
 	return _Validator.Contract.IsPeriodEnding(&_Validator.CallOpts)
 }
 
-// IsValidator is a free data retrieval call binding the contract method 0xfacd743b.
-//
-// Solidity: function isValidator(address _addr) view returns(bool)
-func (_Validator *ValidatorCaller) IsValidator(opts *bind.CallOpts, _addr common.Address) (bool, error) {
-	var out []interface{}
-	err := _Validator.contract.Call(opts, &out, "isValidator", _addr)
-
-	if err != nil {
-		return *new(bool), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
-
-	return out0, err
-
-}
-
-// IsValidator is a free data retrieval call binding the contract method 0xfacd743b.
-//
-// Solidity: function isValidator(address _addr) view returns(bool)
-func (_Validator *ValidatorSession) IsValidator(_addr common.Address) (bool, error) {
-	return _Validator.Contract.IsValidator(&_Validator.CallOpts, _addr)
-}
-
-// IsValidator is a free data retrieval call binding the contract method 0xfacd743b.
-//
-// Solidity: function isValidator(address _addr) view returns(bool)
-func (_Validator *ValidatorCallerSession) IsValidator(_addr common.Address) (bool, error) {
-	return _Validator.Contract.IsValidator(&_Validator.CallOpts, _addr)
-}
-
 // IsValidatorCandidate is a free data retrieval call binding the contract method 0xa0c3f2d2.
 //
 // Solidity: function isValidatorCandidate(address _addr) view returns(bool)
@@ -1336,37 +1106,6 @@ func (_Validator *ValidatorSession) IsValidatorCandidate(_addr common.Address) (
 // Solidity: function isValidatorCandidate(address _addr) view returns(bool)
 func (_Validator *ValidatorCallerSession) IsValidatorCandidate(_addr common.Address) (bool, error) {
 	return _Validator.Contract.IsValidatorCandidate(&_Validator.CallOpts, _addr)
-}
-
-// MaintenanceContract is a free data retrieval call binding the contract method 0xd2cb215e.
-//
-// Solidity: function maintenanceContract() view returns(address)
-func (_Validator *ValidatorCaller) MaintenanceContract(opts *bind.CallOpts) (common.Address, error) {
-	var out []interface{}
-	err := _Validator.contract.Call(opts, &out, "maintenanceContract")
-
-	if err != nil {
-		return *new(common.Address), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
-
-	return out0, err
-
-}
-
-// MaintenanceContract is a free data retrieval call binding the contract method 0xd2cb215e.
-//
-// Solidity: function maintenanceContract() view returns(address)
-func (_Validator *ValidatorSession) MaintenanceContract() (common.Address, error) {
-	return _Validator.Contract.MaintenanceContract(&_Validator.CallOpts)
-}
-
-// MaintenanceContract is a free data retrieval call binding the contract method 0xd2cb215e.
-//
-// Solidity: function maintenanceContract() view returns(address)
-func (_Validator *ValidatorCallerSession) MaintenanceContract() (common.Address, error) {
-	return _Validator.Contract.MaintenanceContract(&_Validator.CallOpts)
 }
 
 // MaxPrioritizedValidatorNumber is a free data retrieval call binding the contract method 0xeeb629a8.
@@ -1462,12 +1201,12 @@ func (_Validator *ValidatorCallerSession) MaxValidatorNumber() (*big.Int, error)
 	return _Validator.Contract.MaxValidatorNumber(&_Validator.CallOpts)
 }
 
-// MinEffectiveDaysOnwards is a free data retrieval call binding the contract method 0xcba44de9.
+// MinEffectiveDaysOnward is a free data retrieval call binding the contract method 0x612c8d98.
 //
-// Solidity: function minEffectiveDaysOnwards() view returns(uint256)
-func (_Validator *ValidatorCaller) MinEffectiveDaysOnwards(opts *bind.CallOpts) (*big.Int, error) {
+// Solidity: function minEffectiveDaysOnward() view returns(uint256)
+func (_Validator *ValidatorCaller) MinEffectiveDaysOnward(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _Validator.contract.Call(opts, &out, "minEffectiveDaysOnwards")
+	err := _Validator.contract.Call(opts, &out, "minEffectiveDaysOnward")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -1479,18 +1218,18 @@ func (_Validator *ValidatorCaller) MinEffectiveDaysOnwards(opts *bind.CallOpts) 
 
 }
 
-// MinEffectiveDaysOnwards is a free data retrieval call binding the contract method 0xcba44de9.
+// MinEffectiveDaysOnward is a free data retrieval call binding the contract method 0x612c8d98.
 //
-// Solidity: function minEffectiveDaysOnwards() view returns(uint256)
-func (_Validator *ValidatorSession) MinEffectiveDaysOnwards() (*big.Int, error) {
-	return _Validator.Contract.MinEffectiveDaysOnwards(&_Validator.CallOpts)
+// Solidity: function minEffectiveDaysOnward() view returns(uint256)
+func (_Validator *ValidatorSession) MinEffectiveDaysOnward() (*big.Int, error) {
+	return _Validator.Contract.MinEffectiveDaysOnward(&_Validator.CallOpts)
 }
 
-// MinEffectiveDaysOnwards is a free data retrieval call binding the contract method 0xcba44de9.
+// MinEffectiveDaysOnward is a free data retrieval call binding the contract method 0x612c8d98.
 //
-// Solidity: function minEffectiveDaysOnwards() view returns(uint256)
-func (_Validator *ValidatorCallerSession) MinEffectiveDaysOnwards() (*big.Int, error) {
-	return _Validator.Contract.MinEffectiveDaysOnwards(&_Validator.CallOpts)
+// Solidity: function minEffectiveDaysOnward() view returns(uint256)
+func (_Validator *ValidatorCallerSession) MinEffectiveDaysOnward() (*big.Int, error) {
+	return _Validator.Contract.MinEffectiveDaysOnward(&_Validator.CallOpts)
 }
 
 // NumberOfBlocksInEpoch is a free data retrieval call binding the contract method 0x6aa1c2ef.
@@ -1586,136 +1325,12 @@ func (_Validator *ValidatorCallerSession) PrecompileSortValidatorsAddress() (com
 	return _Validator.Contract.PrecompileSortValidatorsAddress(&_Validator.CallOpts)
 }
 
-// RoninTrustedOrganizationContract is a free data retrieval call binding the contract method 0x5511cde1.
+// TotalBlockProducer is a free data retrieval call binding the contract method 0xafc69d73.
 //
-// Solidity: function roninTrustedOrganizationContract() view returns(address)
-func (_Validator *ValidatorCaller) RoninTrustedOrganizationContract(opts *bind.CallOpts) (common.Address, error) {
+// Solidity: function totalBlockProducer() view returns(uint256 _total)
+func (_Validator *ValidatorCaller) TotalBlockProducer(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _Validator.contract.Call(opts, &out, "roninTrustedOrganizationContract")
-
-	if err != nil {
-		return *new(common.Address), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
-
-	return out0, err
-
-}
-
-// RoninTrustedOrganizationContract is a free data retrieval call binding the contract method 0x5511cde1.
-//
-// Solidity: function roninTrustedOrganizationContract() view returns(address)
-func (_Validator *ValidatorSession) RoninTrustedOrganizationContract() (common.Address, error) {
-	return _Validator.Contract.RoninTrustedOrganizationContract(&_Validator.CallOpts)
-}
-
-// RoninTrustedOrganizationContract is a free data retrieval call binding the contract method 0x5511cde1.
-//
-// Solidity: function roninTrustedOrganizationContract() view returns(address)
-func (_Validator *ValidatorCallerSession) RoninTrustedOrganizationContract() (common.Address, error) {
-	return _Validator.Contract.RoninTrustedOrganizationContract(&_Validator.CallOpts)
-}
-
-// SlashIndicatorContract is a free data retrieval call binding the contract method 0x5a08482d.
-//
-// Solidity: function slashIndicatorContract() view returns(address)
-func (_Validator *ValidatorCaller) SlashIndicatorContract(opts *bind.CallOpts) (common.Address, error) {
-	var out []interface{}
-	err := _Validator.contract.Call(opts, &out, "slashIndicatorContract")
-
-	if err != nil {
-		return *new(common.Address), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
-
-	return out0, err
-
-}
-
-// SlashIndicatorContract is a free data retrieval call binding the contract method 0x5a08482d.
-//
-// Solidity: function slashIndicatorContract() view returns(address)
-func (_Validator *ValidatorSession) SlashIndicatorContract() (common.Address, error) {
-	return _Validator.Contract.SlashIndicatorContract(&_Validator.CallOpts)
-}
-
-// SlashIndicatorContract is a free data retrieval call binding the contract method 0x5a08482d.
-//
-// Solidity: function slashIndicatorContract() view returns(address)
-func (_Validator *ValidatorCallerSession) SlashIndicatorContract() (common.Address, error) {
-	return _Validator.Contract.SlashIndicatorContract(&_Validator.CallOpts)
-}
-
-// StakingContract is a free data retrieval call binding the contract method 0xee99205c.
-//
-// Solidity: function stakingContract() view returns(address)
-func (_Validator *ValidatorCaller) StakingContract(opts *bind.CallOpts) (common.Address, error) {
-	var out []interface{}
-	err := _Validator.contract.Call(opts, &out, "stakingContract")
-
-	if err != nil {
-		return *new(common.Address), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
-
-	return out0, err
-
-}
-
-// StakingContract is a free data retrieval call binding the contract method 0xee99205c.
-//
-// Solidity: function stakingContract() view returns(address)
-func (_Validator *ValidatorSession) StakingContract() (common.Address, error) {
-	return _Validator.Contract.StakingContract(&_Validator.CallOpts)
-}
-
-// StakingContract is a free data retrieval call binding the contract method 0xee99205c.
-//
-// Solidity: function stakingContract() view returns(address)
-func (_Validator *ValidatorCallerSession) StakingContract() (common.Address, error) {
-	return _Validator.Contract.StakingContract(&_Validator.CallOpts)
-}
-
-// StakingVestingContract is a free data retrieval call binding the contract method 0x3529214b.
-//
-// Solidity: function stakingVestingContract() view returns(address)
-func (_Validator *ValidatorCaller) StakingVestingContract(opts *bind.CallOpts) (common.Address, error) {
-	var out []interface{}
-	err := _Validator.contract.Call(opts, &out, "stakingVestingContract")
-
-	if err != nil {
-		return *new(common.Address), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
-
-	return out0, err
-
-}
-
-// StakingVestingContract is a free data retrieval call binding the contract method 0x3529214b.
-//
-// Solidity: function stakingVestingContract() view returns(address)
-func (_Validator *ValidatorSession) StakingVestingContract() (common.Address, error) {
-	return _Validator.Contract.StakingVestingContract(&_Validator.CallOpts)
-}
-
-// StakingVestingContract is a free data retrieval call binding the contract method 0x3529214b.
-//
-// Solidity: function stakingVestingContract() view returns(address)
-func (_Validator *ValidatorCallerSession) StakingVestingContract() (common.Address, error) {
-	return _Validator.Contract.StakingVestingContract(&_Validator.CallOpts)
-}
-
-// TotalBlockProducers is a free data retrieval call binding the contract method 0x9e94b9ec.
-//
-// Solidity: function totalBlockProducers() view returns(uint256 _total)
-func (_Validator *ValidatorCaller) TotalBlockProducers(opts *bind.CallOpts) (*big.Int, error) {
-	var out []interface{}
-	err := _Validator.contract.Call(opts, &out, "totalBlockProducers")
+	err := _Validator.contract.Call(opts, &out, "totalBlockProducer")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -1727,49 +1342,18 @@ func (_Validator *ValidatorCaller) TotalBlockProducers(opts *bind.CallOpts) (*bi
 
 }
 
-// TotalBlockProducers is a free data retrieval call binding the contract method 0x9e94b9ec.
+// TotalBlockProducer is a free data retrieval call binding the contract method 0xafc69d73.
 //
-// Solidity: function totalBlockProducers() view returns(uint256 _total)
-func (_Validator *ValidatorSession) TotalBlockProducers() (*big.Int, error) {
-	return _Validator.Contract.TotalBlockProducers(&_Validator.CallOpts)
+// Solidity: function totalBlockProducer() view returns(uint256 _total)
+func (_Validator *ValidatorSession) TotalBlockProducer() (*big.Int, error) {
+	return _Validator.Contract.TotalBlockProducer(&_Validator.CallOpts)
 }
 
-// TotalBlockProducers is a free data retrieval call binding the contract method 0x9e94b9ec.
+// TotalBlockProducer is a free data retrieval call binding the contract method 0xafc69d73.
 //
-// Solidity: function totalBlockProducers() view returns(uint256 _total)
-func (_Validator *ValidatorCallerSession) TotalBlockProducers() (*big.Int, error) {
-	return _Validator.Contract.TotalBlockProducers(&_Validator.CallOpts)
-}
-
-// TotalBridgeOperators is a free data retrieval call binding the contract method 0x562d5304.
-//
-// Solidity: function totalBridgeOperators() view returns(uint256 _total)
-func (_Validator *ValidatorCaller) TotalBridgeOperators(opts *bind.CallOpts) (*big.Int, error) {
-	var out []interface{}
-	err := _Validator.contract.Call(opts, &out, "totalBridgeOperators")
-
-	if err != nil {
-		return *new(*big.Int), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
-
-	return out0, err
-
-}
-
-// TotalBridgeOperators is a free data retrieval call binding the contract method 0x562d5304.
-//
-// Solidity: function totalBridgeOperators() view returns(uint256 _total)
-func (_Validator *ValidatorSession) TotalBridgeOperators() (*big.Int, error) {
-	return _Validator.Contract.TotalBridgeOperators(&_Validator.CallOpts)
-}
-
-// TotalBridgeOperators is a free data retrieval call binding the contract method 0x562d5304.
-//
-// Solidity: function totalBridgeOperators() view returns(uint256 _total)
-func (_Validator *ValidatorCallerSession) TotalBridgeOperators() (*big.Int, error) {
-	return _Validator.Contract.TotalBridgeOperators(&_Validator.CallOpts)
+// Solidity: function totalBlockProducer() view returns(uint256 _total)
+func (_Validator *ValidatorCallerSession) TotalBlockProducer() (*big.Int, error) {
+	return _Validator.Contract.TotalBlockProducer(&_Validator.CallOpts)
 }
 
 // TotalDeprecatedReward is a free data retrieval call binding the contract method 0x4ee4d72b.
@@ -1879,46 +1463,46 @@ func (_Validator *ValidatorCallerSession) ValidatorCount() (*big.Int, error) {
 	return _Validator.Contract.ValidatorCount(&_Validator.CallOpts)
 }
 
-// ExecApplyValidatorCandidate is a paid mutator transaction binding the contract method 0x1104e528.
+// ExecApplyValidatorCandidate is a paid mutator transaction binding the contract method 0xf883afaf.
 //
-// Solidity: function execApplyValidatorCandidate(address _candidateAdmin, address _consensusAddr, address _treasuryAddr, address _bridgeOperatorAddr, uint256 _commissionRate) returns()
-func (_Validator *ValidatorTransactor) ExecApplyValidatorCandidate(opts *bind.TransactOpts, _candidateAdmin common.Address, _consensusAddr common.Address, _treasuryAddr common.Address, _bridgeOperatorAddr common.Address, _commissionRate *big.Int) (*types.Transaction, error) {
-	return _Validator.contract.Transact(opts, "execApplyValidatorCandidate", _candidateAdmin, _consensusAddr, _treasuryAddr, _bridgeOperatorAddr, _commissionRate)
+// Solidity: function execApplyValidatorCandidate(address _candidateAdmin, address _consensusAddr, address _treasuryAddr, uint256 _commissionRate) returns()
+func (_Validator *ValidatorTransactor) ExecApplyValidatorCandidate(opts *bind.TransactOpts, _candidateAdmin common.Address, _consensusAddr common.Address, _treasuryAddr common.Address, _commissionRate *big.Int) (*types.Transaction, error) {
+	return _Validator.contract.Transact(opts, "execApplyValidatorCandidate", _candidateAdmin, _consensusAddr, _treasuryAddr, _commissionRate)
 }
 
-// ExecApplyValidatorCandidate is a paid mutator transaction binding the contract method 0x1104e528.
+// ExecApplyValidatorCandidate is a paid mutator transaction binding the contract method 0xf883afaf.
 //
-// Solidity: function execApplyValidatorCandidate(address _candidateAdmin, address _consensusAddr, address _treasuryAddr, address _bridgeOperatorAddr, uint256 _commissionRate) returns()
-func (_Validator *ValidatorSession) ExecApplyValidatorCandidate(_candidateAdmin common.Address, _consensusAddr common.Address, _treasuryAddr common.Address, _bridgeOperatorAddr common.Address, _commissionRate *big.Int) (*types.Transaction, error) {
-	return _Validator.Contract.ExecApplyValidatorCandidate(&_Validator.TransactOpts, _candidateAdmin, _consensusAddr, _treasuryAddr, _bridgeOperatorAddr, _commissionRate)
+// Solidity: function execApplyValidatorCandidate(address _candidateAdmin, address _consensusAddr, address _treasuryAddr, uint256 _commissionRate) returns()
+func (_Validator *ValidatorSession) ExecApplyValidatorCandidate(_candidateAdmin common.Address, _consensusAddr common.Address, _treasuryAddr common.Address, _commissionRate *big.Int) (*types.Transaction, error) {
+	return _Validator.Contract.ExecApplyValidatorCandidate(&_Validator.TransactOpts, _candidateAdmin, _consensusAddr, _treasuryAddr, _commissionRate)
 }
 
-// ExecApplyValidatorCandidate is a paid mutator transaction binding the contract method 0x1104e528.
+// ExecApplyValidatorCandidate is a paid mutator transaction binding the contract method 0xf883afaf.
 //
-// Solidity: function execApplyValidatorCandidate(address _candidateAdmin, address _consensusAddr, address _treasuryAddr, address _bridgeOperatorAddr, uint256 _commissionRate) returns()
-func (_Validator *ValidatorTransactorSession) ExecApplyValidatorCandidate(_candidateAdmin common.Address, _consensusAddr common.Address, _treasuryAddr common.Address, _bridgeOperatorAddr common.Address, _commissionRate *big.Int) (*types.Transaction, error) {
-	return _Validator.Contract.ExecApplyValidatorCandidate(&_Validator.TransactOpts, _candidateAdmin, _consensusAddr, _treasuryAddr, _bridgeOperatorAddr, _commissionRate)
-}
-
-// ExecBailOut is a paid mutator transaction binding the contract method 0x15b5ebde.
-//
-// Solidity: function execBailOut(address _validatorAddr, uint256 _period) returns()
-func (_Validator *ValidatorTransactor) ExecBailOut(opts *bind.TransactOpts, _validatorAddr common.Address, _period *big.Int) (*types.Transaction, error) {
-	return _Validator.contract.Transact(opts, "execBailOut", _validatorAddr, _period)
+// Solidity: function execApplyValidatorCandidate(address _candidateAdmin, address _consensusAddr, address _treasuryAddr, uint256 _commissionRate) returns()
+func (_Validator *ValidatorTransactorSession) ExecApplyValidatorCandidate(_candidateAdmin common.Address, _consensusAddr common.Address, _treasuryAddr common.Address, _commissionRate *big.Int) (*types.Transaction, error) {
+	return _Validator.Contract.ExecApplyValidatorCandidate(&_Validator.TransactOpts, _candidateAdmin, _consensusAddr, _treasuryAddr, _commissionRate)
 }
 
 // ExecBailOut is a paid mutator transaction binding the contract method 0x15b5ebde.
 //
-// Solidity: function execBailOut(address _validatorAddr, uint256 _period) returns()
-func (_Validator *ValidatorSession) ExecBailOut(_validatorAddr common.Address, _period *big.Int) (*types.Transaction, error) {
-	return _Validator.Contract.ExecBailOut(&_Validator.TransactOpts, _validatorAddr, _period)
+// Solidity: function execBailOut(address validatorAddr, uint256 period) returns()
+func (_Validator *ValidatorTransactor) ExecBailOut(opts *bind.TransactOpts, validatorAddr common.Address, period *big.Int) (*types.Transaction, error) {
+	return _Validator.contract.Transact(opts, "execBailOut", validatorAddr, period)
 }
 
 // ExecBailOut is a paid mutator transaction binding the contract method 0x15b5ebde.
 //
-// Solidity: function execBailOut(address _validatorAddr, uint256 _period) returns()
-func (_Validator *ValidatorTransactorSession) ExecBailOut(_validatorAddr common.Address, _period *big.Int) (*types.Transaction, error) {
-	return _Validator.Contract.ExecBailOut(&_Validator.TransactOpts, _validatorAddr, _period)
+// Solidity: function execBailOut(address validatorAddr, uint256 period) returns()
+func (_Validator *ValidatorSession) ExecBailOut(validatorAddr common.Address, period *big.Int) (*types.Transaction, error) {
+	return _Validator.Contract.ExecBailOut(&_Validator.TransactOpts, validatorAddr, period)
+}
+
+// ExecBailOut is a paid mutator transaction binding the contract method 0x15b5ebde.
+//
+// Solidity: function execBailOut(address validatorAddr, uint256 period) returns()
+func (_Validator *ValidatorTransactorSession) ExecBailOut(validatorAddr common.Address, period *big.Int) (*types.Transaction, error) {
+	return _Validator.Contract.ExecBailOut(&_Validator.TransactOpts, validatorAddr, period)
 }
 
 // ExecEmergencyExit is a paid mutator transaction binding the contract method 0xa7c2f119.
@@ -2007,65 +1591,107 @@ func (_Validator *ValidatorTransactorSession) ExecRequestUpdateCommissionRate(_c
 
 // ExecSlash is a paid mutator transaction binding the contract method 0x2f78204c.
 //
-// Solidity: function execSlash(address _validatorAddr, uint256 _newJailedUntil, uint256 _slashAmount, bool _cannotBailout) returns()
-func (_Validator *ValidatorTransactor) ExecSlash(opts *bind.TransactOpts, _validatorAddr common.Address, _newJailedUntil *big.Int, _slashAmount *big.Int, _cannotBailout bool) (*types.Transaction, error) {
-	return _Validator.contract.Transact(opts, "execSlash", _validatorAddr, _newJailedUntil, _slashAmount, _cannotBailout)
+// Solidity: function execSlash(address validatorAddr, uint256 newJailedUntil, uint256 slashAmount, bool cannotBailout) returns()
+func (_Validator *ValidatorTransactor) ExecSlash(opts *bind.TransactOpts, validatorAddr common.Address, newJailedUntil *big.Int, slashAmount *big.Int, cannotBailout bool) (*types.Transaction, error) {
+	return _Validator.contract.Transact(opts, "execSlash", validatorAddr, newJailedUntil, slashAmount, cannotBailout)
 }
 
 // ExecSlash is a paid mutator transaction binding the contract method 0x2f78204c.
 //
-// Solidity: function execSlash(address _validatorAddr, uint256 _newJailedUntil, uint256 _slashAmount, bool _cannotBailout) returns()
-func (_Validator *ValidatorSession) ExecSlash(_validatorAddr common.Address, _newJailedUntil *big.Int, _slashAmount *big.Int, _cannotBailout bool) (*types.Transaction, error) {
-	return _Validator.Contract.ExecSlash(&_Validator.TransactOpts, _validatorAddr, _newJailedUntil, _slashAmount, _cannotBailout)
+// Solidity: function execSlash(address validatorAddr, uint256 newJailedUntil, uint256 slashAmount, bool cannotBailout) returns()
+func (_Validator *ValidatorSession) ExecSlash(validatorAddr common.Address, newJailedUntil *big.Int, slashAmount *big.Int, cannotBailout bool) (*types.Transaction, error) {
+	return _Validator.Contract.ExecSlash(&_Validator.TransactOpts, validatorAddr, newJailedUntil, slashAmount, cannotBailout)
 }
 
 // ExecSlash is a paid mutator transaction binding the contract method 0x2f78204c.
 //
-// Solidity: function execSlash(address _validatorAddr, uint256 _newJailedUntil, uint256 _slashAmount, bool _cannotBailout) returns()
-func (_Validator *ValidatorTransactorSession) ExecSlash(_validatorAddr common.Address, _newJailedUntil *big.Int, _slashAmount *big.Int, _cannotBailout bool) (*types.Transaction, error) {
-	return _Validator.Contract.ExecSlash(&_Validator.TransactOpts, _validatorAddr, _newJailedUntil, _slashAmount, _cannotBailout)
+// Solidity: function execSlash(address validatorAddr, uint256 newJailedUntil, uint256 slashAmount, bool cannotBailout) returns()
+func (_Validator *ValidatorTransactorSession) ExecSlash(validatorAddr common.Address, newJailedUntil *big.Int, slashAmount *big.Int, cannotBailout bool) (*types.Transaction, error) {
+	return _Validator.Contract.ExecSlash(&_Validator.TransactOpts, validatorAddr, newJailedUntil, slashAmount, cannotBailout)
 }
 
 // Initialize is a paid mutator transaction binding the contract method 0x367ec12b.
 //
-// Solidity: function initialize(address __slashIndicatorContract, address __stakingContract, address __stakingVestingContract, address __maintenanceContract, address __roninTrustedOrganizationContract, address __bridgeTrackingContract, uint256 __maxValidatorNumber, uint256 __maxValidatorCandidate, uint256 __maxPrioritizedValidatorNumber, uint256 __minEffectiveDaysOnwards, uint256 __numberOfBlocksInEpoch, uint256[2] __emergencyExitConfigs) returns()
-func (_Validator *ValidatorTransactor) Initialize(opts *bind.TransactOpts, __slashIndicatorContract common.Address, __stakingContract common.Address, __stakingVestingContract common.Address, __maintenanceContract common.Address, __roninTrustedOrganizationContract common.Address, __bridgeTrackingContract common.Address, __maxValidatorNumber *big.Int, __maxValidatorCandidate *big.Int, __maxPrioritizedValidatorNumber *big.Int, __minEffectiveDaysOnwards *big.Int, __numberOfBlocksInEpoch *big.Int, __emergencyExitConfigs [2]*big.Int) (*types.Transaction, error) {
-	return _Validator.contract.Transact(opts, "initialize", __slashIndicatorContract, __stakingContract, __stakingVestingContract, __maintenanceContract, __roninTrustedOrganizationContract, __bridgeTrackingContract, __maxValidatorNumber, __maxValidatorCandidate, __maxPrioritizedValidatorNumber, __minEffectiveDaysOnwards, __numberOfBlocksInEpoch, __emergencyExitConfigs)
+// Solidity: function initialize(address __slashIndicatorContract, address __stakingContract, address __stakingVestingContract, address __maintenanceContract, address __roninTrustedOrganizationContract, address , uint256 __maxValidatorNumber, uint256 __maxValidatorCandidate, uint256 __maxPrioritizedValidatorNumber, uint256 __minEffectiveDaysOnwards, uint256 __numberOfBlocksInEpoch, uint256[2] __emergencyExitConfigs) returns()
+func (_Validator *ValidatorTransactor) Initialize(opts *bind.TransactOpts, __slashIndicatorContract common.Address, __stakingContract common.Address, __stakingVestingContract common.Address, __maintenanceContract common.Address, __roninTrustedOrganizationContract common.Address, arg5 common.Address, __maxValidatorNumber *big.Int, __maxValidatorCandidate *big.Int, __maxPrioritizedValidatorNumber *big.Int, __minEffectiveDaysOnwards *big.Int, __numberOfBlocksInEpoch *big.Int, __emergencyExitConfigs [2]*big.Int) (*types.Transaction, error) {
+	return _Validator.contract.Transact(opts, "initialize", __slashIndicatorContract, __stakingContract, __stakingVestingContract, __maintenanceContract, __roninTrustedOrganizationContract, arg5, __maxValidatorNumber, __maxValidatorCandidate, __maxPrioritizedValidatorNumber, __minEffectiveDaysOnwards, __numberOfBlocksInEpoch, __emergencyExitConfigs)
 }
 
 // Initialize is a paid mutator transaction binding the contract method 0x367ec12b.
 //
-// Solidity: function initialize(address __slashIndicatorContract, address __stakingContract, address __stakingVestingContract, address __maintenanceContract, address __roninTrustedOrganizationContract, address __bridgeTrackingContract, uint256 __maxValidatorNumber, uint256 __maxValidatorCandidate, uint256 __maxPrioritizedValidatorNumber, uint256 __minEffectiveDaysOnwards, uint256 __numberOfBlocksInEpoch, uint256[2] __emergencyExitConfigs) returns()
-func (_Validator *ValidatorSession) Initialize(__slashIndicatorContract common.Address, __stakingContract common.Address, __stakingVestingContract common.Address, __maintenanceContract common.Address, __roninTrustedOrganizationContract common.Address, __bridgeTrackingContract common.Address, __maxValidatorNumber *big.Int, __maxValidatorCandidate *big.Int, __maxPrioritizedValidatorNumber *big.Int, __minEffectiveDaysOnwards *big.Int, __numberOfBlocksInEpoch *big.Int, __emergencyExitConfigs [2]*big.Int) (*types.Transaction, error) {
-	return _Validator.Contract.Initialize(&_Validator.TransactOpts, __slashIndicatorContract, __stakingContract, __stakingVestingContract, __maintenanceContract, __roninTrustedOrganizationContract, __bridgeTrackingContract, __maxValidatorNumber, __maxValidatorCandidate, __maxPrioritizedValidatorNumber, __minEffectiveDaysOnwards, __numberOfBlocksInEpoch, __emergencyExitConfigs)
+// Solidity: function initialize(address __slashIndicatorContract, address __stakingContract, address __stakingVestingContract, address __maintenanceContract, address __roninTrustedOrganizationContract, address , uint256 __maxValidatorNumber, uint256 __maxValidatorCandidate, uint256 __maxPrioritizedValidatorNumber, uint256 __minEffectiveDaysOnwards, uint256 __numberOfBlocksInEpoch, uint256[2] __emergencyExitConfigs) returns()
+func (_Validator *ValidatorSession) Initialize(__slashIndicatorContract common.Address, __stakingContract common.Address, __stakingVestingContract common.Address, __maintenanceContract common.Address, __roninTrustedOrganizationContract common.Address, arg5 common.Address, __maxValidatorNumber *big.Int, __maxValidatorCandidate *big.Int, __maxPrioritizedValidatorNumber *big.Int, __minEffectiveDaysOnwards *big.Int, __numberOfBlocksInEpoch *big.Int, __emergencyExitConfigs [2]*big.Int) (*types.Transaction, error) {
+	return _Validator.Contract.Initialize(&_Validator.TransactOpts, __slashIndicatorContract, __stakingContract, __stakingVestingContract, __maintenanceContract, __roninTrustedOrganizationContract, arg5, __maxValidatorNumber, __maxValidatorCandidate, __maxPrioritizedValidatorNumber, __minEffectiveDaysOnwards, __numberOfBlocksInEpoch, __emergencyExitConfigs)
 }
 
 // Initialize is a paid mutator transaction binding the contract method 0x367ec12b.
 //
-// Solidity: function initialize(address __slashIndicatorContract, address __stakingContract, address __stakingVestingContract, address __maintenanceContract, address __roninTrustedOrganizationContract, address __bridgeTrackingContract, uint256 __maxValidatorNumber, uint256 __maxValidatorCandidate, uint256 __maxPrioritizedValidatorNumber, uint256 __minEffectiveDaysOnwards, uint256 __numberOfBlocksInEpoch, uint256[2] __emergencyExitConfigs) returns()
-func (_Validator *ValidatorTransactorSession) Initialize(__slashIndicatorContract common.Address, __stakingContract common.Address, __stakingVestingContract common.Address, __maintenanceContract common.Address, __roninTrustedOrganizationContract common.Address, __bridgeTrackingContract common.Address, __maxValidatorNumber *big.Int, __maxValidatorCandidate *big.Int, __maxPrioritizedValidatorNumber *big.Int, __minEffectiveDaysOnwards *big.Int, __numberOfBlocksInEpoch *big.Int, __emergencyExitConfigs [2]*big.Int) (*types.Transaction, error) {
-	return _Validator.Contract.Initialize(&_Validator.TransactOpts, __slashIndicatorContract, __stakingContract, __stakingVestingContract, __maintenanceContract, __roninTrustedOrganizationContract, __bridgeTrackingContract, __maxValidatorNumber, __maxValidatorCandidate, __maxPrioritizedValidatorNumber, __minEffectiveDaysOnwards, __numberOfBlocksInEpoch, __emergencyExitConfigs)
+// Solidity: function initialize(address __slashIndicatorContract, address __stakingContract, address __stakingVestingContract, address __maintenanceContract, address __roninTrustedOrganizationContract, address , uint256 __maxValidatorNumber, uint256 __maxValidatorCandidate, uint256 __maxPrioritizedValidatorNumber, uint256 __minEffectiveDaysOnwards, uint256 __numberOfBlocksInEpoch, uint256[2] __emergencyExitConfigs) returns()
+func (_Validator *ValidatorTransactorSession) Initialize(__slashIndicatorContract common.Address, __stakingContract common.Address, __stakingVestingContract common.Address, __maintenanceContract common.Address, __roninTrustedOrganizationContract common.Address, arg5 common.Address, __maxValidatorNumber *big.Int, __maxValidatorCandidate *big.Int, __maxPrioritizedValidatorNumber *big.Int, __minEffectiveDaysOnwards *big.Int, __numberOfBlocksInEpoch *big.Int, __emergencyExitConfigs [2]*big.Int) (*types.Transaction, error) {
+	return _Validator.Contract.Initialize(&_Validator.TransactOpts, __slashIndicatorContract, __stakingContract, __stakingVestingContract, __maintenanceContract, __roninTrustedOrganizationContract, arg5, __maxValidatorNumber, __maxValidatorCandidate, __maxPrioritizedValidatorNumber, __minEffectiveDaysOnwards, __numberOfBlocksInEpoch, __emergencyExitConfigs)
 }
 
-// SetBridgeTrackingContract is a paid mutator transaction binding the contract method 0x9c8d98da.
+// InitializeV2 is a paid mutator transaction binding the contract method 0x5cd8a76b.
 //
-// Solidity: function setBridgeTrackingContract(address _addr) returns()
-func (_Validator *ValidatorTransactor) SetBridgeTrackingContract(opts *bind.TransactOpts, _addr common.Address) (*types.Transaction, error) {
-	return _Validator.contract.Transact(opts, "setBridgeTrackingContract", _addr)
+// Solidity: function initializeV2() returns()
+func (_Validator *ValidatorTransactor) InitializeV2(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Validator.contract.Transact(opts, "initializeV2")
 }
 
-// SetBridgeTrackingContract is a paid mutator transaction binding the contract method 0x9c8d98da.
+// InitializeV2 is a paid mutator transaction binding the contract method 0x5cd8a76b.
 //
-// Solidity: function setBridgeTrackingContract(address _addr) returns()
-func (_Validator *ValidatorSession) SetBridgeTrackingContract(_addr common.Address) (*types.Transaction, error) {
-	return _Validator.Contract.SetBridgeTrackingContract(&_Validator.TransactOpts, _addr)
+// Solidity: function initializeV2() returns()
+func (_Validator *ValidatorSession) InitializeV2() (*types.Transaction, error) {
+	return _Validator.Contract.InitializeV2(&_Validator.TransactOpts)
 }
 
-// SetBridgeTrackingContract is a paid mutator transaction binding the contract method 0x9c8d98da.
+// InitializeV2 is a paid mutator transaction binding the contract method 0x5cd8a76b.
 //
-// Solidity: function setBridgeTrackingContract(address _addr) returns()
-func (_Validator *ValidatorTransactorSession) SetBridgeTrackingContract(_addr common.Address) (*types.Transaction, error) {
-	return _Validator.Contract.SetBridgeTrackingContract(&_Validator.TransactOpts, _addr)
+// Solidity: function initializeV2() returns()
+func (_Validator *ValidatorTransactorSession) InitializeV2() (*types.Transaction, error) {
+	return _Validator.Contract.InitializeV2(&_Validator.TransactOpts)
+}
+
+// InitializeV3 is a paid mutator transaction binding the contract method 0x3101cfcb.
+//
+// Solidity: function initializeV3(address fastFinalityTrackingContract) returns()
+func (_Validator *ValidatorTransactor) InitializeV3(opts *bind.TransactOpts, fastFinalityTrackingContract common.Address) (*types.Transaction, error) {
+	return _Validator.contract.Transact(opts, "initializeV3", fastFinalityTrackingContract)
+}
+
+// InitializeV3 is a paid mutator transaction binding the contract method 0x3101cfcb.
+//
+// Solidity: function initializeV3(address fastFinalityTrackingContract) returns()
+func (_Validator *ValidatorSession) InitializeV3(fastFinalityTrackingContract common.Address) (*types.Transaction, error) {
+	return _Validator.Contract.InitializeV3(&_Validator.TransactOpts, fastFinalityTrackingContract)
+}
+
+// InitializeV3 is a paid mutator transaction binding the contract method 0x3101cfcb.
+//
+// Solidity: function initializeV3(address fastFinalityTrackingContract) returns()
+func (_Validator *ValidatorTransactorSession) InitializeV3(fastFinalityTrackingContract common.Address) (*types.Transaction, error) {
+	return _Validator.Contract.InitializeV3(&_Validator.TransactOpts, fastFinalityTrackingContract)
+}
+
+// SetContract is a paid mutator transaction binding the contract method 0x865e6fd3.
+//
+// Solidity: function setContract(uint8 contractType, address addr) returns()
+func (_Validator *ValidatorTransactor) SetContract(opts *bind.TransactOpts, contractType uint8, addr common.Address) (*types.Transaction, error) {
+	return _Validator.contract.Transact(opts, "setContract", contractType, addr)
+}
+
+// SetContract is a paid mutator transaction binding the contract method 0x865e6fd3.
+//
+// Solidity: function setContract(uint8 contractType, address addr) returns()
+func (_Validator *ValidatorSession) SetContract(contractType uint8, addr common.Address) (*types.Transaction, error) {
+	return _Validator.Contract.SetContract(&_Validator.TransactOpts, contractType, addr)
+}
+
+// SetContract is a paid mutator transaction binding the contract method 0x865e6fd3.
+//
+// Solidity: function setContract(uint8 contractType, address addr) returns()
+func (_Validator *ValidatorTransactorSession) SetContract(contractType uint8, addr common.Address) (*types.Transaction, error) {
+	return _Validator.Contract.SetContract(&_Validator.TransactOpts, contractType, addr)
 }
 
 // SetEmergencyExitLockedAmount is a paid mutator transaction binding the contract method 0x6611f843.
@@ -2108,27 +1734,6 @@ func (_Validator *ValidatorSession) SetEmergencyExpiryDuration(_emergencyExpiryD
 // Solidity: function setEmergencyExpiryDuration(uint256 _emergencyExpiryDuration) returns()
 func (_Validator *ValidatorTransactorSession) SetEmergencyExpiryDuration(_emergencyExpiryDuration *big.Int) (*types.Transaction, error) {
 	return _Validator.Contract.SetEmergencyExpiryDuration(&_Validator.TransactOpts, _emergencyExpiryDuration)
-}
-
-// SetMaintenanceContract is a paid mutator transaction binding the contract method 0x46fe9311.
-//
-// Solidity: function setMaintenanceContract(address _addr) returns()
-func (_Validator *ValidatorTransactor) SetMaintenanceContract(opts *bind.TransactOpts, _addr common.Address) (*types.Transaction, error) {
-	return _Validator.contract.Transact(opts, "setMaintenanceContract", _addr)
-}
-
-// SetMaintenanceContract is a paid mutator transaction binding the contract method 0x46fe9311.
-//
-// Solidity: function setMaintenanceContract(address _addr) returns()
-func (_Validator *ValidatorSession) SetMaintenanceContract(_addr common.Address) (*types.Transaction, error) {
-	return _Validator.Contract.SetMaintenanceContract(&_Validator.TransactOpts, _addr)
-}
-
-// SetMaintenanceContract is a paid mutator transaction binding the contract method 0x46fe9311.
-//
-// Solidity: function setMaintenanceContract(address _addr) returns()
-func (_Validator *ValidatorTransactorSession) SetMaintenanceContract(_addr common.Address) (*types.Transaction, error) {
-	return _Validator.Contract.SetMaintenanceContract(&_Validator.TransactOpts, _addr)
 }
 
 // SetMaxPrioritizedValidatorNumber is a paid mutator transaction binding the contract method 0xc94aaa02.
@@ -2213,90 +1818,6 @@ func (_Validator *ValidatorSession) SetMinEffectiveDaysOnwards(_numOfDays *big.I
 // Solidity: function setMinEffectiveDaysOnwards(uint256 _numOfDays) returns()
 func (_Validator *ValidatorTransactorSession) SetMinEffectiveDaysOnwards(_numOfDays *big.Int) (*types.Transaction, error) {
 	return _Validator.Contract.SetMinEffectiveDaysOnwards(&_Validator.TransactOpts, _numOfDays)
-}
-
-// SetRoninTrustedOrganizationContract is a paid mutator transaction binding the contract method 0xb5e337de.
-//
-// Solidity: function setRoninTrustedOrganizationContract(address _addr) returns()
-func (_Validator *ValidatorTransactor) SetRoninTrustedOrganizationContract(opts *bind.TransactOpts, _addr common.Address) (*types.Transaction, error) {
-	return _Validator.contract.Transact(opts, "setRoninTrustedOrganizationContract", _addr)
-}
-
-// SetRoninTrustedOrganizationContract is a paid mutator transaction binding the contract method 0xb5e337de.
-//
-// Solidity: function setRoninTrustedOrganizationContract(address _addr) returns()
-func (_Validator *ValidatorSession) SetRoninTrustedOrganizationContract(_addr common.Address) (*types.Transaction, error) {
-	return _Validator.Contract.SetRoninTrustedOrganizationContract(&_Validator.TransactOpts, _addr)
-}
-
-// SetRoninTrustedOrganizationContract is a paid mutator transaction binding the contract method 0xb5e337de.
-//
-// Solidity: function setRoninTrustedOrganizationContract(address _addr) returns()
-func (_Validator *ValidatorTransactorSession) SetRoninTrustedOrganizationContract(_addr common.Address) (*types.Transaction, error) {
-	return _Validator.Contract.SetRoninTrustedOrganizationContract(&_Validator.TransactOpts, _addr)
-}
-
-// SetSlashIndicatorContract is a paid mutator transaction binding the contract method 0x2bcf3d15.
-//
-// Solidity: function setSlashIndicatorContract(address _addr) returns()
-func (_Validator *ValidatorTransactor) SetSlashIndicatorContract(opts *bind.TransactOpts, _addr common.Address) (*types.Transaction, error) {
-	return _Validator.contract.Transact(opts, "setSlashIndicatorContract", _addr)
-}
-
-// SetSlashIndicatorContract is a paid mutator transaction binding the contract method 0x2bcf3d15.
-//
-// Solidity: function setSlashIndicatorContract(address _addr) returns()
-func (_Validator *ValidatorSession) SetSlashIndicatorContract(_addr common.Address) (*types.Transaction, error) {
-	return _Validator.Contract.SetSlashIndicatorContract(&_Validator.TransactOpts, _addr)
-}
-
-// SetSlashIndicatorContract is a paid mutator transaction binding the contract method 0x2bcf3d15.
-//
-// Solidity: function setSlashIndicatorContract(address _addr) returns()
-func (_Validator *ValidatorTransactorSession) SetSlashIndicatorContract(_addr common.Address) (*types.Transaction, error) {
-	return _Validator.Contract.SetSlashIndicatorContract(&_Validator.TransactOpts, _addr)
-}
-
-// SetStakingContract is a paid mutator transaction binding the contract method 0x9dd373b9.
-//
-// Solidity: function setStakingContract(address _addr) returns()
-func (_Validator *ValidatorTransactor) SetStakingContract(opts *bind.TransactOpts, _addr common.Address) (*types.Transaction, error) {
-	return _Validator.contract.Transact(opts, "setStakingContract", _addr)
-}
-
-// SetStakingContract is a paid mutator transaction binding the contract method 0x9dd373b9.
-//
-// Solidity: function setStakingContract(address _addr) returns()
-func (_Validator *ValidatorSession) SetStakingContract(_addr common.Address) (*types.Transaction, error) {
-	return _Validator.Contract.SetStakingContract(&_Validator.TransactOpts, _addr)
-}
-
-// SetStakingContract is a paid mutator transaction binding the contract method 0x9dd373b9.
-//
-// Solidity: function setStakingContract(address _addr) returns()
-func (_Validator *ValidatorTransactorSession) SetStakingContract(_addr common.Address) (*types.Transaction, error) {
-	return _Validator.Contract.SetStakingContract(&_Validator.TransactOpts, _addr)
-}
-
-// SetStakingVestingContract is a paid mutator transaction binding the contract method 0xad295783.
-//
-// Solidity: function setStakingVestingContract(address _addr) returns()
-func (_Validator *ValidatorTransactor) SetStakingVestingContract(opts *bind.TransactOpts, _addr common.Address) (*types.Transaction, error) {
-	return _Validator.contract.Transact(opts, "setStakingVestingContract", _addr)
-}
-
-// SetStakingVestingContract is a paid mutator transaction binding the contract method 0xad295783.
-//
-// Solidity: function setStakingVestingContract(address _addr) returns()
-func (_Validator *ValidatorSession) SetStakingVestingContract(_addr common.Address) (*types.Transaction, error) {
-	return _Validator.Contract.SetStakingVestingContract(&_Validator.TransactOpts, _addr)
-}
-
-// SetStakingVestingContract is a paid mutator transaction binding the contract method 0xad295783.
-//
-// Solidity: function setStakingVestingContract(address _addr) returns()
-func (_Validator *ValidatorTransactorSession) SetStakingVestingContract(_addr common.Address) (*types.Transaction, error) {
-	return _Validator.Contract.SetStakingVestingContract(&_Validator.TransactOpts, _addr)
 }
 
 // SubmitBlockReward is a paid mutator transaction binding the contract method 0x52091f17.
@@ -3310,273 +2831,6 @@ func (_Validator *ValidatorFilterer) ParseBridgeOperatorSetUpdated(log types.Log
 	return event, nil
 }
 
-// ValidatorBridgeTrackingContractUpdatedIterator is returned from FilterBridgeTrackingContractUpdated and is used to iterate over the raw logs and unpacked data for BridgeTrackingContractUpdated events raised by the Validator contract.
-type ValidatorBridgeTrackingContractUpdatedIterator struct {
-	Event *ValidatorBridgeTrackingContractUpdated // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *ValidatorBridgeTrackingContractUpdatedIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(ValidatorBridgeTrackingContractUpdated)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(ValidatorBridgeTrackingContractUpdated)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *ValidatorBridgeTrackingContractUpdatedIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *ValidatorBridgeTrackingContractUpdatedIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// ValidatorBridgeTrackingContractUpdated represents a BridgeTrackingContractUpdated event raised by the Validator contract.
-type ValidatorBridgeTrackingContractUpdated struct {
-	Arg0 common.Address
-	Raw  types.Log // Blockchain specific contextual infos
-}
-
-// FilterBridgeTrackingContractUpdated is a free log retrieval operation binding the contract event 0x034c8da497df28467c79ddadbba1cc3cdd41f510ea73faae271e6f16a6111621.
-//
-// Solidity: event BridgeTrackingContractUpdated(address arg0)
-func (_Validator *ValidatorFilterer) FilterBridgeTrackingContractUpdated(opts *bind.FilterOpts) (*ValidatorBridgeTrackingContractUpdatedIterator, error) {
-
-	logs, sub, err := _Validator.contract.FilterLogs(opts, "BridgeTrackingContractUpdated")
-	if err != nil {
-		return nil, err
-	}
-	return &ValidatorBridgeTrackingContractUpdatedIterator{contract: _Validator.contract, event: "BridgeTrackingContractUpdated", logs: logs, sub: sub}, nil
-}
-
-// WatchBridgeTrackingContractUpdated is a free log subscription operation binding the contract event 0x034c8da497df28467c79ddadbba1cc3cdd41f510ea73faae271e6f16a6111621.
-//
-// Solidity: event BridgeTrackingContractUpdated(address arg0)
-func (_Validator *ValidatorFilterer) WatchBridgeTrackingContractUpdated(opts *bind.WatchOpts, sink chan<- *ValidatorBridgeTrackingContractUpdated) (event.Subscription, error) {
-
-	logs, sub, err := _Validator.contract.WatchLogs(opts, "BridgeTrackingContractUpdated")
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(ValidatorBridgeTrackingContractUpdated)
-				if err := _Validator.contract.UnpackLog(event, "BridgeTrackingContractUpdated", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// ParseBridgeTrackingContractUpdated is a log parse operation binding the contract event 0x034c8da497df28467c79ddadbba1cc3cdd41f510ea73faae271e6f16a6111621.
-//
-// Solidity: event BridgeTrackingContractUpdated(address arg0)
-func (_Validator *ValidatorFilterer) ParseBridgeTrackingContractUpdated(log types.Log) (*ValidatorBridgeTrackingContractUpdated, error) {
-	event := new(ValidatorBridgeTrackingContractUpdated)
-	if err := _Validator.contract.UnpackLog(event, "BridgeTrackingContractUpdated", log); err != nil {
-		return nil, err
-	}
-	event.Raw = log
-	return event, nil
-}
-
-// ValidatorBridgeTrackingIncorrectlyRespondedIterator is returned from FilterBridgeTrackingIncorrectlyResponded and is used to iterate over the raw logs and unpacked data for BridgeTrackingIncorrectlyResponded events raised by the Validator contract.
-type ValidatorBridgeTrackingIncorrectlyRespondedIterator struct {
-	Event *ValidatorBridgeTrackingIncorrectlyResponded // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *ValidatorBridgeTrackingIncorrectlyRespondedIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(ValidatorBridgeTrackingIncorrectlyResponded)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(ValidatorBridgeTrackingIncorrectlyResponded)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *ValidatorBridgeTrackingIncorrectlyRespondedIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *ValidatorBridgeTrackingIncorrectlyRespondedIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// ValidatorBridgeTrackingIncorrectlyResponded represents a BridgeTrackingIncorrectlyResponded event raised by the Validator contract.
-type ValidatorBridgeTrackingIncorrectlyResponded struct {
-	Raw types.Log // Blockchain specific contextual infos
-}
-
-// FilterBridgeTrackingIncorrectlyResponded is a free log retrieval operation binding the contract event 0x64ba7143ea5a17abea37667aa9ae137e3afba5033c5f504770c02829c128189c.
-//
-// Solidity: event BridgeTrackingIncorrectlyResponded()
-func (_Validator *ValidatorFilterer) FilterBridgeTrackingIncorrectlyResponded(opts *bind.FilterOpts) (*ValidatorBridgeTrackingIncorrectlyRespondedIterator, error) {
-
-	logs, sub, err := _Validator.contract.FilterLogs(opts, "BridgeTrackingIncorrectlyResponded")
-	if err != nil {
-		return nil, err
-	}
-	return &ValidatorBridgeTrackingIncorrectlyRespondedIterator{contract: _Validator.contract, event: "BridgeTrackingIncorrectlyResponded", logs: logs, sub: sub}, nil
-}
-
-// WatchBridgeTrackingIncorrectlyResponded is a free log subscription operation binding the contract event 0x64ba7143ea5a17abea37667aa9ae137e3afba5033c5f504770c02829c128189c.
-//
-// Solidity: event BridgeTrackingIncorrectlyResponded()
-func (_Validator *ValidatorFilterer) WatchBridgeTrackingIncorrectlyResponded(opts *bind.WatchOpts, sink chan<- *ValidatorBridgeTrackingIncorrectlyResponded) (event.Subscription, error) {
-
-	logs, sub, err := _Validator.contract.WatchLogs(opts, "BridgeTrackingIncorrectlyResponded")
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(ValidatorBridgeTrackingIncorrectlyResponded)
-				if err := _Validator.contract.UnpackLog(event, "BridgeTrackingIncorrectlyResponded", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// ParseBridgeTrackingIncorrectlyResponded is a log parse operation binding the contract event 0x64ba7143ea5a17abea37667aa9ae137e3afba5033c5f504770c02829c128189c.
-//
-// Solidity: event BridgeTrackingIncorrectlyResponded()
-func (_Validator *ValidatorFilterer) ParseBridgeTrackingIncorrectlyResponded(log types.Log) (*ValidatorBridgeTrackingIncorrectlyResponded, error) {
-	event := new(ValidatorBridgeTrackingIncorrectlyResponded)
-	if err := _Validator.contract.UnpackLog(event, "BridgeTrackingIncorrectlyResponded", log); err != nil {
-		return nil, err
-	}
-	event.Raw = log
-	return event, nil
-}
-
 // ValidatorCandidateGrantedIterator is returned from FilterCandidateGranted and is used to iterate over the raw logs and unpacked data for CandidateGranted events raised by the Validator contract.
 type ValidatorCandidateGrantedIterator struct {
 	Event *ValidatorCandidateGranted // Event containing the contract specifics and raw log
@@ -3646,16 +2900,15 @@ func (it *ValidatorCandidateGrantedIterator) Close() error {
 
 // ValidatorCandidateGranted represents a CandidateGranted event raised by the Validator contract.
 type ValidatorCandidateGranted struct {
-	ConsensusAddr  common.Address
-	TreasuryAddr   common.Address
-	Admin          common.Address
-	BridgeOperator common.Address
-	Raw            types.Log // Blockchain specific contextual infos
+	ConsensusAddr common.Address
+	TreasuryAddr  common.Address
+	Admin         common.Address
+	Raw           types.Log // Blockchain specific contextual infos
 }
 
-// FilterCandidateGranted is a free log retrieval operation binding the contract event 0xd690f592ed983cfbc05717fbcf06c4e10ae328432c309fe49246cf4a4be69fcd.
+// FilterCandidateGranted is a free log retrieval operation binding the contract event 0x1ca451a9920472b99355a9cf74185bf017604a7849c113f020888ecec9db9366.
 //
-// Solidity: event CandidateGranted(address indexed consensusAddr, address indexed treasuryAddr, address indexed admin, address bridgeOperator)
+// Solidity: event CandidateGranted(address indexed consensusAddr, address indexed treasuryAddr, address indexed admin)
 func (_Validator *ValidatorFilterer) FilterCandidateGranted(opts *bind.FilterOpts, consensusAddr []common.Address, treasuryAddr []common.Address, admin []common.Address) (*ValidatorCandidateGrantedIterator, error) {
 
 	var consensusAddrRule []interface{}
@@ -3678,9 +2931,9 @@ func (_Validator *ValidatorFilterer) FilterCandidateGranted(opts *bind.FilterOpt
 	return &ValidatorCandidateGrantedIterator{contract: _Validator.contract, event: "CandidateGranted", logs: logs, sub: sub}, nil
 }
 
-// WatchCandidateGranted is a free log subscription operation binding the contract event 0xd690f592ed983cfbc05717fbcf06c4e10ae328432c309fe49246cf4a4be69fcd.
+// WatchCandidateGranted is a free log subscription operation binding the contract event 0x1ca451a9920472b99355a9cf74185bf017604a7849c113f020888ecec9db9366.
 //
-// Solidity: event CandidateGranted(address indexed consensusAddr, address indexed treasuryAddr, address indexed admin, address bridgeOperator)
+// Solidity: event CandidateGranted(address indexed consensusAddr, address indexed treasuryAddr, address indexed admin)
 func (_Validator *ValidatorFilterer) WatchCandidateGranted(opts *bind.WatchOpts, sink chan<- *ValidatorCandidateGranted, consensusAddr []common.Address, treasuryAddr []common.Address, admin []common.Address) (event.Subscription, error) {
 
 	var consensusAddrRule []interface{}
@@ -3728,9 +2981,9 @@ func (_Validator *ValidatorFilterer) WatchCandidateGranted(opts *bind.WatchOpts,
 	}), nil
 }
 
-// ParseCandidateGranted is a log parse operation binding the contract event 0xd690f592ed983cfbc05717fbcf06c4e10ae328432c309fe49246cf4a4be69fcd.
+// ParseCandidateGranted is a log parse operation binding the contract event 0x1ca451a9920472b99355a9cf74185bf017604a7849c113f020888ecec9db9366.
 //
-// Solidity: event CandidateGranted(address indexed consensusAddr, address indexed treasuryAddr, address indexed admin, address bridgeOperator)
+// Solidity: event CandidateGranted(address indexed consensusAddr, address indexed treasuryAddr, address indexed admin)
 func (_Validator *ValidatorFilterer) ParseCandidateGranted(log types.Log) (*ValidatorCandidateGranted, error) {
 	event := new(ValidatorCandidateGranted)
 	if err := _Validator.contract.UnpackLog(event, "CandidateGranted", log); err != nil {
@@ -4449,6 +3702,159 @@ func (_Validator *ValidatorFilterer) WatchCommissionRateUpdated(opts *bind.Watch
 func (_Validator *ValidatorFilterer) ParseCommissionRateUpdated(log types.Log) (*ValidatorCommissionRateUpdated, error) {
 	event := new(ValidatorCommissionRateUpdated)
 	if err := _Validator.contract.UnpackLog(event, "CommissionRateUpdated", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// ValidatorContractUpdatedIterator is returned from FilterContractUpdated and is used to iterate over the raw logs and unpacked data for ContractUpdated events raised by the Validator contract.
+type ValidatorContractUpdatedIterator struct {
+	Event *ValidatorContractUpdated // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *ValidatorContractUpdatedIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(ValidatorContractUpdated)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(ValidatorContractUpdated)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *ValidatorContractUpdatedIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *ValidatorContractUpdatedIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// ValidatorContractUpdated represents a ContractUpdated event raised by the Validator contract.
+type ValidatorContractUpdated struct {
+	ContractType uint8
+	Addr         common.Address
+	Raw          types.Log // Blockchain specific contextual infos
+}
+
+// FilterContractUpdated is a free log retrieval operation binding the contract event 0x865d1c228a8ea13709cfe61f346f7ff67f1bbd4a18ff31ad3e7147350d317c59.
+//
+// Solidity: event ContractUpdated(uint8 indexed contractType, address indexed addr)
+func (_Validator *ValidatorFilterer) FilterContractUpdated(opts *bind.FilterOpts, contractType []uint8, addr []common.Address) (*ValidatorContractUpdatedIterator, error) {
+
+	var contractTypeRule []interface{}
+	for _, contractTypeItem := range contractType {
+		contractTypeRule = append(contractTypeRule, contractTypeItem)
+	}
+	var addrRule []interface{}
+	for _, addrItem := range addr {
+		addrRule = append(addrRule, addrItem)
+	}
+
+	logs, sub, err := _Validator.contract.FilterLogs(opts, "ContractUpdated", contractTypeRule, addrRule)
+	if err != nil {
+		return nil, err
+	}
+	return &ValidatorContractUpdatedIterator{contract: _Validator.contract, event: "ContractUpdated", logs: logs, sub: sub}, nil
+}
+
+// WatchContractUpdated is a free log subscription operation binding the contract event 0x865d1c228a8ea13709cfe61f346f7ff67f1bbd4a18ff31ad3e7147350d317c59.
+//
+// Solidity: event ContractUpdated(uint8 indexed contractType, address indexed addr)
+func (_Validator *ValidatorFilterer) WatchContractUpdated(opts *bind.WatchOpts, sink chan<- *ValidatorContractUpdated, contractType []uint8, addr []common.Address) (event.Subscription, error) {
+
+	var contractTypeRule []interface{}
+	for _, contractTypeItem := range contractType {
+		contractTypeRule = append(contractTypeRule, contractTypeItem)
+	}
+	var addrRule []interface{}
+	for _, addrItem := range addr {
+		addrRule = append(addrRule, addrItem)
+	}
+
+	logs, sub, err := _Validator.contract.WatchLogs(opts, "ContractUpdated", contractTypeRule, addrRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(ValidatorContractUpdated)
+				if err := _Validator.contract.UnpackLog(event, "ContractUpdated", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseContractUpdated is a log parse operation binding the contract event 0x865d1c228a8ea13709cfe61f346f7ff67f1bbd4a18ff31ad3e7147350d317c59.
+//
+// Solidity: event ContractUpdated(uint8 indexed contractType, address indexed addr)
+func (_Validator *ValidatorFilterer) ParseContractUpdated(log types.Log) (*ValidatorContractUpdated, error) {
+	event := new(ValidatorContractUpdated)
+	if err := _Validator.contract.UnpackLog(event, "ContractUpdated", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
@@ -5468,6 +4874,315 @@ func (_Validator *ValidatorFilterer) ParseEmergencyExpiryDurationUpdated(log typ
 	return event, nil
 }
 
+// ValidatorFastFinalityRewardDistributedIterator is returned from FilterFastFinalityRewardDistributed and is used to iterate over the raw logs and unpacked data for FastFinalityRewardDistributed events raised by the Validator contract.
+type ValidatorFastFinalityRewardDistributedIterator struct {
+	Event *ValidatorFastFinalityRewardDistributed // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *ValidatorFastFinalityRewardDistributedIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(ValidatorFastFinalityRewardDistributed)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(ValidatorFastFinalityRewardDistributed)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *ValidatorFastFinalityRewardDistributedIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *ValidatorFastFinalityRewardDistributedIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// ValidatorFastFinalityRewardDistributed represents a FastFinalityRewardDistributed event raised by the Validator contract.
+type ValidatorFastFinalityRewardDistributed struct {
+	ConsensusAddr common.Address
+	Recipient     common.Address
+	Amount        *big.Int
+	Raw           types.Log // Blockchain specific contextual infos
+}
+
+// FilterFastFinalityRewardDistributed is a free log retrieval operation binding the contract event 0x0c4d6a43fc8470dee97db74874b5685e412cc517d9bdecfde1623c5e835b18e4.
+//
+// Solidity: event FastFinalityRewardDistributed(address indexed consensusAddr, address indexed recipient, uint256 amount)
+func (_Validator *ValidatorFilterer) FilterFastFinalityRewardDistributed(opts *bind.FilterOpts, consensusAddr []common.Address, recipient []common.Address) (*ValidatorFastFinalityRewardDistributedIterator, error) {
+
+	var consensusAddrRule []interface{}
+	for _, consensusAddrItem := range consensusAddr {
+		consensusAddrRule = append(consensusAddrRule, consensusAddrItem)
+	}
+	var recipientRule []interface{}
+	for _, recipientItem := range recipient {
+		recipientRule = append(recipientRule, recipientItem)
+	}
+
+	logs, sub, err := _Validator.contract.FilterLogs(opts, "FastFinalityRewardDistributed", consensusAddrRule, recipientRule)
+	if err != nil {
+		return nil, err
+	}
+	return &ValidatorFastFinalityRewardDistributedIterator{contract: _Validator.contract, event: "FastFinalityRewardDistributed", logs: logs, sub: sub}, nil
+}
+
+// WatchFastFinalityRewardDistributed is a free log subscription operation binding the contract event 0x0c4d6a43fc8470dee97db74874b5685e412cc517d9bdecfde1623c5e835b18e4.
+//
+// Solidity: event FastFinalityRewardDistributed(address indexed consensusAddr, address indexed recipient, uint256 amount)
+func (_Validator *ValidatorFilterer) WatchFastFinalityRewardDistributed(opts *bind.WatchOpts, sink chan<- *ValidatorFastFinalityRewardDistributed, consensusAddr []common.Address, recipient []common.Address) (event.Subscription, error) {
+
+	var consensusAddrRule []interface{}
+	for _, consensusAddrItem := range consensusAddr {
+		consensusAddrRule = append(consensusAddrRule, consensusAddrItem)
+	}
+	var recipientRule []interface{}
+	for _, recipientItem := range recipient {
+		recipientRule = append(recipientRule, recipientItem)
+	}
+
+	logs, sub, err := _Validator.contract.WatchLogs(opts, "FastFinalityRewardDistributed", consensusAddrRule, recipientRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(ValidatorFastFinalityRewardDistributed)
+				if err := _Validator.contract.UnpackLog(event, "FastFinalityRewardDistributed", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseFastFinalityRewardDistributed is a log parse operation binding the contract event 0x0c4d6a43fc8470dee97db74874b5685e412cc517d9bdecfde1623c5e835b18e4.
+//
+// Solidity: event FastFinalityRewardDistributed(address indexed consensusAddr, address indexed recipient, uint256 amount)
+func (_Validator *ValidatorFilterer) ParseFastFinalityRewardDistributed(log types.Log) (*ValidatorFastFinalityRewardDistributed, error) {
+	event := new(ValidatorFastFinalityRewardDistributed)
+	if err := _Validator.contract.UnpackLog(event, "FastFinalityRewardDistributed", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// ValidatorFastFinalityRewardDistributionFailedIterator is returned from FilterFastFinalityRewardDistributionFailed and is used to iterate over the raw logs and unpacked data for FastFinalityRewardDistributionFailed events raised by the Validator contract.
+type ValidatorFastFinalityRewardDistributionFailedIterator struct {
+	Event *ValidatorFastFinalityRewardDistributionFailed // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *ValidatorFastFinalityRewardDistributionFailedIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(ValidatorFastFinalityRewardDistributionFailed)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(ValidatorFastFinalityRewardDistributionFailed)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *ValidatorFastFinalityRewardDistributionFailedIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *ValidatorFastFinalityRewardDistributionFailedIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// ValidatorFastFinalityRewardDistributionFailed represents a FastFinalityRewardDistributionFailed event raised by the Validator contract.
+type ValidatorFastFinalityRewardDistributionFailed struct {
+	ConsensusAddr   common.Address
+	Recipient       common.Address
+	Amount          *big.Int
+	ContractBalance *big.Int
+	Raw             types.Log // Blockchain specific contextual infos
+}
+
+// FilterFastFinalityRewardDistributionFailed is a free log retrieval operation binding the contract event 0x98697ee35f04a599a814432016fff3968c483d2d88dacb484926b9358f8e7cf9.
+//
+// Solidity: event FastFinalityRewardDistributionFailed(address indexed consensusAddr, address indexed recipient, uint256 amount, uint256 contractBalance)
+func (_Validator *ValidatorFilterer) FilterFastFinalityRewardDistributionFailed(opts *bind.FilterOpts, consensusAddr []common.Address, recipient []common.Address) (*ValidatorFastFinalityRewardDistributionFailedIterator, error) {
+
+	var consensusAddrRule []interface{}
+	for _, consensusAddrItem := range consensusAddr {
+		consensusAddrRule = append(consensusAddrRule, consensusAddrItem)
+	}
+	var recipientRule []interface{}
+	for _, recipientItem := range recipient {
+		recipientRule = append(recipientRule, recipientItem)
+	}
+
+	logs, sub, err := _Validator.contract.FilterLogs(opts, "FastFinalityRewardDistributionFailed", consensusAddrRule, recipientRule)
+	if err != nil {
+		return nil, err
+	}
+	return &ValidatorFastFinalityRewardDistributionFailedIterator{contract: _Validator.contract, event: "FastFinalityRewardDistributionFailed", logs: logs, sub: sub}, nil
+}
+
+// WatchFastFinalityRewardDistributionFailed is a free log subscription operation binding the contract event 0x98697ee35f04a599a814432016fff3968c483d2d88dacb484926b9358f8e7cf9.
+//
+// Solidity: event FastFinalityRewardDistributionFailed(address indexed consensusAddr, address indexed recipient, uint256 amount, uint256 contractBalance)
+func (_Validator *ValidatorFilterer) WatchFastFinalityRewardDistributionFailed(opts *bind.WatchOpts, sink chan<- *ValidatorFastFinalityRewardDistributionFailed, consensusAddr []common.Address, recipient []common.Address) (event.Subscription, error) {
+
+	var consensusAddrRule []interface{}
+	for _, consensusAddrItem := range consensusAddr {
+		consensusAddrRule = append(consensusAddrRule, consensusAddrItem)
+	}
+	var recipientRule []interface{}
+	for _, recipientItem := range recipient {
+		recipientRule = append(recipientRule, recipientItem)
+	}
+
+	logs, sub, err := _Validator.contract.WatchLogs(opts, "FastFinalityRewardDistributionFailed", consensusAddrRule, recipientRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(ValidatorFastFinalityRewardDistributionFailed)
+				if err := _Validator.contract.UnpackLog(event, "FastFinalityRewardDistributionFailed", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseFastFinalityRewardDistributionFailed is a log parse operation binding the contract event 0x98697ee35f04a599a814432016fff3968c483d2d88dacb484926b9358f8e7cf9.
+//
+// Solidity: event FastFinalityRewardDistributionFailed(address indexed consensusAddr, address indexed recipient, uint256 amount, uint256 contractBalance)
+func (_Validator *ValidatorFilterer) ParseFastFinalityRewardDistributionFailed(log types.Log) (*ValidatorFastFinalityRewardDistributionFailed, error) {
+	event := new(ValidatorFastFinalityRewardDistributionFailed)
+	if err := _Validator.contract.UnpackLog(event, "FastFinalityRewardDistributionFailed", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
 // ValidatorInitializedIterator is returned from FilterInitialized and is used to iterate over the raw logs and unpacked data for Initialized events raised by the Validator contract.
 type ValidatorInitializedIterator struct {
 	Event *ValidatorInitialized // Event containing the contract specifics and raw log
@@ -5596,140 +5311,6 @@ func (_Validator *ValidatorFilterer) WatchInitialized(opts *bind.WatchOpts, sink
 func (_Validator *ValidatorFilterer) ParseInitialized(log types.Log) (*ValidatorInitialized, error) {
 	event := new(ValidatorInitialized)
 	if err := _Validator.contract.UnpackLog(event, "Initialized", log); err != nil {
-		return nil, err
-	}
-	event.Raw = log
-	return event, nil
-}
-
-// ValidatorMaintenanceContractUpdatedIterator is returned from FilterMaintenanceContractUpdated and is used to iterate over the raw logs and unpacked data for MaintenanceContractUpdated events raised by the Validator contract.
-type ValidatorMaintenanceContractUpdatedIterator struct {
-	Event *ValidatorMaintenanceContractUpdated // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *ValidatorMaintenanceContractUpdatedIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(ValidatorMaintenanceContractUpdated)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(ValidatorMaintenanceContractUpdated)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *ValidatorMaintenanceContractUpdatedIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *ValidatorMaintenanceContractUpdatedIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// ValidatorMaintenanceContractUpdated represents a MaintenanceContractUpdated event raised by the Validator contract.
-type ValidatorMaintenanceContractUpdated struct {
-	Arg0 common.Address
-	Raw  types.Log // Blockchain specific contextual infos
-}
-
-// FilterMaintenanceContractUpdated is a free log retrieval operation binding the contract event 0x31a33f126a5bae3c5bdf6cfc2cd6dcfffe2fe9634bdb09e21c44762993889e3b.
-//
-// Solidity: event MaintenanceContractUpdated(address arg0)
-func (_Validator *ValidatorFilterer) FilterMaintenanceContractUpdated(opts *bind.FilterOpts) (*ValidatorMaintenanceContractUpdatedIterator, error) {
-
-	logs, sub, err := _Validator.contract.FilterLogs(opts, "MaintenanceContractUpdated")
-	if err != nil {
-		return nil, err
-	}
-	return &ValidatorMaintenanceContractUpdatedIterator{contract: _Validator.contract, event: "MaintenanceContractUpdated", logs: logs, sub: sub}, nil
-}
-
-// WatchMaintenanceContractUpdated is a free log subscription operation binding the contract event 0x31a33f126a5bae3c5bdf6cfc2cd6dcfffe2fe9634bdb09e21c44762993889e3b.
-//
-// Solidity: event MaintenanceContractUpdated(address arg0)
-func (_Validator *ValidatorFilterer) WatchMaintenanceContractUpdated(opts *bind.WatchOpts, sink chan<- *ValidatorMaintenanceContractUpdated) (event.Subscription, error) {
-
-	logs, sub, err := _Validator.contract.WatchLogs(opts, "MaintenanceContractUpdated")
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(ValidatorMaintenanceContractUpdated)
-				if err := _Validator.contract.UnpackLog(event, "MaintenanceContractUpdated", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// ParseMaintenanceContractUpdated is a log parse operation binding the contract event 0x31a33f126a5bae3c5bdf6cfc2cd6dcfffe2fe9634bdb09e21c44762993889e3b.
-//
-// Solidity: event MaintenanceContractUpdated(address arg0)
-func (_Validator *ValidatorFilterer) ParseMaintenanceContractUpdated(log types.Log) (*ValidatorMaintenanceContractUpdated, error) {
-	event := new(ValidatorMaintenanceContractUpdated)
-	if err := _Validator.contract.UnpackLog(event, "MaintenanceContractUpdated", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
@@ -6581,408 +6162,6 @@ func (_Validator *ValidatorFilterer) ParseMiningRewardDistributionFailed(log typ
 	return event, nil
 }
 
-// ValidatorRoninTrustedOrganizationContractUpdatedIterator is returned from FilterRoninTrustedOrganizationContractUpdated and is used to iterate over the raw logs and unpacked data for RoninTrustedOrganizationContractUpdated events raised by the Validator contract.
-type ValidatorRoninTrustedOrganizationContractUpdatedIterator struct {
-	Event *ValidatorRoninTrustedOrganizationContractUpdated // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *ValidatorRoninTrustedOrganizationContractUpdatedIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(ValidatorRoninTrustedOrganizationContractUpdated)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(ValidatorRoninTrustedOrganizationContractUpdated)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *ValidatorRoninTrustedOrganizationContractUpdatedIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *ValidatorRoninTrustedOrganizationContractUpdatedIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// ValidatorRoninTrustedOrganizationContractUpdated represents a RoninTrustedOrganizationContractUpdated event raised by the Validator contract.
-type ValidatorRoninTrustedOrganizationContractUpdated struct {
-	Arg0 common.Address
-	Raw  types.Log // Blockchain specific contextual infos
-}
-
-// FilterRoninTrustedOrganizationContractUpdated is a free log retrieval operation binding the contract event 0xfd6f5f93d69a07c593a09be0b208bff13ab4ffd6017df3b33433d63bdc59b4d7.
-//
-// Solidity: event RoninTrustedOrganizationContractUpdated(address arg0)
-func (_Validator *ValidatorFilterer) FilterRoninTrustedOrganizationContractUpdated(opts *bind.FilterOpts) (*ValidatorRoninTrustedOrganizationContractUpdatedIterator, error) {
-
-	logs, sub, err := _Validator.contract.FilterLogs(opts, "RoninTrustedOrganizationContractUpdated")
-	if err != nil {
-		return nil, err
-	}
-	return &ValidatorRoninTrustedOrganizationContractUpdatedIterator{contract: _Validator.contract, event: "RoninTrustedOrganizationContractUpdated", logs: logs, sub: sub}, nil
-}
-
-// WatchRoninTrustedOrganizationContractUpdated is a free log subscription operation binding the contract event 0xfd6f5f93d69a07c593a09be0b208bff13ab4ffd6017df3b33433d63bdc59b4d7.
-//
-// Solidity: event RoninTrustedOrganizationContractUpdated(address arg0)
-func (_Validator *ValidatorFilterer) WatchRoninTrustedOrganizationContractUpdated(opts *bind.WatchOpts, sink chan<- *ValidatorRoninTrustedOrganizationContractUpdated) (event.Subscription, error) {
-
-	logs, sub, err := _Validator.contract.WatchLogs(opts, "RoninTrustedOrganizationContractUpdated")
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(ValidatorRoninTrustedOrganizationContractUpdated)
-				if err := _Validator.contract.UnpackLog(event, "RoninTrustedOrganizationContractUpdated", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// ParseRoninTrustedOrganizationContractUpdated is a log parse operation binding the contract event 0xfd6f5f93d69a07c593a09be0b208bff13ab4ffd6017df3b33433d63bdc59b4d7.
-//
-// Solidity: event RoninTrustedOrganizationContractUpdated(address arg0)
-func (_Validator *ValidatorFilterer) ParseRoninTrustedOrganizationContractUpdated(log types.Log) (*ValidatorRoninTrustedOrganizationContractUpdated, error) {
-	event := new(ValidatorRoninTrustedOrganizationContractUpdated)
-	if err := _Validator.contract.UnpackLog(event, "RoninTrustedOrganizationContractUpdated", log); err != nil {
-		return nil, err
-	}
-	event.Raw = log
-	return event, nil
-}
-
-// ValidatorSlashIndicatorContractUpdatedIterator is returned from FilterSlashIndicatorContractUpdated and is used to iterate over the raw logs and unpacked data for SlashIndicatorContractUpdated events raised by the Validator contract.
-type ValidatorSlashIndicatorContractUpdatedIterator struct {
-	Event *ValidatorSlashIndicatorContractUpdated // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *ValidatorSlashIndicatorContractUpdatedIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(ValidatorSlashIndicatorContractUpdated)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(ValidatorSlashIndicatorContractUpdated)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *ValidatorSlashIndicatorContractUpdatedIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *ValidatorSlashIndicatorContractUpdatedIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// ValidatorSlashIndicatorContractUpdated represents a SlashIndicatorContractUpdated event raised by the Validator contract.
-type ValidatorSlashIndicatorContractUpdated struct {
-	Arg0 common.Address
-	Raw  types.Log // Blockchain specific contextual infos
-}
-
-// FilterSlashIndicatorContractUpdated is a free log retrieval operation binding the contract event 0xaa5b07dd43aa44c69b70a6a2b9c3fcfed12b6e5f6323596ba7ac91035ab80a4f.
-//
-// Solidity: event SlashIndicatorContractUpdated(address arg0)
-func (_Validator *ValidatorFilterer) FilterSlashIndicatorContractUpdated(opts *bind.FilterOpts) (*ValidatorSlashIndicatorContractUpdatedIterator, error) {
-
-	logs, sub, err := _Validator.contract.FilterLogs(opts, "SlashIndicatorContractUpdated")
-	if err != nil {
-		return nil, err
-	}
-	return &ValidatorSlashIndicatorContractUpdatedIterator{contract: _Validator.contract, event: "SlashIndicatorContractUpdated", logs: logs, sub: sub}, nil
-}
-
-// WatchSlashIndicatorContractUpdated is a free log subscription operation binding the contract event 0xaa5b07dd43aa44c69b70a6a2b9c3fcfed12b6e5f6323596ba7ac91035ab80a4f.
-//
-// Solidity: event SlashIndicatorContractUpdated(address arg0)
-func (_Validator *ValidatorFilterer) WatchSlashIndicatorContractUpdated(opts *bind.WatchOpts, sink chan<- *ValidatorSlashIndicatorContractUpdated) (event.Subscription, error) {
-
-	logs, sub, err := _Validator.contract.WatchLogs(opts, "SlashIndicatorContractUpdated")
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(ValidatorSlashIndicatorContractUpdated)
-				if err := _Validator.contract.UnpackLog(event, "SlashIndicatorContractUpdated", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// ParseSlashIndicatorContractUpdated is a log parse operation binding the contract event 0xaa5b07dd43aa44c69b70a6a2b9c3fcfed12b6e5f6323596ba7ac91035ab80a4f.
-//
-// Solidity: event SlashIndicatorContractUpdated(address arg0)
-func (_Validator *ValidatorFilterer) ParseSlashIndicatorContractUpdated(log types.Log) (*ValidatorSlashIndicatorContractUpdated, error) {
-	event := new(ValidatorSlashIndicatorContractUpdated)
-	if err := _Validator.contract.UnpackLog(event, "SlashIndicatorContractUpdated", log); err != nil {
-		return nil, err
-	}
-	event.Raw = log
-	return event, nil
-}
-
-// ValidatorStakingContractUpdatedIterator is returned from FilterStakingContractUpdated and is used to iterate over the raw logs and unpacked data for StakingContractUpdated events raised by the Validator contract.
-type ValidatorStakingContractUpdatedIterator struct {
-	Event *ValidatorStakingContractUpdated // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *ValidatorStakingContractUpdatedIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(ValidatorStakingContractUpdated)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(ValidatorStakingContractUpdated)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *ValidatorStakingContractUpdatedIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *ValidatorStakingContractUpdatedIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// ValidatorStakingContractUpdated represents a StakingContractUpdated event raised by the Validator contract.
-type ValidatorStakingContractUpdated struct {
-	Arg0 common.Address
-	Raw  types.Log // Blockchain specific contextual infos
-}
-
-// FilterStakingContractUpdated is a free log retrieval operation binding the contract event 0x6397f5b135542bb3f477cb346cfab5abdec1251d08dc8f8d4efb4ffe122ea0bf.
-//
-// Solidity: event StakingContractUpdated(address arg0)
-func (_Validator *ValidatorFilterer) FilterStakingContractUpdated(opts *bind.FilterOpts) (*ValidatorStakingContractUpdatedIterator, error) {
-
-	logs, sub, err := _Validator.contract.FilterLogs(opts, "StakingContractUpdated")
-	if err != nil {
-		return nil, err
-	}
-	return &ValidatorStakingContractUpdatedIterator{contract: _Validator.contract, event: "StakingContractUpdated", logs: logs, sub: sub}, nil
-}
-
-// WatchStakingContractUpdated is a free log subscription operation binding the contract event 0x6397f5b135542bb3f477cb346cfab5abdec1251d08dc8f8d4efb4ffe122ea0bf.
-//
-// Solidity: event StakingContractUpdated(address arg0)
-func (_Validator *ValidatorFilterer) WatchStakingContractUpdated(opts *bind.WatchOpts, sink chan<- *ValidatorStakingContractUpdated) (event.Subscription, error) {
-
-	logs, sub, err := _Validator.contract.WatchLogs(opts, "StakingContractUpdated")
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(ValidatorStakingContractUpdated)
-				if err := _Validator.contract.UnpackLog(event, "StakingContractUpdated", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// ParseStakingContractUpdated is a log parse operation binding the contract event 0x6397f5b135542bb3f477cb346cfab5abdec1251d08dc8f8d4efb4ffe122ea0bf.
-//
-// Solidity: event StakingContractUpdated(address arg0)
-func (_Validator *ValidatorFilterer) ParseStakingContractUpdated(log types.Log) (*ValidatorStakingContractUpdated, error) {
-	event := new(ValidatorStakingContractUpdated)
-	if err := _Validator.contract.UnpackLog(event, "StakingContractUpdated", log); err != nil {
-		return nil, err
-	}
-	event.Raw = log
-	return event, nil
-}
-
 // ValidatorStakingRewardDistributedIterator is returned from FilterStakingRewardDistributed and is used to iterate over the raw logs and unpacked data for StakingRewardDistributed events raised by the Validator contract.
 type ValidatorStakingRewardDistributedIterator struct {
 	Event *ValidatorStakingRewardDistributed // Event containing the contract specifics and raw log
@@ -7250,140 +6429,6 @@ func (_Validator *ValidatorFilterer) WatchStakingRewardDistributionFailed(opts *
 func (_Validator *ValidatorFilterer) ParseStakingRewardDistributionFailed(log types.Log) (*ValidatorStakingRewardDistributionFailed, error) {
 	event := new(ValidatorStakingRewardDistributionFailed)
 	if err := _Validator.contract.UnpackLog(event, "StakingRewardDistributionFailed", log); err != nil {
-		return nil, err
-	}
-	event.Raw = log
-	return event, nil
-}
-
-// ValidatorStakingVestingContractUpdatedIterator is returned from FilterStakingVestingContractUpdated and is used to iterate over the raw logs and unpacked data for StakingVestingContractUpdated events raised by the Validator contract.
-type ValidatorStakingVestingContractUpdatedIterator struct {
-	Event *ValidatorStakingVestingContractUpdated // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *ValidatorStakingVestingContractUpdatedIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(ValidatorStakingVestingContractUpdated)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(ValidatorStakingVestingContractUpdated)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *ValidatorStakingVestingContractUpdatedIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *ValidatorStakingVestingContractUpdatedIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// ValidatorStakingVestingContractUpdated represents a StakingVestingContractUpdated event raised by the Validator contract.
-type ValidatorStakingVestingContractUpdated struct {
-	Arg0 common.Address
-	Raw  types.Log // Blockchain specific contextual infos
-}
-
-// FilterStakingVestingContractUpdated is a free log retrieval operation binding the contract event 0xc328090a37d855191ab58469296f98f87a851ca57d5cdfd1e9ac3c83e9e7096d.
-//
-// Solidity: event StakingVestingContractUpdated(address arg0)
-func (_Validator *ValidatorFilterer) FilterStakingVestingContractUpdated(opts *bind.FilterOpts) (*ValidatorStakingVestingContractUpdatedIterator, error) {
-
-	logs, sub, err := _Validator.contract.FilterLogs(opts, "StakingVestingContractUpdated")
-	if err != nil {
-		return nil, err
-	}
-	return &ValidatorStakingVestingContractUpdatedIterator{contract: _Validator.contract, event: "StakingVestingContractUpdated", logs: logs, sub: sub}, nil
-}
-
-// WatchStakingVestingContractUpdated is a free log subscription operation binding the contract event 0xc328090a37d855191ab58469296f98f87a851ca57d5cdfd1e9ac3c83e9e7096d.
-//
-// Solidity: event StakingVestingContractUpdated(address arg0)
-func (_Validator *ValidatorFilterer) WatchStakingVestingContractUpdated(opts *bind.WatchOpts, sink chan<- *ValidatorStakingVestingContractUpdated) (event.Subscription, error) {
-
-	logs, sub, err := _Validator.contract.WatchLogs(opts, "StakingVestingContractUpdated")
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(ValidatorStakingVestingContractUpdated)
-				if err := _Validator.contract.UnpackLog(event, "StakingVestingContractUpdated", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// ParseStakingVestingContractUpdated is a log parse operation binding the contract event 0xc328090a37d855191ab58469296f98f87a851ca57d5cdfd1e9ac3c83e9e7096d.
-//
-// Solidity: event StakingVestingContractUpdated(address arg0)
-func (_Validator *ValidatorFilterer) ParseStakingVestingContractUpdated(log types.Log) (*ValidatorStakingVestingContractUpdated, error) {
-	event := new(ValidatorStakingVestingContractUpdated)
-	if err := _Validator.contract.UnpackLog(event, "StakingVestingContractUpdated", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
