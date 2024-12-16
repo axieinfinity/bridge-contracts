@@ -33,7 +33,7 @@ var ABIMaps = map[string]*bind.MetaData{
 	"Staking":        ronStaking.RonStakingMetaData,
 	"KatanaPair":     katana.KatanaPairMetaData,
 	"KatanaRouter":   katana.KatanaRouterMetaData,
-	"KatanaPairV3":   katana.KatanaPairV3,
-	"KatanaRouterV3": katana.KatanaRouterV3,
+	"KatanaPairV3":   katana.KatanaPairV3MetaData,
+	"KatanaRouterV3": katana.KatanaRouterV3MetaData,
 	"WRON":           wron.WRONMetaData,
 }
