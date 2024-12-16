@@ -16,4 +16,7 @@ generate:
 generate_katana:
 	abigen --abi "./contracts/katana/KatanaRouter.abi" --pkg "katana" --type KatanaRouter --out "./generated_contracts/ronin/katana/katana_router.go"
 	abigen --abi "./contracts/katana/KatanaPair.abi" --pkg "katana" --type KatanaPair --out "./generated_contracts/ronin/katana/katana_pair.go"
+	abigen --abi "./contracts/katana/KatanaRouterV3.abi" --pkg "katana" --type KatanaRouterV3 --out "./generated_contracts/ronin/katana/katana_router_v3.go"
+	abigen --abi "./contracts/katana/KatanaPairV3.abi" --pkg "katana" --type KatanaPairV3 --out "./generated_contracts/ronin/katana/katana_pair_v3.go"
+
 	abigen --abi "./contracts/ronin/WRON.abi" --pkg "wron" --type WRON --out "./generated_contracts/ronin/wron/wron.go"
